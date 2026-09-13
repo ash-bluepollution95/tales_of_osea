@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
 import { characters } from "@/lib/characters";
 
 export default function CharactersPage() {
@@ -8,8 +9,9 @@ export default function CharactersPage() {
       <ul>
         {characters.map((c) => (
           <li key={c.slug}>
-            <Link href={`/characters/${c.slug}`}>
-              {c.name} — {c.title}
+            <Link href={`/characters/${c.slug}`} className={buttonVariants({ variant: "outline", size: "sm" })}>
+
+            {c.title}
             </Link>
             <p>{c.blurb}</p>
           </li>

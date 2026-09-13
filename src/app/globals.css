@@ -50,6 +50,22 @@
   --font-yellowtail: var(--font-yellowtail);
   --font-nunito: var(--font-nunito);
   --font-inconsolata: var(--font-inconsolata);
+  --color-pane-shadow: var(--pane-shadow);
+  --color-pane-highlight: var(--pane-highlight);
+  --color-pane-knob: var(--pane-knob);
+  --color-pane-border-accent: var(--pane-border-accent);
+  --color-pane-tint-accent: var(--pane-tint-accent);
+  --color-pane-border-clear: var(--pane-border-clear);
+  --color-pane-border-regular: var(--pane-border-regular);
+  --pane-border-width: var(--pane-border-width);
+  --color-pane-nested-clear: var(--pane-nested-clear);
+  --color-pane-nested-regular: var(--pane-nested-regular);
+  --color-pane-tint-clear: var(--pane-tint-clear);
+  --color-pane-tint-regular: var(--pane-tint-regular);
+  --pane-saturation: var(--pane-saturation);
+  --pane-blur-clear: var(--pane-blur-clear);
+  --pane-blur-regular: var(--pane-blur-regular);
+  --pane-fg: var(--pane-fg);
 }
 
 :root {
@@ -85,6 +101,22 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(0.98 0.008 300);
   --foreground: oklch(0.16 0.025 290);
+  --pane-fg: var(--foreground);
+  --pane-blur-regular: 12px;
+  --pane-blur-clear: 5px;
+  --pane-saturation: 1.7;
+  --pane-tint-regular: rgba(255, 255, 255, 0.26);
+  --pane-tint-clear: rgba(255, 255, 255, 0.08);
+  --pane-nested-regular: rgba(255, 255, 255, 0.4);
+  --pane-nested-clear: rgba(255, 255, 255, 0.2);
+  --pane-border-width: 0.5px;
+  --pane-border-regular: rgba(255, 255, 255, 0.85);
+  --pane-border-clear: rgba(255, 255, 255, 0.6);
+  --pane-tint-accent: rgba(52, 199, 89, 0.82);
+  --pane-border-accent: rgba(255, 255, 255, 0.7);
+  --pane-knob: rgba(255, 255, 255, 0.92);
+  --pane-highlight: rgba(255, 255, 255, 0.85);
+  --pane-shadow: rgba(0, 0, 0, 0.1);
 }
 
 .dark {
@@ -119,6 +151,17 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  --pane-tint-regular: rgba(28, 28, 32, 0.3);
+  --pane-tint-clear: rgba(18, 18, 22, 0.12);
+  --pane-nested-regular: rgba(255, 255, 255, 0.12);
+  --pane-nested-clear: rgba(255, 255, 255, 0.07);
+  --pane-border-regular: rgba(255, 255, 255, 0.14);
+  --pane-border-clear: rgba(255, 255, 255, 0.1);
+  --pane-tint-accent: rgba(48, 209, 88, 0.75);
+  --pane-border-accent: rgba(255, 255, 255, 0.24);
+  --pane-knob: rgba(255, 255, 255, 0.95);
+  --pane-highlight: rgba(255, 255, 255, 0.22);
+  --pane-shadow: rgba(0, 0, 0, 0.5);
 }
 
 @layer base {

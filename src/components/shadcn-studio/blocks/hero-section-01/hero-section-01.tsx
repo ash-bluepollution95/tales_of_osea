@@ -14,10 +14,10 @@ const HeroSection = () => {
         </div>
 
         <h1 className='text-3xl leading-[1.29167] font-bold text-balance sm:text-4xl lg:text-5xl'>
-          Tales of Osea
+         
           <br />
           <span className='relative'>
-            Final
+            Tales of Osea
             <svg
               width='223'
               height='12'
@@ -47,11 +47,11 @@ const HeroSection = () => {
               </defs>
             </svg>
           </span>{' '}
-          Fantasy XIV Series!
+         
         </h1>
 
         <p className='text-muted-foreground'>
-          A series mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before. 
+          A machinima series utilizing Final Fantasy XIV, mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before. 
 
 
           <br />

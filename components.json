@@ -54,6 +54,9 @@
     "@uiable": "https://uiable.com/r/{name}.json",
     "@spell": "https://spell.sh/r/{name}.json",
     "@diceui": "https://diceui.com/r/{style}/{name}.json",
-    "@svgl": "https://svgl.app/r/{name}.json"
+    "@svgl": "https://svgl.app/r/{name}.json",
+    "@hugeicons-animated": "https://hugeicons-animated.com/r/{name}.json",
+    "@pane": "https://pane.theui.company/r/{name}.json",
+    "@cnippet": "https://ui.cnippet.dev/r/{name}.json"
   }
 }
