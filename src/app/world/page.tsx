@@ -17,8 +17,7 @@ export default function WorldPage() {
       <header className="mb-10 text-center">
         <h1>World &amp; Lore</h1>
         <p className="text-foreground/80 mx-auto mt-3 max-w-2xl">
-          (TEMPORARY) The world behind Tales of Osea — one page, no detours.
-          Jump to a section below.
+          The World of Osea, and the people within.
         </p>
       </header>
 

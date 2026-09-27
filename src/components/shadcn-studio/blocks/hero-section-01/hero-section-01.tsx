@@ -50,17 +50,21 @@ const HeroSection = () => {
         </h1>
 
         <p className='text-muted-foreground mt-4'>
-          A machinima series utilizing Final Fantasy XIV, mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before.
+          A machinima series utilizing Final Fantasy XIV. Mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before.
+		      </p>
 
-
-          <br />
-          Much like the sundered worlds, the cracks of other worlds start to show - and the differences start flooding in.
+              <p className='text-muted-foreground mt-4'>
+          Much like the sundered worlds of Ancient Etheryis, the cracks of other worlds start to show - and the differences start flooding in.  The cracks however, are not just an Ascian playing head games.
+				       </p>
+		  <p className='text-muted-foreground mt-4'>
+		  These cracks are caused by an Ancient book from the Osenayans themselves. A book filled with incantations, memories and spells.    </p>
+		  
+		    <p className='text-muted-foreground mt-4'> Future, past and present from every universe start to converge - causing chaos beyond. 
         </p>
 
-        <Button size='lg' nativeButton={false} render={<a href='#' />} className='mt-8'>
 
-         Open The Portal
-        </Button>
+
+       
       </div>
 
     </section>

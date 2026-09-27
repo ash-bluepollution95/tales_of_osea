@@ -7,24 +7,24 @@ export type WorldSection = {
 
 export const worldSections: WorldSection[] = [
   {
-    slug: "the-sundering",
-    title: "The Sundering",
-    summary: "How one world became many.",
+    slug: "osea",
+    title: "The Islands of Osea",
+    summary: "A land that may have once existed, across multiple universes.",
     content:
-      "(TEMPORARY) Fill in the Sundering lore here. What was the world before it split, and what caused the break?\n\n(TEMPORARY) Add a second paragraph: what survived, and what was lost.",
+      "(TEMPORARY) LOREM IPSUM DUSK NEEDS TO WRITE MORE SOON - JUST ADDING TEXT SO I HAVE TIME TO THINK.",
   },
   {
     slug: "the-rifts",
     title: "The Rifts",
     summary: "The cracks between worlds — and what leaks through.",
     content:
-      "(TEMPORARY) Describe the rifts themselves here. Where do they open, and why?\n\n(TEMPORARY) What crosses between worlds — memories, selves, or something stranger?",
+      "(TEMPORARY) LOREM IPSUM DUSK NEEDS TO WRITE MORE SOON - JUST ADDING TEXT SO I HAVE TIME TO THINK",
   },
   {
-    slug: "osea",
-    title: "Osea",
-    summary: "The world our story calls home.",
+    slug: "the-book",
+    title: "The Book of Memories",
+    summary: "An ancient artifact from Osea that contains incantations, spells, as well as past, present and future memories.",
     content:
-      "(TEMPORARY) Describe Osea itself here — its regions, its people, its mood.\n\n(TEMPORARY) How does Osea relate to Eorzea, and where do the alters' memories fit?",
+      "(TEMPORARY) LOREM IPSUM DUSK NEEDS TO WRITE MORE SOON - JUST ADDING TEXT SO I HAVE TIME TO THINK",
   },
 ];
