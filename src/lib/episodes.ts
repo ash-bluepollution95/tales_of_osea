@@ -7,6 +7,7 @@ export type Episode = {
   blurb: string;         // one-line hook for the list
   description: string;   // longer writeup for the detail page
   youtubeId: string;     // YouTube video id → embeds the player
+  thumbnail?: string;    // "?" = episode card thumbnail (webP); falls back to YouTube's maxresdefault
   season?: number;       // "?" = shorts/teaser might not have one
   number?: number;       // "?" = episode number, not for teaser
   releaseDate: string;
@@ -21,6 +22,7 @@ export const episodes: Episode[] = [
     blurb: "A teaser introduction to Kay Solas and Criss Solas, and their journey in Eorzea",
     description: "Tales of Osea: A series mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before. Much like the sundered worlds, the cracks of other worlds start to show - and the differences start flooding in.",
     youtubeId: "F-xtOSVcVeo",
+    // thumbnail: "/images/episodes/teaser.webp",
     releaseDate: "August 27, 2026",
     characters: ["criss_solas", "kay_solas"],
   },

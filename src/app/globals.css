@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-inconsolata);
-  --font-heading: var(--font-yellowtail);
+  --font-heading: var(--font-metal-mania);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -66,6 +66,19 @@
   --pane-blur-clear: var(--pane-blur-clear);
   --pane-blur-regular: var(--pane-blur-regular);
   --pane-fg: var(--pane-fg);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-surface-4: var(--surface-4);
+  --color-surface-5: var(--surface-5);
+  --color-surface-6: var(--surface-6);
+  --color-surface-7: var(--surface-7);
+  --color-surface-8: var(--surface-8);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-active: var(--surface-active);
+  --color-surface-selected: var(--surface-selected);
+  --color-chrome: var(--chrome);
+  --color-chrome-foreground: var(--chrome-foreground);
 }
 
 :root {
@@ -117,6 +130,66 @@
   --pane-knob: rgba(255, 255, 255, 0.92);
   --pane-highlight: rgba(255, 255, 255, 0.85);
   --pane-shadow: rgba(0, 0, 0, 0.1);
+
+  /* --- Cubby UI surface elevation ladder (light) --- */
+  /* Light mode is flat: fills are all near-white, shadows do the elevation. */
+  --surface-1: oklch(0.98 0.008 300);
+  --surface-2: oklch(0.985 0.006 300);
+  --surface-3: oklch(0.99 0.005 300);
+  --surface-4: oklch(0.995 0.004 300);
+  --surface-5: oklch(1 0.003 300);
+  --surface-6: oklch(1 0.003 300);
+  --surface-7: oklch(1 0.003 300);
+  --surface-8: oklch(1 0.003 300);
+
+  /* State overlays: darken a surface by a fixed perceptual delta. */
+  --surface-hover: oklch(0 0 0 / 0.06);
+  --surface-active: oklch(0 0 0 / 0.08);
+  --surface-selected: oklch(0 0 0 / 0.1);
+  --surface-rim-color: oklch(0 0 0 / 0);
+
+  /* Shadow ingredients, composed per level below. */
+  --surface-shadow-ring: oklch(0 0 0 / 0.06);
+  --surface-shadow-near: oklch(0 0 0 / 0.06);
+  --surface-shadow-mid: oklch(0 0 0 / 0.05);
+  --surface-shadow-far: oklch(0 0 0 / 0.04);
+  --surface-shadow-ambient: oklch(0 0 0 / 0.03);
+
+  --surface-shadow-1: 0 0 0 1px var(--surface-shadow-ring);
+  --surface-shadow-2: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near);
+  --surface-shadow-3: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid);
+  --surface-shadow-4: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid);
+  --surface-shadow-5: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far);
+  --surface-shadow-6: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far), 0 24px 24px -12px var(--surface-shadow-far);
+  --surface-shadow-7: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far), 0 24px 24px -12px var(--surface-shadow-far), 0 48px 48px -24px var(--surface-shadow-ambient);
+  --surface-shadow-8: 0 0 0 1px var(--surface-shadow-ring), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far), 0 24px 24px -12px var(--surface-shadow-far), 0 48px 48px -24px var(--surface-shadow-ambient), 0 96px 96px -48px var(--surface-shadow-ambient);
+
+  /* Rim highlights: a no-op in light mode (transparent), painted in dark. */
+  --surface-rim-1: 0 0 transparent;
+  --surface-rim-2: 0 0 transparent;
+  --surface-rim-3: 0 0 transparent;
+  --surface-rim-4: 0 0 transparent;
+  --surface-rim-5: 0 0 transparent;
+  --surface-rim-6: 0 0 transparent;
+  --surface-rim-7: 0 0 transparent;
+  --surface-rim-8: 0 0 transparent;
+
+  --surface-shadow-combined-1: var(--surface-shadow-1), var(--surface-rim-1);
+  --surface-shadow-combined-2: var(--surface-shadow-2), var(--surface-rim-2);
+  --surface-shadow-combined-3: var(--surface-shadow-3), var(--surface-rim-3);
+  --surface-shadow-combined-4: var(--surface-shadow-4), var(--surface-rim-4);
+  --surface-shadow-combined-5: var(--surface-shadow-5), var(--surface-rim-5);
+  --surface-shadow-combined-6: var(--surface-shadow-6), var(--surface-rim-6);
+  --surface-shadow-combined-7: var(--surface-shadow-7), var(--surface-rim-7);
+  --surface-shadow-combined-8: var(--surface-shadow-8), var(--surface-rim-8);
+
+  /* Chrome: near-black fill for app chrome (header bars, floating labels). */
+  --chrome: oklch(0.21 0.02 290);
+  --chrome-foreground: oklch(0.98 0.01 300);
+  --chrome-muted-foreground: color-mix(in oklab, var(--chrome-foreground) 71%, var(--chrome));
+  --chrome-hover: color-mix(in oklab, var(--chrome-foreground) 10%, transparent);
+  --chrome-border: color-mix(in oklab, var(--chrome-foreground) 12%, transparent);
+  --chrome-shadow: var(--surface-shadow-1);
 }
 
 .dark {
@@ -162,6 +235,88 @@
   --pane-knob: rgba(255, 255, 255, 0.95);
   --pane-highlight: rgba(255, 255, 255, 0.22);
   --pane-shadow: rgba(0, 0, 0, 0.5);
+
+  /* --- Cubby UI surface elevation ladder (dark) --- */
+  /* Dark mode is progressive: higher elevation = lighter fill + a top highlight. */
+  --surface-1: oklch(0.10 0.025 290);
+  --surface-2: oklch(0.12 0.027 290);
+  --surface-3: oklch(0.14 0.03 290);
+  --surface-4: oklch(0.17 0.03 290);
+  --surface-5: oklch(0.20 0.03 290);
+  --surface-6: oklch(0.23 0.03 290);
+  --surface-7: oklch(0.26 0.03 290);
+  --surface-8: oklch(0.29 0.03 290);
+
+  /* State overlays flip to white-on-black. */
+  --surface-hover: oklch(1 0 0 / 0.06);
+  --surface-active: oklch(1 0 0 / 0.08);
+  --surface-selected: oklch(1 0 0 / 0.1);
+  --surface-rim-color: oklch(1 0 0 / 0.04);
+
+  /* Rim recipe ingredients: white highlights so edges read against black. */
+  --surface-hi-base: oklch(1 0 0 / 0.01);
+  --surface-hi-mid: oklch(1 0 0 / 0.02);
+  --surface-hi-high: oklch(1 0 0 / 0.04);
+  --surface-hi-peak: oklch(1 0 0 / 0.06);
+  --surface-ring-base: oklch(1 0 0 / 0.02);
+  --surface-ring-mid: oklch(1 0 0 / 0.04);
+  --surface-ring-high: oklch(1 0 0 / 0.06);
+
+  /* Shadows get deeper in dark mode. */
+  --surface-shadow-near: oklch(0 0 0 / 0.18);
+  --surface-shadow-mid: oklch(0 0 0 / 0.16);
+  --surface-shadow-far: oklch(0 0 0 / 0.14);
+  --surface-shadow-ambient: oklch(0 0 0 / 0.12);
+
+  --surface-shadow-1: 0 0 transparent;
+  --surface-shadow-2: 0 1px 1px -0.5px var(--surface-shadow-near);
+  --surface-shadow-3: 0 0 0 1px oklch(0 0 0 / 0.12), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid);
+  --surface-shadow-4: 0 0 0 1px oklch(0 0 0 / 0.14), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid);
+  --surface-shadow-5: 0 0 0 1px oklch(0 0 0 / 0.16), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far);
+  --surface-shadow-6: 0 0 0 1px oklch(0 0 0 / 0.18), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far), 0 24px 24px -12px var(--surface-shadow-far);
+  --surface-shadow-7: 0 0 0 1px oklch(0 0 0 / 0.2), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far), 0 24px 24px -12px var(--surface-shadow-far), 0 48px 48px -24px var(--surface-shadow-ambient);
+  --surface-shadow-8: 0 0 0 1px oklch(0 0 0 / 0.22), 0 1px 1px -0.5px var(--surface-shadow-near), 0 3px 3px -1.5px var(--surface-shadow-mid), 0 6px 6px -3px var(--surface-shadow-mid), 0 12px 12px -6px var(--surface-shadow-far), 0 24px 24px -12px var(--surface-shadow-far), 0 48px 48px -24px var(--surface-shadow-ambient), 0 96px 96px -48px var(--surface-shadow-ambient);
+
+  /* Rim highlights: painted in dark mode (top-edge highlight + outer ring). */
+  --surface-rim-1: inset 0 0 0 1px var(--surface-ring-base);
+  --surface-rim-2: inset 0 1px 0 0 var(--surface-hi-base), inset 0 0 0 1px var(--surface-ring-base);
+  --surface-rim-3: inset 0 1px 0 0 var(--surface-hi-mid), inset 0 0 0 1px var(--surface-ring-base);
+  --surface-rim-4: inset 0 1px 0 0 var(--surface-hi-mid), inset 0 0 0 1px var(--surface-ring-mid);
+  --surface-rim-5: inset 0 1px 0 0 var(--surface-hi-high), inset 0 0 0 1px var(--surface-ring-mid);
+  --surface-rim-6: inset 0 1px 0 0 var(--surface-hi-high), inset 0 0 0 1px var(--surface-ring-high);
+  --surface-rim-7: inset 0 1px 0 0 var(--surface-hi-peak), inset 0 0 0 1px var(--surface-ring-high);
+  --surface-rim-8: inset 0 1px 0 0 var(--surface-hi-peak), inset 0 0 0 1px var(--surface-ring-high);
+
+  --surface-shadow-combined-1: var(--surface-shadow-1), var(--surface-rim-1);
+  --surface-shadow-combined-2: var(--surface-shadow-2), var(--surface-rim-2);
+  --surface-shadow-combined-3: var(--surface-shadow-3), var(--surface-rim-3);
+  --surface-shadow-combined-4: var(--surface-shadow-4), var(--surface-rim-4);
+  --surface-shadow-combined-5: var(--surface-shadow-5), var(--surface-rim-5);
+  --surface-shadow-combined-6: var(--surface-shadow-6), var(--surface-rim-6);
+  --surface-shadow-combined-7: var(--surface-shadow-7), var(--surface-rim-7);
+  --surface-shadow-combined-8: var(--surface-shadow-8), var(--surface-rim-8);
+
+  /* Chrome: slightly lighter than the page so it reads as a distinct surface. */
+  --chrome: oklch(0.159 0.02 290);
+  --chrome-foreground: var(--foreground);
+  --chrome-muted-foreground: color-mix(in oklab, var(--chrome-foreground) 71%, var(--chrome));
+  --chrome-hover: color-mix(in oklab, var(--chrome-foreground) 10%, transparent);
+  --chrome-border: color-mix(in oklab, var(--chrome-foreground) 12%, transparent);
+  --chrome-shadow: 0 0 0 1px oklch(0 0 0 / 0.7), inset 0 1px 0 0 oklch(1 0 0 / 0.065);
+}
+
+/* Chrome-surface contract: re-points text/border tokens for the subtree so
+   ordinary page classes keep working on a near-black chrome surface. */
+[data-surface="chrome"] {
+  --foreground: var(--chrome-foreground);
+  --muted-foreground: var(--chrome-muted-foreground);
+  --border: var(--chrome-border);
+  --muted: var(--chrome-hover);
+  --accent: var(--chrome-hover);
+  --accent-foreground: var(--chrome-foreground);
+  --input: var(--chrome-hover);
+  --surface-hover: var(--chrome-hover);
+  --surface-active: var(--chrome-hover);
 }
 
 @layer base {
@@ -169,7 +324,11 @@
     @apply border-border outline-ring/50;
   }
   body {
+    position: relative;
     @apply bg-background text-foreground;
+  }
+  .root {
+    isolation: isolate;
   }
   html {
     @apply font-sans;
@@ -179,21 +338,21 @@
     font-size: 2.75rem;
     line-height: 1.05;
     letter-spacing: -0.035em;
-    font-weight: 800;
+    font-weight: 400;
   }
   h2 {
     font-family: var(--font-heading);
     font-size: 2.25rem;
     line-height: 1.1;
     letter-spacing: -0.025em;
-    font-weight: 700;
+    font-weight: 400;
   }
   h3 {
     font-family: var(--font-heading);
     font-size: 1.75rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
-    font-weight: 700;
+    font-weight: 400;
   }
   h4, h5, h6 {
     font-family: var(--font-heading);

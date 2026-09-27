@@ -63,6 +63,7 @@ export function YouTubePlayer({
   const [expanded, setExpanded] = useState(defaultExpanded)
   const [playing, setPlaying] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
+  const [thumbFallback, setThumbFallback] = useState(false)
 
   // Extract video ID from full URL if needed
   const extractVideoId = (id: string) => {
@@ -109,9 +110,10 @@ export function YouTubePlayer({
 
   const getThumbnailUrl = () => {
     if (customThumbnail) return customThumbnail
-    return actualVideoId
+    if (!actualVideoId) return ""
+    return thumbFallback
       ? `https://i.ytimg.com/vi/${actualVideoId}/hqdefault.jpg`
-      : ""
+      : `https://i.ytimg.com/vi/${actualVideoId}/maxresdefault.jpg`
   }
 
   return (
@@ -149,6 +151,7 @@ export function YouTubePlayer({
                       layoutId={`youtube-player-thumbnail-${videoId}`}
                       src={getThumbnailUrl()}
                       alt={title || "Video thumbnail"}
+                      onError={() => setThumbFallback(true)}
                       className={cn(
                         "absolute inset-0 h-full w-full object-cover opacity-70",
                         thumbnailImageClassName
@@ -266,6 +269,7 @@ export function YouTubePlayer({
                             layoutId={`youtube-player-thumbnail-${videoId}`}
                             src={getThumbnailUrl()}
                             alt={title || "Video thumbnail"}
+                            onError={() => setThumbFallback(true)}
                             className={cn(
                               "absolute inset-0 h-full w-full object-cover opacity-70",
                               thumbnailImageClassName

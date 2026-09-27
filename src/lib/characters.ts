@@ -19,6 +19,7 @@ export type Character = {
   relationships: Relationships;
   tech?: Tech;             // "?" = not every char has implants/mods
   noGos: string[];         // "Things you can't get away with" → a LIST
+  gallery?: { thumb: string; full: string; alt: string; caption?: string }[];   // "?" = per-character image gallery; thumb = grid tile, full = lightbox, alt = screen-reader, caption = optional lightbox text
 };
 
 type Identity = {
@@ -172,6 +173,10 @@ export const characters: Character[] = [
   exes: "He jokes Wuk Lamat is his Ex, but in reality he's just a dumb catboy XD ",  },
   tech: {   implants: "He's got a knee replacement, and it's not one he had when he was alive outside of Eorzea, he got stabbed in a fight and they stuck an electrope based replacement in it-- he's got some story about it - because it's slowly causing some 'issues'. ", 
   geneticMods: "Technically the replacement is a 'GENETIC MODIFICATION' but Kay didn't know about the effects, he'll joke he didn't read the ToS -- but in reality, it was a dodgy side deal because he didn't have the funds to deal with it -- and Criss wasn't around yet. ",  },             
+  // gallery: [
+  //   { thumb: "/images/characters/kay_solas/01-thumb.webp", full: "/images/characters/kay_solas/01-full.webp", alt: "Kay in the Rising Stones", caption: "Kay mid-gibb-slap negotiation." },
+  //   { thumb: "/images/characters/kay_solas/02-thumb.webp", full: "/images/characters/kay_solas/02-full.webp", alt: "Kay crafting", caption: "Kay pretending the healer jacket was worth it." },
+  // ],
   noGos: ["Pulling Kay's tail, Calling Kay 'CRISS', Not letting Kay gibb slap you, Telling Kitch where Kay is, and what he's done."],           
   },
   {

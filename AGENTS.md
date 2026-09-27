@@ -45,6 +45,7 @@ A FFXIV-based fan/creative site that fictionalizes the owner's plural system's e
 
 ## Source of truth
 - `BETA_PLANNING.md` is the live status board — check it at the start of a session, update it as work finishes.
+- `design_thoughts.md` is the owner's intent/vibe doc in their own words — read it at the start of a session to align on *why* before working. It's a lens, not a task list.
 
 ## Notes
 - `CLAUDE.md` just re-imports this file (`@AGENTS.md`) — edit here, not there.

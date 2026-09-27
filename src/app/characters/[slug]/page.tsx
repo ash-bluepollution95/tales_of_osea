@@ -1,5 +1,16 @@
 import { notFound } from "next/navigation";
 import { characters } from "@/lib/characters";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import CharacterGallery from "@/components/character-gallery";
+
+function Field({ label, value }: { label: string; value?: string }) {
+  if (!value) return null;
+  return (
+    <p className="text-muted-foreground text-sm">
+      <strong className="text-foreground font-medium">{label}:</strong> {value}
+    </p>
+  );
+}
 
 export default async function CharacterPage({
   params,
@@ -11,119 +22,171 @@ export default async function CharacterPage({
 
   if (!character) notFound();
 
-return (
-  <main>
-    <h1>{character.name}</h1>
-    <p>{character.title}</p>
-    <p>{character.blurb}</p>
+  return (
+    <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
+      <header className="mb-10 text-center">
+        <h1>{character.name}</h1>
+        <p className="text-muted-foreground mt-2 text-lg">{character.title}</p>
+        <p className="text-muted-foreground mx-auto mt-2 max-w-2xl">
+          {character.blurb}
+        </p>
+      </header>
 
-    <section>
-      <h2>Identity</h2>
-      <p>Birth Name: {character.identity.birthName}</p>
-      <p>Osenayan Name: {character.identity.osenayanName}</p>
-      <p>Eorzean Name: {character.identity.eorzeanName}</p>
-      <p>Gender: {character.identity.gender}</p>
-      <p>Orientation: {character.identity.orientation}</p>
-      <p>Religion: {character.identity.religion}</p>
-      <p>Politics: {character.identity.politics}</p>
-    </section>
-	
-	    <section>
-      <h2>Current Situation</h2>
-      <p>Main Class: {character.currentSituation.mainClass}</p>
-<p>Side Class: {character.currentSituation.sideClass}</p>
-<p>Job: {character.currentSituation.job}</p>
-<p>Residence: {character.currentSituation.residence}</p>
-<p>Economic Class: {character.currentSituation.economicClass}</p>
-    </section>
-	
-	<section>
-  <h2>Appearance</h2>
-  <p>Age: {character.appearance.age}</p>
- <p>Hair: {character.appearance.hair}</p>
-<p>Eyes: {character.appearance.eyes}</p>
-<p>Skin: {character.appearance.skin}</p>
-<p>Height: {character.appearance.height}</p>
-<p>Build: {character.appearance.build}</p>
-<p>Outfit: {character.appearance.outfit}</p>
-</section>
+      {/* Gallery */}
+      <section className="mb-10">
+        <h2 className="mb-4">Gallery</h2>
+        <CharacterGallery gallery={character.gallery} />
+      </section>
 
-<section>
-  <h2>Background</h2>
-  <p>Hometown: {character.background.hometown}</p>  
-  <p>Heritage: {character.background.heritage}</p>
-    <p>First Language: {character.background.firstLanguage}</p>
-<p>Life Events: {character.background.lifeEvents}</p>
-<p>Regrets: {character.background.regrets}</p>
+      {/* Sections */}
+      <div className="grid gap-6 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle>Identity</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Birth Name" value={character.identity.birthName} />
+            <Field label="Osenayan Name" value={character.identity.osenayanName} />
+            <Field label="Eorzean Name" value={character.identity.eorzeanName} />
+            <Field label="Gender" value={character.identity.gender} />
+            <Field label="Orientation" value={character.identity.orientation} />
+            <Field label="Religion" value={character.identity.religion} />
+            <Field label="Politics" value={character.identity.politics} />
+          </CardContent>
+        </Card>
 
-</section>
+        <Card>
+          <CardHeader>
+            <CardTitle>Current Situation</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Main Class" value={character.currentSituation.mainClass} />
+            <Field label="Side Class" value={character.currentSituation.sideClass} />
+            <Field label="Job" value={character.currentSituation.job} />
+            <Field label="Residence" value={character.currentSituation.residence} />
+            <Field label="Economic Class" value={character.currentSituation.economicClass} />
+          </CardContent>
+        </Card>
 
-<section>
-  <h2>Skills</h2>
-  <p>Qualifications: {character.skills.qualifications}</p>  
-  <p>Talents: {character.skills.talents}</p>
-  <p>Languages: {character.skills.languages}</p>
+        <Card>
+          <CardHeader>
+            <CardTitle>Appearance</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Age" value={character.appearance.age} />
+            <Field label="Hair" value={character.appearance.hair} />
+            <Field label="Eyes" value={character.appearance.eyes} />
+            <Field label="Skin" value={character.appearance.skin} />
+            <Field label="Height" value={character.appearance.height} />
+            <Field label="Build" value={character.appearance.build} />
+            <Field label="Outfit" value={character.appearance.outfit} />
+          </CardContent>
+        </Card>
 
-</section>
+        <Card>
+          <CardHeader>
+            <CardTitle>Background</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Hometown" value={character.background.hometown} />
+            <Field label="Heritage" value={character.background.heritage} />
+            <Field label="First Language" value={character.background.firstLanguage} />
+            <Field label="Life Events" value={character.background.lifeEvents} />
+            <Field label="Regrets" value={character.background.regrets} />
+          </CardContent>
+        </Card>
 
-<section>
-  <h2>Qualities</h2>
-  <p>Conditions: {character.qualities.conditions}</p>  
-  <p>Strengths: {character.qualities.strengths}</p>
- <p>Weaknesses: {character.qualities.weaknesses}</p>
+        <Card>
+          <CardHeader>
+            <CardTitle>Skills</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Qualifications" value={character.skills.qualifications} />
+            <Field label="Talents" value={character.skills.talents} />
+            <Field label="Languages" value={character.skills.languages} />
+          </CardContent>
+        </Card>
 
+        <Card>
+          <CardHeader>
+            <CardTitle>Qualities</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Conditions" value={character.qualities.conditions} />
+            <Field label="Strengths" value={character.qualities.strengths} />
+            <Field label="Weaknesses" value={character.qualities.weaknesses} />
+          </CardContent>
+        </Card>
 
-</section>
+        <Card>
+          <CardHeader>
+            <CardTitle>Desires</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Yearning" value={character.desires.yearning} />
+            <Field label="Goals" value={character.desires.goals} />
+            <Field label="Wishes" value={character.desires.wishes} />
+            <Field label="Dream Job" value={character.desires.dreamJob} />
+          </CardContent>
+        </Card>
 
-<section>
-  <h2>Desires</h2>
-  <p>Yearning: {character.desires.yearning}</p>  
-  <p>Goals: {character.desires.goals}</p>
- <p>Wishes: {character.desires.wishes}</p>
-    <p>Dream Job: {character.desires.dreamJob}</p>
+        <Card>
+          <CardHeader>
+            <CardTitle>Other</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Fears" value={character.other.fears} />
+            <Field label="Secrets" value={character.other.secrets} />
+            <Field label="Habits" value={character.other.habits} />
+            <Field label="Hobbies" value={character.other.hobbies} />
+          </CardContent>
+        </Card>
 
-</section>
-  
-  <section>
-  <h2>Other</h2>
-  <p>Fears: {character.other.fears}</p>  
-  <p>Secrets: {character.other.secrets}</p>
- <p>Habits: {character.other.habits}</p>
-     <p>Hobbies: {character.other.hobbies}</p>
+        <Card>
+          <CardHeader>
+            <CardTitle>Family</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Parents" value={character.family.parents.join(", ")} />
+            <Field label="Siblings" value={character.family.siblings.join(", ")} />
+            <Field label="Children" value={character.family.children} />
+          </CardContent>
+        </Card>
 
-</section>
- 
-  
-<section>
-  <h2>Family</h2>
-  <p>Parents: {character.family.parents.join(", ")}</p>
-  <p>Siblings: {character.family.siblings.join(", ")}</p>
-  <p>Children: {character.family.children}</p>
-</section>
+        <Card>
+          <CardHeader>
+            <CardTitle>Relationships</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="Friends" value={character.relationships.friends.join(", ")} />
+            <Field label="Enemies" value={character.relationships.enemies.join(", ")} />
+            <Field label="Partner" value={character.relationships.partner} />
+            <Field label="Crush" value={character.relationships.crush} />
+            <Field label="Exes" value={character.relationships.exes} />
+          </CardContent>
+        </Card>
 
-   
+        <Card>
+          <CardHeader>
+            <CardTitle>Things You Can&apos;t Get Away With</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-1">
+            <Field label="No-Gos" value={character.noGos.join(", ")} />
+          </CardContent>
+        </Card>
 
-  
-<section>
-  <h2>Relationships</h2>
-  <p>Friends: {character.relationships.friends.join(", ")}</p>
-  <p>Enemies: {character.relationships.enemies.join(", ")}</p>
-  <p>Partner: {character.relationships.partner}</p>
-  <p>Crush: {character.relationships.crush}</p>
-  <p>Exes: {character.relationships.exes}</p>
-</section>
-
-<section>
-  <h2>Things You Can&apos;t Get Away With</h2>
-  <p>{character.noGos.join(", ")}</p>
-</section>
-
-<section>
-  <h2>Tech</h2>
-  <p>Implants: {character.tech?.implants}</p>
-<p>Genetic Modifications: {character.tech?.geneticMods}</p>
-</section> 
- 
-  </main>
-);
+        {character.tech ? (
+          <Card>
+            <CardHeader>
+              <CardTitle>Tech</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-1">
+              <Field label="Implants" value={character.tech.implants} />
+              <Field label="Genetic Modifications" value={character.tech.geneticMods} />
+            </CardContent>
+          </Card>
+        ) : null}
+      </div>
+    </main>
+  );
 }

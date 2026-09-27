@@ -1,28 +1,26 @@
-import Image from "next/image";
+export default function CreditsPage() {
+  const credits = [
+    "Disclaimer/Opening (Trailer/Teaser) - Us/duskfallcrew",
+    "Kay Solas (Trailer) - Us (duskfallcrew)",
+    "Kay Solas (Episode 001) - Cheese",
+    "Criss Solas (Trailer/Episode 001) - ApollotheGremlin",
+  ];
 
-export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center font-sans">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-          Voice Acting Credits
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-           Disclaimer/Opening (Trailer/Teaser) - Us/duskfallcrew          </p>
-		          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-Kay Solas (Trailer) - Us (duskfallcrew)        </p>
-		             <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-Kay Solas (Episode 001) - Cheese       </p>
-				            <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-Criss Solas (Trailer/Episode 001) - ApollotheGremlin 
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-   
-        </div>
-      </main>
-    </div>
+    <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
+      <header className="mb-10 text-center">
+        <h1>Voice Acting Credits</h1>
+      </header>
+
+      <div className="rounded-3xl border border-border/60 bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent p-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-12">
+        <ul className="space-y-3 text-center">
+          {credits.map((credit) => (
+            <li key={credit} className="text-muted-foreground">
+              {credit}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </main>
   );
 }

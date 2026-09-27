@@ -27,9 +27,20 @@
 - [ ] Per-character VA field on `Character`
 - [ ] Episodes **card layout** — show videos (via `YouTubePlayer`) as cards on the same page as the episode list, instead of a bare list + separate detail page
 - [ ] Character **dialogue as text messages** — use the installed chat bubble/message components to render dialogue between characters like a text thread (left/right alignment per speaker, avatars = portraits, names as labels)
+- [ ] **Cards + div layers** on pages where needed (page layout structure)
+- [ ] **Bento grids** for image layouts (or find a better gallery option first)
 
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.
 - One source of truth: `Episode.characters` is the only stored link; reverse lookups are **derived** with `.filter()`, never mirrored.
 - VA casting is **per-character** — a character's VA name belongs on `Character`.
 - Fill the data slot only when the data exists (no empty "nothing found" sections).
+- **Gallery images (per-character)** — files live in `public/images/characters/<slug>/` as `01-thumb.webp` + `01-full.webp` (16:9 webP, two tiers, no mid). Referenced as `Character.gallery: [{ thumb, full, alt, caption? }]`. `thumb` (~640×360) = grid tiles; `full` (~1920×1080) = lightbox. Rendered with `next/image`: tiles are `aspect-video` + `object-cover` (zero crop, 16:9 matches), lightbox shows `full` `object-contain` in a 16:9 frame + caption. `alt` = screen-reader text; `caption` = optional text shown only in the lightbox (thumbnails stay clean). Cap `full` at 1920×1080; don't ship raw FFXIV screenshots.
+
+## 🧠 Memory recall (one-liners for future you)
+- **All UI is Base UI now** — zero Radix in `src`; `radix-ui` stays in `package.json` as a "this was Radix, swap me" marker.
+- **Base UI composes with `render={...}`**, not Radix's `asChild`. Item hover state is `data-highlighted`, not `focus:`.
+- **Cubby-ui surface tokens** (`--surface-*` ladder) live in `globals.css`. Don't `shadcn add @cubby-ui/style` — it wipes the purple theme + font mappings.
+- **Theme** = one space/nebula/ethereal identity, varied per page: front page gets an animated eyecatcher (the *concept*, not necessarily the current satin one); other pages neutral-dark + OKLCH accents. Scope the *background*, not the tokens.
+- **Install policy** = prefer Base UI; Radix/other-lib components are fine case-by-case (assistant migrates them).
+- **Character gallery** = `ExpandableCard` (already Base UI) for the character showcase; `DepthCarousel` / bento grid for per-character galleries.

@@ -4,18 +4,17 @@ import { Button } from '@/components/ui/button'
 
 const HeroSection = () => {
   return (
-    <section className='flex flex-1 flex-col justify-between gap-12 relative isolate overflow-hidden pt-8 sm:gap-16 sm:pt-16 lg:gap-24 lg:pt-24'>
+    <section className='relative isolate flex flex-1 flex-col items-center justify-center px-4 py-16 sm:px-6 sm:py-24'>
 
-	  {/* Hero Content */}
-      <div className='mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 text-center sm:px-6 lg:px-8'>
-        <div className='bg-muted flex items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
+      {/* Glass card */}
+      <div className='w-full max-w-3xl rounded-3xl border border-border/60 bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent p-8 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-12'>
+        <div className='bg-muted mx-auto flex w-fit items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
           <Badge>Fan-Made</Badge>
           <span className='text-muted-foreground'>Video Series</span>
         </div>
 
-        <h1 className='text-3xl leading-[1.29167] font-bold text-balance sm:text-4xl lg:text-5xl'>
-         
-          <br />
+        <h1 className='mt-6 text-3xl leading-[1.29167] text-balance sm:text-4xl lg:text-5xl'>
+
           <span className='relative'>
             Tales of Osea
             <svg
@@ -47,24 +46,23 @@ const HeroSection = () => {
               </defs>
             </svg>
           </span>{' '}
-         
+
         </h1>
 
-        <p className='text-muted-foreground'>
-          A machinima series utilizing Final Fantasy XIV, mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before. 
+        <p className='text-muted-foreground mt-4'>
+          A machinima series utilizing Final Fantasy XIV, mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before.
 
 
           <br />
-          Much like the sundered worlds, the cracks of other worlds start to show - and the differences start flooding in. 
+          Much like the sundered worlds, the cracks of other worlds start to show - and the differences start flooding in.
         </p>
 
-        <Button size='lg' nativeButton={false} render={<a href='#' />}>
+        <Button size='lg' nativeButton={false} render={<a href='#' />} className='mt-8'>
 
          Open The Portal
         </Button>
       </div>
 
-     
     </section>
   )
 }

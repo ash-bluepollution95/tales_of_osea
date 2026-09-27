@@ -1,9 +1,9 @@
-import { Instagram, Linkedin, Twitter } from '@/components/ui/brand-icons';
+import { Instagram, Linkedin } from '@/components/ui/brand-icons';
 import { Bluesky } from "@/components/ui/svgs/bluesky";
 
 export default function EcommerceFooterWithSocials() {
   return (
-    <footer className="bg-muted/30 border-t px-4 py-8 md:py-12">
+    <footer className="bg-background/80 border-t backdrop-blur-md px-4 py-8 md:py-12">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-6">
           {/* Company Info */}

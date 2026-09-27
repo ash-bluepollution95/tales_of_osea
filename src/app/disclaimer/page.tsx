@@ -1,24 +1,26 @@
-import Image from "next/image";
-
-export default function Home() {
+export default function DisclaimerPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center font-sans ">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start">
-        
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            Disclaimer
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-           This is NOT to cause system discourse, nor cause harm with in the system community as a whole - NOR with Final Fantasy XIV. This is an entertainment series we are planning, and it's a ROUGH fictionalized version of what some of our system feels.. 
+    <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
+      <header className="mb-10 text-center">
+        <h1>Disclaimer</h1>
+      </header>
 
-What one system feels doesn't mean it's everyone's choice nor every experience. We're not here to diagnose, nor lead anyone astray. 
+      <div className="rounded-3xl border border-border/60 bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent p-8 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-12">
+        <div className="text-muted-foreground space-y-6">
+          <p>
+            This is NOT to cause system discourse, nor cause harm within the
+            system community as a whole - NOR with Final Fantasy XIV. This is an
+            entertainment series we are planning, and it&apos;s a ROUGH
+            fictionalized version of what some of our system feels..
+          </p>
+
+          <p>
+            What one system feels doesn&apos;t mean it&apos;s everyone&apos;s
+            choice nor every experience. We&apos;re not here to diagnose, nor
+            lead anyone astray.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-         
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

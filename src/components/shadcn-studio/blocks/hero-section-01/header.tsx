@@ -29,7 +29,7 @@ type HeaderProps = {
 
 const Header = ({ navigationData, className }: HeaderProps) => {
   return (
-    <header className={cn('sticky top-0 z-50 h-16', className)}>
+    <header className={cn('sticky top-0 z-50 h-16 border-b bg-background/85 bg-gradient-to-b from-white/[0.06] to-transparent shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)] backdrop-blur-xl', className)}>
       <div className='mx-auto flex h-full max-w-7xl items-center justify-center gap-6 px-4 sm:px-6 lg:px-8'>
 
 
@@ -40,7 +40,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
               <NavigationMenuItem key={navItem.title}>
                 <NavigationMenuLink
                   href={navItem.href}
-                  className='text-muted-foreground hover:text-primary bg-transparent! px-3 py-1.5 text-base! font-medium'
+                  className='text-foreground/90 hover:text-primary bg-transparent! px-3 py-1.5 text-base! font-medium'
                 >
                   {navItem.title}
                 </NavigationMenuLink>
@@ -55,12 +55,10 @@ const Header = ({ navigationData, className }: HeaderProps) => {
   
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant='outline' size='icon-lg'>
-                <MenuIcon
-                />
-                <span className='sr-only'>Menu</span>
-              </Button>
+            <DropdownMenuTrigger render={<Button variant='outline' size='icon-lg' />}>
+              <MenuIcon
+              />
+              <span className='sr-only'>Menu</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent className='w-56' align='end'>
               {navigationData.map((item, index) => (
