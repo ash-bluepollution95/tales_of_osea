@@ -100,6 +100,7 @@ export default async function CharacterPage({
             <Field label="Heritage" value={character.background.heritage} />
             <Field label="First Language" value={character.background.firstLanguage} />
             <Field label="Life Events" value={character.background.lifeEvents} />
+			<Field label="Historical Events" value={character.background.historicalevents} />
             <Field label="Regrets" value={character.background.regrets} />
           </CardContent>
         </Card>
@@ -158,6 +159,7 @@ export default async function CharacterPage({
             <Field label="Parents" value={character.family.parents.join(", ")} />
             <Field label="Siblings" value={character.family.siblings.join(", ")} />
             <Field label="Children" value={character.family.children} />
+			<Field label="Other" value={character.family.other} />
           </CardContent>
         </Card>
 

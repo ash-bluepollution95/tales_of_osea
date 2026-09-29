@@ -33,7 +33,8 @@ const navigationData: NavigationSection[] = [
   { title: "World", href: "/world" },
   { title: "Episodes", href: "/episodes" },
   { title: "Credits", href: "/credits" },
-  { title: "Disclaimer", href: "/disclaimer" },
+  { title: "Copyright", href: "/copyright" },
+  { title: "Disclaimers", href: "/disclaimer" },
 ];
 
 export const metadata: Metadata = {

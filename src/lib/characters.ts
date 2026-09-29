@@ -56,6 +56,7 @@ type Background = {
   heritage: string;
   firstLanguage: string;
   lifeEvents: string;
+  historicalevents: string;
   regrets: string;
 };
 
@@ -89,7 +90,8 @@ type Other = {
 type Family = {
   parents: string[];     
   siblings: string[];   
-  children?: string;   
+  children?: string; 
+  other?: string;
 };
 
 type Relationships = {
@@ -110,7 +112,7 @@ export const characters: Character[] = [
   slug: "kay_solas",
   name: "Kay",
   title: "Kay Solas",
-  blurb: "Chaotic Sibling, Career crafter, chronic card-haver, and the one man in Eorzea willing to gibbs-slap a Galvus.",
+  blurb: "Chaotic Sibling, 'Worst Healer Ever', Career crafter, chronic energy-drink addict.",
   
   voicedBy:"Cheese",
   
@@ -146,6 +148,7 @@ export const characters: Character[] = [
   heritage: "Half Osenayan, but he didn't grow up knowing much about it - so he just thinks he's a suntanned part irish kid",
   firstLanguage: "ELELATOR GO DOWN DA HOOOOOOLLEEE (Yea Y'shtola and G'raha still dont undesrtand that reference)",
   lifeEvents: "Winning the Jumbo Cacpot, and then getting stranded in Ul'dah because he lost it all on Triple Triad",
+  historicalevents:"Witnessing Eorzean Jesus after a few too many energy drinks in Solution nine.",
   regrets: "Pissing Kitch off, because Criss doesn't know it yet but she's here, and SHE IS AN ANGY BUNNY.",
   
   },
@@ -181,13 +184,13 @@ export const characters: Character[] = [
   { thumb: "/images/characters/kay_solas/02-thumb.webp", full: "/images/characters/kay_solas/02-full.webp", alt: "Kay Solas Viper Outfit, black and red hair, miqo'te, red eyes, baseball jacket with no undershirt, torn jeans and ripped knees.", caption: "Kay hawking outside of the Bloomers Bar and Grill." },
   { thumb: "/images/characters/kay_solas/03-thumb.webp", full: "/images/characters/kay_solas/03-full.webp", alt: "Kay Solas Astrologian Outfit, black and red hair, miqo'te, red eyes, cosmic exploration tech gear.", caption: "Kay standing inside a high tech area (Spoiler Dungeon Post DT)." },
  ],
-  noGos: ["Pulling Kay's tail, Calling Kay 'CRISS', Not letting Kay gibb slap you, Telling Kitch where Kay is, and what he's done."],           
+  noGos: ["Pulling Kay's tail, Calling Kay 'CRISS', Not letting Kay `Gibbs slap you`, Telling Kitch where Kay is, and what he's done."],           
   },
   {
   slug: "criss_solas",
   name: "Criss",
   title: "Criss Solas",
-  blurb: "Leader, Healer and Charismatic Parent.",
+  blurb: "Leader, Healer, Country Bumpkin and Charismatic Parent.",
   
   voicedBy:"ApolloTheGremlin",
   
@@ -223,6 +226,7 @@ export const characters: Character[] = [
   heritage: "Osenayan he'll tell you, but he's a Sunseeker Miqo'te -- tribeless because nobody remembers him",
   firstLanguage: "Swearing",
   lifeEvents: "My brother Lucien getting DECKED by our brother Michael once.. ",
+  historicalevents:"Does 9/11 count, or are we in for another round of tears when I say Haurchefant?",
   regrets: "Pissing my sister off, both in Eorzea once and when Ah was younger..",
   
   },
@@ -260,6 +264,86 @@ export const characters: Character[] = [
   { thumb: "/images/characters/criss_solas/04-thumb.webp", full: "/images/characters/criss_solas/04-full.webp", alt: "Criss Solas, blue and pink hair, mid length hair, miqo'te, red eyes, teal and violet open jacket,", caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch." },
  ],
   noGos: ["Criss hates it when you play with his ears, not because 'HORNY' but because it does sort .. it's like TICKLING but not the horny kind XD Telling him that the snickers bar in the shower is from him, because honestly? He made a mistake once with his sister and said 'I'm gonna go take a shit, and shower' and our partner's system just.. .like never let us live it down lmao. So now Criss is  'SHITS IN THE SHOWER'"],           
+  },
+  {
+  slug: "tori_solas",
+  name: "T`rii",
+  title: "Tori Solas",
+  blurb: "Axe weilding mom-cat, First place in The Great Eorzean Bake Off.",
+  
+  voicedBy:"Clara/Irene",
+  
+  identity: {
+  birthName: "Victoria 'Tori' (She doesn't in this story entirely remember her surname).",
+  osenayanName: "Doesn't remember.",
+  eorzeanName: "T'Rii",
+  gender: "Female",
+  orientation: "Unsure",
+  religion: "Religiously untied but respectfully goes along with teh stuff about the twelve, she doesn't remember much about before Eorzea for some reason - Morally she SEEMS quite 'normal' but just give her two minutes.",
+  politics: "*insert warrior glowing eye horror story* ",
+  },
+  currentSituation: {
+  mainClass: "Warrior",
+  sideClass: "Mom-Cat",
+  job: "Daycare inside Limsa Lominsa.",
+  residence: "She doesn't really have an apartment, nor ``ROOM`` per se she sleeps wherever she can lay her head - and won't let anyone know otherwise - she has a few places she's stayed at that she calls her ``HOME`` but most of the time she's sleeping it rough as she travels a lot.",
+  economicClass: "Blue collar in terms of previous life, and similarly in Eorzea - she was found on the shores when an Ocean Fishing voyage noticed someone laying mostly dead on the beach.",
+  },
+  
+  appearance: {
+  age: "Earlier 30s. maybe late 20s",
+  hair: "A sleek purple with some pink/magenta highlights (She just said it's all dusky-pinky)",
+  eyes: "Stark ocean blue",
+  skin: "Sun avoidance here, she's a lot whiter than her brothers in Eorzea for some reason.",
+  height: "5' something -- She doesn't really care about stature or height.",
+  build: "You REALLY WANNA ASK A LADY ABOUT HER WAIST SIZE?",
+  outfit: " Lil' ol me? I just wear this all the time, it's comfy. ",
+	  
+  },
+  
+  background: {   hometown: "Eorzea wise, she was found on a random Ocean Voyage trip on the shore somewhere, but outside of that she's likely even though she isn't entirely remembering: From the same place as her brothers, and weirdly her accent is JUST AS THICK as Criss, if not more..",
+  heritage: "Half Osenayan, but again her memories are scattered.",
+  firstLanguage: "Eorzean according to her, but the twang in her words speak of another world.",
+  lifeEvents: "Celebrating one of the kid's birthdays at the Adventurer's guild, she crafted lightweight fabric and card based axes and took them all out 'hunting' across Limsa and hid 'TREASURES' like 'PIRATES' for them",
+  historicalevents:"that SPHENE bitch going down.",
+  regrets: "Meeting my brothers but not remembering them.",
+  
+  },
+  skills: {   qualifications: "I majored in something, but I Feel like I was a mother once..",
+  talents: "Wrangling the tiny sabotenders! (The children)",
+  languages: "I dunno.",
+  
+  },
+  qualities: {   conditions: "AuDHD, CPTSD. She's got asthma, and she's managed to find a tea or two that solves SOME of the breathing issues -- how she got through being a WAR we have no clue",
+  strengths: "Got kicked out of the Arcanist's guild  after they commented on her 'Form' -- which she took as 'Body Size' (They meant her posture wasn't suited towards casting lol) ",
+  weaknesses: "Vylbrand Chocolate Cookies. ", 
+  },
+  desires: {   yearning: "To survive.",
+  goals: "The few memories she's got of this 'OTHER LIFE' she wants to know if it's because 'AZEM' or because 'ASS-HEMS' as she calls her brothers.",
+  wishes: "If the OTHER MEMORIES aren't really real, she just wants to continue protecting what makes her happy -and thats' the kids and the families around Limsa.",
+  dreamJob: "She wanted actually to be a scholar, AND she even once tried to learn Thamaturgy -- but uh, WORDS ARE HARD was her first statement..", },
+  other: {   fears: "Death.", 
+  secrets: "Crossword puzzles are her secret.", 
+  habits: "Not dressing formally when shes' going out to meet someone for a job, she forgets she's not just a high end WARRIOR but runs the childcare in Limsa.", 
+  hobbies: " Baking, party planning.", },
+  family: {   parents: ["Marai'ii X'voor, Rowan McNamara"],   
+  siblings: ["Michael (Mica), Cameron (Cam), Timothy (Tim), Lucien (Gren), HIMSELF (Criss), Kitch (Christina), Aeron (Arrow), Adriana (Adri), Kris (Gibb Slap/Kay), Tobias (Tobi), Victoria (Tori), Matthew (Jun) "], 
+  children: " Similar to Kay, she may have had children but she's unsure. ",
+  other: "She has memories that don't stack up with all of the ones that Criss and Kay have - but she shakes it off because there's no way in He-Double-Biscuit Sticks that 'ODIN' is actualyl a sibling -- he's a PRIMAL FFS -- (Hint: O'daan is the guy's osenayan name and he's from a different universe, but we'renot sure who ALL is showing up as we only have so many glam plates made XD)"  },
+  relationships: {   friends: ["None really, she hasn't felt comfortable enough to be true friends with anyone but she's friendly to everyone in Limsa."],  
+  enemies: ["THAT BITCH THAT BROUGHT THAT DOME DOWN -- THAT FAKE BITCH SPEHNENENNENENENNENENE. I got my eye on her ass."], 
+  partner: "IShe may or may not have been with Felix in another time, but she's single but not sure about mingling -- the Pirates will eat her axe if they get too close.",      
+  crush: "Shale.", 
+  exes: "She jokes about it being Y'shtola's sister when they met throug hthe Arcanists guild but since she's a WAR/MRD -- she uh can't really claim that anymore LOL. ",  },
+  tech: {   implants: "None, though somehow the other Miqo'te are swearing she got a boob job", 
+  geneticMods: " None, but whatever the gods gave Y'shtola she wants some of that.",  },             
+  //gallery: [
+ //{ thumb: "/images/characters/criss_solas/01-thumb.webp", full: "/images/characters/criss_solas/01-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), teal and violet open jacket, black slacks, kneeling, purple floor.", caption: "Criss in an assumed end of the world scenario (Shadowbringers Dungeon)" },
+ // { thumb: "/images/characters/criss_solas/02-thumb.webp", full: "/images/characters/criss_solas/02-full.webp", alt: "Criss Solas and Angel Of'The'Night, Angel is a white/light blonde haired Elezen with assumed blue-violet eyes. Criss's appearance is, blue and pink hair, braided messy long hair with fringe (bangs), Criss is wearing the Story Teller's crop top dyed with black and teal, and Angel is wearing the Night of Devilry outfit in standard purple hues.", caption: "Angel flirting with Criss inside the Bloomers Bar and Grill." },
+ // { thumb: "/images/characters/criss_solas/03-thumb.webp", full: "/images/characters/criss_solas/03-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), miqo'te, red eyes, teal and violet open jacket.", caption: "Criss inside the Paissa Litterbox Venue, likely a staff portrait." },
+ // { thumb: "/images/characters/criss_solas/04-thumb.webp", full: "/images/characters/criss_solas/04-full.webp", alt: "Criss Solas, blue and pink hair, mid length hair, miqo'te, red eyes, teal and violet open jacket,", caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch." },
+ //], 
+  noGos: ["Calling her Victoria. Calling her Kitch. *(Sometimes the pirates mix her up with Kitch even tho Kitch is a Viera-- it's... just drunk dumb boys according to Tori)  "],           
   }
   
 ];

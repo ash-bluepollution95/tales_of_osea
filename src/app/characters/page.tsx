@@ -8,7 +8,7 @@ export default function CharactersPage() {
       <header className="mb-10 text-center">
         <h1>Characters</h1>
         <p className="text-foreground/80 mx-auto mt-3 max-w-2xl">
-          (TEMPORARY) The cast of Tales of Osea. Click a card to peek, then open
+          The cast of Tales of Osea. Click a card to peek, then open
           the full sheet.
         </p>
       </header>
