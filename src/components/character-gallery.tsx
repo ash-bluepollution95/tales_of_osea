@@ -25,7 +25,7 @@ export default function CharacterGallery({ gallery }: CharacterGalleryProps) {
         {Array.from({ length: 4 }).map((_, i) => (
           <div
             key={i}
-            className="relative aspect-video overflow-hidden rounded-xl border border-dashed border-border"
+            className="relative aspect-square overflow-hidden rounded-xl border border-dashed border-border"
           >
             <div className="bg-muted/40 absolute inset-0 animate-pulse" />
           </div>
@@ -47,7 +47,7 @@ export default function CharacterGallery({ gallery }: CharacterGalleryProps) {
             key={img.full}
             type="button"
             onClick={() => setSelected(img)}
-            className="relative aspect-video w-full overflow-hidden rounded-xl border"
+            className="relative aspect-square w-full overflow-hidden rounded-xl border"
           >
             <Image
               src={img.thumb}

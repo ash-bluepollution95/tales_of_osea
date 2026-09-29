@@ -6,6 +6,7 @@ export type Character = {
   blurb: string;     // one-line hook for the list
 
   // --- detail-page only ---
+  voicedBy?: string;   // "?" = optional, so uncast characters don't break anything
   identity: Identity;
   currentSituation: CurrentSituation;
   appearance: Appearance;
@@ -111,6 +112,8 @@ export const characters: Character[] = [
   title: "Kay Solas",
   blurb: "Chaotic Sibling, Career crafter, chronic card-haver, and the one man in Eorzea willing to gibbs-slap a Galvus.",
   
+  voicedBy:"Cheese",
+  
   identity: {
   birthName: "He refuses to tell anyone, including Criss.",
   osenayanName: "Doesn't remember.",
@@ -173,10 +176,11 @@ export const characters: Character[] = [
   exes: "He jokes Wuk Lamat is his Ex, but in reality he's just a dumb catboy XD ",  },
   tech: {   implants: "He's got a knee replacement, and it's not one he had when he was alive outside of Eorzea, he got stabbed in a fight and they stuck an electrope based replacement in it-- he's got some story about it - because it's slowly causing some 'issues'. ", 
   geneticMods: "Technically the replacement is a 'GENETIC MODIFICATION' but Kay didn't know about the effects, he'll joke he didn't read the ToS -- but in reality, it was a dodgy side deal because he didn't have the funds to deal with it -- and Criss wasn't around yet. ",  },             
-  // gallery: [
-  //   { thumb: "/images/characters/kay_solas/01-thumb.webp", full: "/images/characters/kay_solas/01-full.webp", alt: "Kay in the Rising Stones", caption: "Kay mid-gibb-slap negotiation." },
-  //   { thumb: "/images/characters/kay_solas/02-thumb.webp", full: "/images/characters/kay_solas/02-full.webp", alt: "Kay crafting", caption: "Kay pretending the healer jacket was worth it." },
-  // ],
+ gallery: [
+ { thumb: "/images/characters/kay_solas/01-thumb.webp", full: "/images/characters/kay_solas/01-full.webp", alt: "Kay Solas, black and red hair miqo'te, red eyes, red and black open jacket.", caption: "Kay and Criss in Aethrochemical Research Facility." },
+  { thumb: "/images/characters/kay_solas/02-thumb.webp", full: "/images/characters/kay_solas/02-full.webp", alt: "Kay Solas Viper Outfit, black and red hair, miqo'te, red eyes, baseball jacket with no undershirt, torn jeans and ripped knees.", caption: "Kay hawking outside of the Bloomers Bar and Grill." },
+  { thumb: "/images/characters/kay_solas/03-thumb.webp", full: "/images/characters/kay_solas/03-full.webp", alt: "Kay Solas Astrologian Outfit, black and red hair, miqo'te, red eyes, cosmic exploration tech gear.", caption: "Kay standing inside a high tech area (Spoiler Dungeon Post DT)." },
+ ],
   noGos: ["Pulling Kay's tail, Calling Kay 'CRISS', Not letting Kay gibb slap you, Telling Kitch where Kay is, and what he's done."],           
   },
   {
@@ -184,6 +188,8 @@ export const characters: Character[] = [
   name: "Criss",
   title: "Criss Solas",
   blurb: "Leader, Healer and Charismatic Parent.",
+  
+  voicedBy:"ApolloTheGremlin",
   
   identity: {
   birthName: "He'll tell you it's Christopher Ryan David X'voor, but it's likely Christian Marin X'voor.",
@@ -247,6 +253,13 @@ export const characters: Character[] = [
   exes: "Theory has it he TRIED TO TAKE G'RAHA OUT TO DINNER ONCE -- but nah he's not got any exes in Eorzea, and he doenst' recall most of them from his other life.",  },
   tech: {   implants: "According to Criss he's got a few teeth crowns and had braces when he was younger? AND THAT MAY JUST BE WHY HE HEARS RADIO (he's kidding btw) from several hometown stations XD", 
   geneticMods: "None but Criss calls the Mithra patterns on a face one that was forced on him, because the fact that it's a thin layer of fur he can't shave off PISSES HIM THE EVER LOVING FUCK OFF.",  },             
+  gallery: [
+ { thumb: "/images/characters/criss_solas/01-thumb.webp", full: "/images/characters/criss_solas/01-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), teal and violet open jacket, black slacks, kneeling, purple floor.", caption: "Criss in an assumed end of the world scenario (Shadowbringers Dungeon)" },
+  { thumb: "/images/characters/criss_solas/02-thumb.webp", full: "/images/characters/criss_solas/02-full.webp", alt: "Criss Solas and Angel Of'The'Night, Angel is a white/light blonde haired Elezen with assumed blue-violet eyes. Criss's appearance is, blue and pink hair, braided messy long hair with fringe (bangs), Criss is wearing the Story Teller's crop top dyed with black and teal, and Angel is wearing the Night of Devilry outfit in standard purple hues.", caption: "Angel flirting with Criss inside the Bloomers Bar and Grill." },
+  { thumb: "/images/characters/criss_solas/03-thumb.webp", full: "/images/characters/criss_solas/03-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), miqo'te, red eyes, teal and violet open jacket.", caption: "Criss inside the Paissa Litterbox Venue, likely a staff portrait." },
+  { thumb: "/images/characters/criss_solas/04-thumb.webp", full: "/images/characters/criss_solas/04-full.webp", alt: "Criss Solas, blue and pink hair, mid length hair, miqo'te, red eyes, teal and violet open jacket,", caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch." },
+ ],
   noGos: ["Criss hates it when you play with his ears, not because 'HORNY' but because it does sort .. it's like TICKLING but not the horny kind XD Telling him that the snickers bar in the shower is from him, because honestly? He made a mistake once with his sister and said 'I'm gonna go take a shit, and shower' and our partner's system just.. .like never let us live it down lmao. So now Criss is  'SHITS IN THE SHOWER'"],           
   }
+  
 ];

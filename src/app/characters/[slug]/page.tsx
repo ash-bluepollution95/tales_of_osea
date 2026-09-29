@@ -39,7 +39,15 @@ export default async function CharacterPage({
       </section>
 
       {/* Sections */}
+	  
+			  <div className="rounded-xl border p-4">
+  <span className="text-muted-foreground text-sm">Voiced by </span>
+  <span className="text-sm font-medium">{character.voicedBy}</span>
+</div>
+		
       <div className="grid gap-6 md:grid-cols-2">
+	  
+
         <Card>
           <CardHeader>
             <CardTitle>Identity</CardTitle>
