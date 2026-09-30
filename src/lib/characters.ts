@@ -7,6 +7,7 @@ export type Character = {
 
   // --- detail-page only ---
   voicedBy?: string;   // "?" = optional, so uncast characters don't break anything
+  charNotes?: string;
   identity: Identity;
   currentSituation: CurrentSituation;
   appearance: Appearance;
@@ -25,8 +26,10 @@ export type Character = {
 
 type Identity = {
   birthName: string;
+  chosenName?: string; 
   osenayanName: string;
   eorzeanName: string;
+  race?: string;
   gender: string;
   orientation: string;
   religion: string;
@@ -48,6 +51,9 @@ type Appearance = {
   skin: string;
   height: string;
   build: string;
+  bodyMod?: string;
+  face?: string;
+  dominantHand?: string;
   outfit: string;
 };
 
@@ -120,6 +126,7 @@ export const characters: Character[] = [
   birthName: "He refuses to tell anyone, including Criss.",
   osenayanName: "Doesn't remember.",
   eorzeanName: "He just goes by Kay, he didn't bother to really fake an Eorzean name.",
+  race: "Miqo'te Sunseeker",
   gender: "Male (Transgender) ",
   orientation: "Greysexual, Panromantic",
   religion: "Saturday Morning cartoons",
@@ -140,6 +147,9 @@ export const characters: Character[] = [
   skin: "Similar to the rest of the fam he's not entirely white but he's also not native, nor any other thing he is just half osenayan and whiter than Criss. ",
   height: "181 cm",
   build: "Kay states, and we quote 'It is all in the hips baby!'",
+  face: "face 4",
+  bodyMod: "TBSE/SBTL",
+  dominantHand: "*looks at hands* BOTH! I CAN SLAP EVERYONE JUST LIKE DAVIE504!",
   outfit: "Light Heavyweight jacket of Healing, and his comfort outfit is a Baseball style shirt-jacket with no undershirt, and really worn jeans.",
 	  
   },
@@ -198,6 +208,7 @@ export const characters: Character[] = [
   birthName: "He'll tell you it's Christopher Ryan David X'voor, but it's likely Christian Marin X'voor.",
   osenayanName: "SUPPOSEDLY it's Matoya'iivi Na'agora-- but he doesn't remember what Kay's is, their universes alone were muddy.",
   eorzeanName: "He goes by K'rhis but he met another one like him -- with the same name",
+  race:"Miqo'te Sunseeker",
   gender: "Male",
   orientation: "Will tell you he's straight, but with a sly hilarious smirk he'll remind you he's taken AND his husband made him gay.",
   religion: "Whatever floats, wether it's in the toilet, the shower floor, or in the sky.",
@@ -217,7 +228,10 @@ export const characters: Character[] = [
   eyes: "Glassy Red",
   skin: "He's not standard caucasian, but he's an odd color that is hard to explain -- but in Eorzea he's got Mithra markings",
   height: "186 cm",
-  build: "Uses TBSE Twunk",
+  build: "Lightweight and Squishy",
+  face: "face 4",
+  bodyMod: "TBSE Twunk",
+  dominantHand: "*blinks* Right hand. *puts hand over felix's mouth*",
   outfit: " Uses the modded Light heavyweight jacket of scouting due to not owning the Dyeable, and some matching edgy aesthetic pieces. ",
 	  
   },
@@ -272,11 +286,13 @@ export const characters: Character[] = [
   blurb: "Axe weilding mom-cat, First place in The Great Eorzean Bake Off.",
   
   voicedBy:"Clara/Irene",
+  charNotes: "We have glam pics for T'rii, but forgot to crop them, give us time to do her justice!",
   
   identity: {
   birthName: "Victoria 'Tori' (She doesn't in this story entirely remember her surname).",
   osenayanName: "Doesn't remember.",
   eorzeanName: "T'Rii",
+  race: "Miqo'te",
   gender: "Female",
   orientation: "Unsure",
   religion: "Religiously untied but respectfully goes along with teh stuff about the twelve, she doesn't remember much about before Eorzea for some reason - Morally she SEEMS quite 'normal' but just give her two minutes.",
@@ -297,6 +313,9 @@ export const characters: Character[] = [
   skin: "Sun avoidance here, she's a lot whiter than her brothers in Eorzea for some reason.",
   height: "5' something -- She doesn't really care about stature or height.",
   build: "You REALLY WANNA ASK A LADY ABOUT HER WAIST SIZE?",
+  face: "TBA",
+  bodyMod: "YAB/Rue",
+  dominantHand: "Right.",
   outfit: " Lil' ol me? I just wear this all the time, it's comfy. ",
 	  
   },
@@ -344,6 +363,174 @@ export const characters: Character[] = [
  // { thumb: "/images/characters/criss_solas/04-thumb.webp", full: "/images/characters/criss_solas/04-full.webp", alt: "Criss Solas, blue and pink hair, mid length hair, miqo'te, red eyes, teal and violet open jacket,", caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch." },
  //], 
   noGos: ["Calling her Victoria. Calling her Kitch. *(Sometimes the pirates mix her up with Kitch even tho Kitch is a Viera-- it's... just drunk dumb boys according to Tori)  "],           
-  }
+  },
+   {
+  slug: "felix_solas",
+  name: "Felix",
+  title: "Felix Solas",
+  blurb: "Collecting Partners Like it's a Trading Card Game (TM).",
   
+  voicedBy:"TBA",
+  
+  identity: {
+  birthName: "Felicity Lorcan",
+  osenayanName: "Married into Osea... got told it's 'Fe-lick' by his husband.",
+  eorzeanName: "Felix",
+  race: "Midlander Hyur",
+  gender: "Transgender Male",
+  orientation: "Right, Left, Center, Up, Down, Diagonal and sometimes with the Balance Bar? Y'know like Dance Dance Revolution?",
+  religion: "Church of the she'll be right, mince n' cheese pie",
+  politics: "Whatever floats Criss's boat",
+  },
+  currentSituation: {
+  mainClass: "Blue Mage",
+  sideClass: "Bleu Mage",
+  job: "Solution nine - kitchen staff.",
+  residence: "S9 Apartments.",
+  economicClass: "I work in a kitchen, what do you think?",
+  },
+  
+  appearance: {
+  age: "30s",
+  hair: "Black",
+  eyes: "I gave up looking in a mirror years ago",
+  skin: "Whiter than the shocked face my mother when I ran away from home.",
+  height: "Got a measuring tape?",
+  build: "Well I don't have tits anymore so that's a thing",
+  face: "TBA",
+  bodyMod: "TBSE",
+  dominantHand: "*holds up Criss's right hand*",
+  outfit: " anything that's not my work uniform",
+	  
+  },
+  
+  background: {   hometown: "They assumed he was inside the dome when it happened, but in reality he just lied to them ..",
+  heritage: "Australian, but lived in the USA for a long time, he married into the Osenayan bloodline every single time across the universes..",
+  firstLanguage: "...If you tell me ONE MORE G-D TIME GLEN MCGRATH IS A WANKER I AM GONNA LOSE MY SHIT ... wait lanugage? SWEARING. ENLGIHS WAHTEVER",
+  lifeEvents: "Well, getting married to every version of my cat in other universes but yet I haven't found him here i'm gonna lose my shit.",
+  historicalevents:"None really, I work in a freaking kitchen.",
+  regrets: ".... If you see my kids around tell them that's what I meant.",
+  
+  },
+  skills: {   qualifications: "I majored in being a problem.",
+  talents: "Parents don't have talents.",
+  languages: "Turali tinged eorzean, knows a few swear words in Gaelic, failed spanish",
+  
+  },
+  qualities: {   conditions: "Despite having their insides changed and outside changed -- hormones still thwap him once a month. OH AND HIS KIDS ARE AN ILLNESS.. HE SAW MAYCEIN ONCE AND KNEW IT WAS HER because all she kept doing was asking for Turtle Treats.",
+  strengths: "Criss's thighs.  ",
+  weaknesses: "Criss. ", 
+  },
+  desires: {   yearning: "Finding Criss, Kay, Tori and the rest of the family.",
+  goals: "...GETTING OUT OF THE DAMN KITCHEN.",
+  wishes: "ust to get out of here and back home, but if i can't have that just-- knowing my family is safe..",
+  dreamJob: "You don't understand, i'm a parent... we don't get dream jobs...", },
+  other: {   fears: "Criss being with someone else. Criss actually existing somewhere else and NOT knowing anything.. Losing his family.", 
+  secrets: "Realizing Criss is likely not going to remember him, so has given up partially on that fear..", 
+  habits: "Microwaving pies, it's a sin but he ain't got time to find a pie warmer..", 
+  hobbies: " Shhh crochet, it's a Lorcan tradition -- weirdly the males do this in the Lorcan family, not the females! Felix's brothers taught him when he was younger..", },
+  family: {   parents: ["????, ????"],   
+  siblings: ["Ryan Lorcan, Larkin Lorcan "], 
+  children: " Ask me which universe, `ASPEN GET THE FUCK OUT OF THE WIND-- MACE STOP HITTING JUPITER`.. `BY GOD TIERGAN STOP FLIRTING IWTH YOUR HUSBAND IM BEING SERIOUS` ",
+  other: "Technically the center in a polycule but he kinda gave up the idea of being able to wrangle them all because he can't find them all."  },
+  relationships: {   friends: ["Co-workers."],  
+  enemies: ["The Paissa Litter Box Owner.... (Not really an enemy, he just says this because when he finds Criss he's jealous of Angel-- but Angel isn't really his enemy lol)."], 
+  partner: "Well technically it's Criss, but i was ... sort of... a bit slutty and dragged more in to a polycule once.",      
+  crush: "Koana.", 
+  exes: "grr... If you see Marlin tell him i said hello.. ",  },
+  tech: {   implants: "None", 
+  geneticMods: " None that he's aware of.",  },             
+ gallery: [
+ { thumb: "/images/characters/felix_solas/01-thumb.webp", full: "/images/characters/felix_solas/01-full.webp", alt: "Felix Solas, eastern techno jacket outfit, black hair, green-teal eyes, australian transmasc Midlander Hyur.", caption: "Felix in the Grand Cosmos seeking his family." },
+ { thumb: "/images/characters/felix_solas/02-thumb.webp", full: "/images/characters/felix_solas/02-full.webp", alt: "Felix Solas, eastern techno jacket outfit, black hair, green-teal eyes, australian transmasc Midlander Hyur.", caption: "Felix feeling Flirty while inside the Tuliyollal inn." },
+ { thumb: "/images/characters/felix_solas/03-thumb.webp", full: "/images/characters/felix_solas/03-full.webp", alt: "Felix Solas, eastern techno jacket outfit, black hair, green-teal eyes, australian transmasc Midlander Hyur.", caption: "Felix suddenly seeing himself in drag, at the request of his `arch enemy` Angel OfTheNight.." },
+ // { thumb: "/images/characters/criss_solas/04-thumb.webp", full: "/images/characters/criss_solas/04-full.webp", alt: "Criss Solas, blue and pink hair, mid length hair, miqo'te, red eyes, teal and violet open jacket,", caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch." },
+], 
+  noGos: ["Start chanting AUSSIE AUSSIE AUSSIE OI OI OI. Telling him that Criss married someone else in this universe. Tell him that he's not a real man.  "],           
+  } ,
+    {
+  slug: "roi_vanzey",
+  name: "R'oidan",
+  title: "R'oidan Tia",
+  blurb: "Ever heard a song about a bard that was a chicken shit?",
+  
+  voicedBy:"TBA",
+  
+  identity: {
+  birthName: "Rhiannon V'anzey",
+  osenayanName: "Roi'adan Vanzey",
+  eorzeanName: "R'oidan Tia",
+  race: "Miqo'te Sunseeker",
+  gender: "Transgender Male",
+  orientation: "Like I have time for that.",
+  religion: "The twelve are important to him.",
+  politics: "It's important to have a voice.",
+  },
+  currentSituation: {
+  mainClass: "Bard",
+  sideClass: "Scared, Chicken Shit, Bard",
+  job: "Caroline Canopy Janitor",
+  residence: "somewhere in the Lavendar beds.",
+  economicClass: "Pfft, i'm poor what do you expect.",
+  },
+  
+  appearance: {
+  age: "20s",
+  hair: "Orange/Ginger",
+  eyes: "Green",
+  skin: "Skin, that's what it is!",
+  height: "*counts on one hand* POTATO!",
+  build: "I'm a medium build, smaller than Tai tho.. he's beefy",
+  face: "face 4",
+  bodyMod: "TBSE/SBTL",
+  dominantHand: "Why are you asking such a person--- OH YOU MEAN FOR WRITING? I'm a right handed pen wi...GET YOUR MIND OUT OF THE GUTTER.",
+  outfit: "What i'm wearing, beacuse other than that I have night wear that's like ten years old",
+	  
+  },
+  
+  background: {   hometown: "He doesn't care to know, even though he has memories of the deck of a ship -- at the end of a universe. ",
+  heritage: "He knows he's at least half osenayan, and knows he had a book of memories -- but those memories are fading fast.",
+  firstLanguage: "Gridania Flavored Eorzean. ",
+  lifeEvents: "Finding T'aine... Losing T'aine, Finding him again -- Y'know the brotherly rotation..",
+  historicalevents: "The red moon falling, you could see it from the canopy.. I wasn't high enough ranked to be there to fight - but i lent my skills to guard New Gridania..",
+  regrets: "Finding Antaine.",
+  
+  },
+  skills: {   qualifications: "Mediocre Bard.",
+  talents: "Carving, both food sculptures and wood.",
+  languages: "Mostly Eorzean (aka English lol) -- but it's accented, plausibly celtic, plausibly some format of rhotic but not sure.",
+  
+  },
+  qualities: {   conditions: "Likely Autistic & ADHD. Easily lost in thought.",
+  strengths: "Storytelling.",
+  weaknesses: "Pumpkin Cookies.", 
+  },
+  desires: {   yearning: "Getting strong enough to aid people in their plight..",
+  goals: "As much has figuring out his former life would be a goal, he'd rather become stronger and use his bard abilities to save people..",
+  wishes: "T'aine to stop asking what his bra size is, because getting his former gender doxxed iS NOT ON THE AGENDA right now.",
+  dreamJob: "Chocolatier in Limsa.", },
+  other: {   fears: "Finding out what his former life actually was.", 
+  secrets: "None really.", 
+  habits: "Showing off his bow, and when asked he's honest `I did buy it but i liked the glowy bits`.", 
+  hobbies: "  Baking, Carving, Sculpting.", },
+  family: {   parents: ["????, ????"],   
+  siblings: ["Antaine V'anzy (T'aine Vanzey), there may be others but the two of them only remember each other."], 
+  children: " NONE ",
+  other: "Not really a secret but not common knowledge, he has a stuffed toy that made it through worlds with him that he's not sure where he got it. It's quite advanced in how it's built according to him, and it's been with him as long as he can remember. (We're not sure WHICH IRL stuffed toy this represents because he just made this up on the fly now.)"  },
+  relationships: {   friends: ["Everyone he meets hopefully?"],  
+  enemies: ["Antaine... but in reality nobody."], 
+  partner: "None.",      
+  crush: "I dont have time for that..", 
+  exes: "Waaat? ",  },
+  tech: {   implants: "None", 
+  geneticMods: " None that he's aware of.",  },             
+  gallery: [
+  { thumb: "/images/characters/roiadan_vanzey/01-thumb.webp", full: "/images/characters/roiadan_vanzey/01-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oidan visiting the Paissa Litterbox Venue." },
+  { thumb: "/images/characters/roiadan_vanzey/02-thumb.webp", full: "/images/characters/roiadan_vanzey/02-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oidan showing off his purchased Bard Bow.." },
+  { thumb: "/images/characters/roiadan_vanzey/03-thumb.webp", full: "/images/characters/roiadan_vanzey/03-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oi expressing regret at finding T'aine." },
+  { thumb: "/images/characters/roiadan_vanzey/04-thumb.webp", full: "/images/characters/roiadan_vanzey/04-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oi expressing even more threatening regret at finding his brother." },
+  { thumb: "/images/characters/roiadan_vanzey/05-thumb.webp", full: "/images/characters/roiadan_vanzey/05-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oidan exploring the aftermath of Pagl'than.." },
+  ], 
+  noGos: ["Call him Rhiannon.Ask him his makeup routine. Tell him that he's not a real man. Ask him dating tips. Ask him where his brother lives"],           
+  } ,
 ];

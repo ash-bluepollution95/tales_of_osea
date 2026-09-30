@@ -42,7 +42,10 @@ export default async function CharacterPage({
 	  
 			  <div className="rounded-xl border p-4">
   <span className="text-muted-foreground text-sm">Voiced by </span>
-  <span className="text-sm font-medium">{character.voicedBy}</span>
+  <span className="text-sm font-medium">{character.voicedBy}</span>      </div>
+  <div className="rounded-xl border p-4">
+    <span className="text-muted-foreground text-sm">Character Notes </span>
+  <span className="text-sm font-medium">{character.charNotes}</span>
 </div>
 		
       <div className="grid gap-6 md:grid-cols-2">
@@ -56,6 +59,7 @@ export default async function CharacterPage({
             <Field label="Birth Name" value={character.identity.birthName} />
             <Field label="Osenayan Name" value={character.identity.osenayanName} />
             <Field label="Eorzean Name" value={character.identity.eorzeanName} />
+            <Field label="Race" value={character.identity.race} />			
             <Field label="Gender" value={character.identity.gender} />
             <Field label="Orientation" value={character.identity.orientation} />
             <Field label="Religion" value={character.identity.religion} />
@@ -87,6 +91,9 @@ export default async function CharacterPage({
             <Field label="Skin" value={character.appearance.skin} />
             <Field label="Height" value={character.appearance.height} />
             <Field label="Build" value={character.appearance.build} />
+            <Field label="Face" value={character.appearance.face} />			
+            <Field label="Body Type/Mod Style" value={character.appearance.bodyMod} />
+            <Field label="Dominant Hand" value={character.appearance.dominantHand} />			
             <Field label="Outfit" value={character.appearance.outfit} />
           </CardContent>
         </Card>

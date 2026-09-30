@@ -29,6 +29,7 @@
 - [ ] Character **dialogue as text messages** — use the installed chat bubble/message components to render dialogue between characters like a text thread (left/right alignment per speaker, avatars = portraits, names as labels)
 - [ ] **Cards + div layers** on pages where needed (page layout structure)
 - [ ] **Bento grids** for image layouts (or find a better gallery option first)
+- [ ] **Character Blog** — RP "side-story" posts written as markdown files (like FFXIV side quests outside the MSQ), eventually hooked up to characters via frontmatter/slug (e.g. `characters: [kay_solas]`). Idea parked — don't start this yet.
 
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.
