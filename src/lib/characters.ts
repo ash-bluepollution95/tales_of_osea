@@ -356,12 +356,14 @@ export const characters: Character[] = [
   exes: "She jokes about it being Y'shtola's sister when they met throug hthe Arcanists guild but since she's a WAR/MRD -- she uh can't really claim that anymore LOL. ",  },
   tech: {   implants: "None, though somehow the other Miqo'te are swearing she got a boob job", 
   geneticMods: " None, but whatever the gods gave Y'shtola she wants some of that.",  },             
-  //gallery: [
- //{ thumb: "/images/characters/criss_solas/01-thumb.webp", full: "/images/characters/criss_solas/01-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), teal and violet open jacket, black slacks, kneeling, purple floor.", caption: "Criss in an assumed end of the world scenario (Shadowbringers Dungeon)" },
- // { thumb: "/images/characters/criss_solas/02-thumb.webp", full: "/images/characters/criss_solas/02-full.webp", alt: "Criss Solas and Angel Of'The'Night, Angel is a white/light blonde haired Elezen with assumed blue-violet eyes. Criss's appearance is, blue and pink hair, braided messy long hair with fringe (bangs), Criss is wearing the Story Teller's crop top dyed with black and teal, and Angel is wearing the Night of Devilry outfit in standard purple hues.", caption: "Angel flirting with Criss inside the Bloomers Bar and Grill." },
- // { thumb: "/images/characters/criss_solas/03-thumb.webp", full: "/images/characters/criss_solas/03-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), miqo'te, red eyes, teal and violet open jacket.", caption: "Criss inside the Paissa Litterbox Venue, likely a staff portrait." },
- // { thumb: "/images/characters/criss_solas/04-thumb.webp", full: "/images/characters/criss_solas/04-full.webp", alt: "Criss Solas, blue and pink hair, mid length hair, miqo'te, red eyes, teal and violet open jacket,", caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch." },
- //], 
+  gallery: [
+  { thumb: "/images/characters/tori_solas/01-thumb.webp", full: "/images/characters/tori_solas/01-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori in the Limsa Lominsa inn attempting to throw her axe in someone's general direction." },
+  { thumb: "/images/characters/tori_solas/02-thumb.webp", full: "/images/characters/tori_solas/02-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori seemingly reading what seems to be the book that is causing chaos." },
+  { thumb: "/images/characters/tori_solas/03-thumb.webp", full: "/images/characters/tori_solas/03-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori laying happily on the INN room bed." },
+  { thumb: "/images/characters/tori_solas/04-thumb.webp", full: "/images/characters/tori_solas/04-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori Gleefully standing in the limsa inn room with her axe by her side." },
+  { thumb: "/images/characters/tori_solas/05-thumb.webp", full: "/images/characters/tori_solas/05-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori happily smiling." },
+  { thumb: "/images/characters/tori_solas/06-thumb.webp", full: "/images/characters/tori_solas/06-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori having a sip of a hot drink in the Starlight Mug from Limsa." },
+ ], 
   noGos: ["Calling her Victoria. Calling her Kitch. *(Sometimes the pirates mix her up with Kitch even tho Kitch is a Viera-- it's... just drunk dumb boys according to Tori)  "],           
   },
    {
