@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Yellowtail, Nunito, Inconsolata, Metal_Mania } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shadcn-studio/blocks/hero-section-01/header";
-import type { NavigationSection } from "@/components/shadcn-studio/blocks/hero-section-01/header";
+import { navigationData } from "@/lib/navigation";
 import { cn } from "@/lib/utils";
 import { Providers } from "./providers";
 import EcommerceFooterWithSocials from "@/components/blocks/ecommerce/ecommerce-footers/with-socials";
@@ -26,17 +26,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const navigationData: NavigationSection[] = [
-  { title: "Home", href: "/" },
-  { title: "About", href: "/about" },
-  { title: "Characters", href: "/characters" },
-  { title: "World", href: "/world" },
-  { title: "Episodes", href: "/episodes" },
-  { title: "Soundtrack", href: "/soundtrack" },
-  { title: "Credits", href: "/credits" },
-  { title: "Copyright", href: "/copyright" },
-  { title: "Disclaimers", href: "/disclaimer" },
-];
 
 export const metadata: Metadata = {
   title: "Tales of Osea",

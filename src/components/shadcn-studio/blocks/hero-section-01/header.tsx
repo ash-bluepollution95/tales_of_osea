@@ -2,6 +2,8 @@ import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuLabel,
   DropdownMenuItem,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu'
@@ -9,18 +11,18 @@ import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
-  NavigationMenuList
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuContent
 } from '@/components/ui/cubby-ui/navigation-menu';
+import type { NavigationSection } from '@/lib/navigation';
 
 import { cn } from '@/lib/utils'
 
 
 import { MenuIcon } from "lucide-react"
 
-export type NavigationSection = {
-  title: string
-  href: string
-}
+
 
 type HeaderProps = {
   navigationData: NavigationSection[]
@@ -34,18 +36,32 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
 
         {/* Navigation */}
-        <NavigationMenu className='max-md:hidden'>
+        <NavigationMenu className='max-md:hidden' closeDelay={250}>
           <NavigationMenuList className='flex-wrap justify-start gap-0'>
-            {navigationData.map(navItem => (
-              <NavigationMenuItem key={navItem.title}>
-                <NavigationMenuLink
-                  href={navItem.href}
-                  className='text-foreground/90 hover:text-primary bg-transparent! px-3 py-1.5 text-base! font-medium'
-                >
-                  {navItem.title}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            ))}
+            {navigationData.map((navItem) => (
+  <NavigationMenuItem key={navItem.title}>
+    {'href' in navItem ? (
+      <NavigationMenuLink
+        href={navItem.href}
+        standalone
+        className='bg-transparent! px-3 py-1.5 text-base! font-medium text-foreground/90 hover:text-primary'
+      >
+        {navItem.title}
+      </NavigationMenuLink>
+    ) : (
+      <>
+        <NavigationMenuTrigger>{navItem.title}</NavigationMenuTrigger>
+        <NavigationMenuContent>
+          {navItem.children.map((child) => (
+            <NavigationMenuLink key={child.title} href={child.href}>
+              {child.title}
+            </NavigationMenuLink>
+          ))}
+        </NavigationMenuContent>
+      </>
+    )}
+  </NavigationMenuItem>
+))}
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -61,11 +77,22 @@ const Header = ({ navigationData, className }: HeaderProps) => {
               <span className='sr-only'>Menu</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent className='w-56' align='end'>
-              {navigationData.map((item, index) => (
-                <DropdownMenuItem key={index}>
-                  <a href={item.href}>{item.title}</a>
-                </DropdownMenuItem>
-              ))}
+              {navigationData.map((item) =>
+  'href' in item ? (
+    <DropdownMenuItem key={item.title}>
+      <a href={item.href}>{item.title}</a>
+    </DropdownMenuItem>
+  ) : (
+    <DropdownMenuGroup key={item.title}>
+      <DropdownMenuLabel>{item.title}</DropdownMenuLabel>
+      {item.children.map((child) => (
+        <DropdownMenuItem key={child.title}>
+          <a href={child.href}>{child.title}</a>
+        </DropdownMenuItem>
+      ))}
+    </DropdownMenuGroup>
+  ),
+)}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>

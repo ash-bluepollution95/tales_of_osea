@@ -5,6 +5,7 @@
 - **Character pages** — list (`/characters`) + detail (`/characters/[slug]`), all 12 sections render
 - **Episode type + data** — `src/lib/episodes.ts` (`EpisodeKind` union, teaser + s01e01 real, short-1 TBA)
 - **Episode pages** — list (`/episodes`) + detail (`/episodes/[slug]`) with YouTube iframe embed
+- **Navigation reorganized** — `src/lib/navigation.ts` (union type `NavigationSection = NavigationLink | NavigationGroup` + grouped `navigationData`); header branches link vs group (desktop `NavigationMenuTrigger`/`Content`, mobile `DropdownMenuGroup`/`Label`)
 
 ## 🧱 Next up (homework)
 - [x] Fill **Kay's real copy** into `characters.ts` (replace all the `"TBA"` strings with his sheet's content)
@@ -12,6 +13,7 @@
 - [ ] **Homework #2** — on the episode detail page, turn `Featuring: {episode.characters.join(", ")}` into real `<Link>`s to `/characters/[slug]` — and resolve each slug to its `Character.name` so it *displays* the name (e.g. "Kay"), not the raw slug (`kay_solas`)
 - [ ] Fill **short-1** with real data (+ duplicate for `short-2`, `short-3`, etc. if more shorts)
 - [ ] Add teaser **cameo slugs** to `teaser.characters` (currently `[]`)
+- [ ] **Privacy + Terms pages** — currently placeholder copies of the Copyright page (routes exist so the nav links resolve); write real copy
 
 ## 🗺️ Routing left
 - [ ] **World/Lore** — decide flat vs nested first, then `lore.ts` + list + `[slug]`
@@ -22,6 +24,7 @@
 - [ ] Static pages: **Home** (featured data), **About**, **Credits**, **Disclaimer**
 
 ## 🔮 Later
+- [ ] **Reusable faceted search** — a shared `<FacetedSearch>` / `useFacetedSearch` hook: facet `<Select>` + text `<Input>`, filters any typed array client-side with `match-sorter` (`keys`). Build once, reuse on `/characters`, `/soundtrack`, `/episodes`. Plain-substring v1 → `match-sorter` v2. Turns those lists into `"use client"` components. Build together.
 - [ ] "Appears in:" section on character page (derive via `episodes.filter(...)`)
 - [ ] Reusable `<YouTubeEmbed>` component
 - [ ] Per-character VA field on `Character`
