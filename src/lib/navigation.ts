@@ -4,11 +4,12 @@ export type NavigationSection = NavigationLink | NavigationGroup
 
 export const navigationData: NavigationSection[] = [
   { title: "Home", href: "/" },
+  { title: "Characters", href: "/characters" },
   { title: "Story", children: [
       { title: "About", href: "/about" },
-      { title: "Characters", href: "/characters" },
       { title: "World", href: "/world" },
       { title: "Episodes", href: "/episodes" },
+	  { title: "Stories", href: "/stories" }, 
   ]},
   { title: "Soundtrack", href: "/soundtrack" },
   { title: "Community", children: [

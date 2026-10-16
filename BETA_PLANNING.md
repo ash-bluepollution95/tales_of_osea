@@ -8,6 +8,7 @@
 - **Navigation reorganized** — `src/lib/navigation.ts` (union type `NavigationSection = NavigationLink | NavigationGroup` + grouped `navigationData`); header branches link vs group (desktop `NavigationMenuTrigger`/`Content`, mobile `DropdownMenuGroup`/`Label`)
 
 ## 🧱 Next up (homework)
+- [ ] **Stories** (`/stories`) — RP "side-story" posts linked to characters via a `characters: [slug]` field. Build: typed `src/lib/stories.ts` (mirroring `characters.ts`, `body` = typed `StoryBlock[]` union — heading/paragraph/quote/image — rendered with existing shadcn/Base UI components, zero new deps), `/stories` list (`.map()`), `/stories/[slug]` detail.
 - [x] Fill **Kay's real copy** into `characters.ts` (replace all the `"TBA"` strings with his sheet's content)
 - [x] Add **Criss's row** to `characters.ts` (then add his slug to `s01e01.characters`)
 - [ ] **Homework #2** — on the episode detail page, turn `Featuring: {episode.characters.join(", ")}` into real `<Link>`s to `/characters/[slug]` — and resolve each slug to its `Character.name` so it *displays* the name (e.g. "Kay"), not the raw slug (`kay_solas`)
@@ -22,6 +23,7 @@
 ## 🎨 Design / theme (do once, last)
 - [ ] **Dark & ethereal theme** — `globals.css` + Tailwind + `layout.tsx`, applies to every page
 - [ ] Static pages: **Home** (featured data), **About**, **Credits**, **Disclaimer**
+- [ ] **Align mobile nav menu to the surface ladder** — desktop nav (cubby-ui `NavigationMenu` in `header.tsx`) wears the `--surface-*` elevation ladder (highlight rim + layered shadow → "sleek"); the mobile dropdown (`src/components/ui/dropdown-menu.tsx` + the `md:hidden` block in `src/components/shadcn-studio/blocks/hero-section-01/header.tsx`) uses flat shadcn `bg-popover` + `shadow-md` + `ring-foreground/10` + `bg-accent` row hover, so contrast doesn't match. **Look for:** the popup line in `dropdown-menu.tsx` (`bg-popover … shadow-md ring-1 ring-foreground/10`) and the item hover (`data-highlighted:bg-accent`). **Fix:** swap the popup's shadow/ring for the surface rim + combined shadow, and use the surface hover token on items.
 
 ## 🔮 Later
 - [ ] **Reusable faceted search** — a shared `<FacetedSearch>` / `useFacetedSearch` hook: facet `<Select>` + text `<Input>`, filters any typed array client-side with `match-sorter` (`keys`). Build once, reuse on `/characters`, `/soundtrack`, `/episodes`. Plain-substring v1 → `match-sorter` v2. Turns those lists into `"use client"` components. Build together.
@@ -32,7 +34,6 @@
 - [ ] Character **dialogue as text messages** — use the installed chat bubble/message components to render dialogue between characters like a text thread (left/right alignment per speaker, avatars = portraits, names as labels)
 - [ ] **Cards + div layers** on pages where needed (page layout structure)
 - [ ] **Bento grids** for image layouts (or find a better gallery option first)
-- [ ] **Character Blog** — RP "side-story" posts written as markdown files (like FFXIV side quests outside the MSQ), eventually hooked up to characters via frontmatter/slug (e.g. `characters: [kay_solas]`). Idea parked — don't start this yet.
 
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.
