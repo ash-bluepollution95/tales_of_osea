@@ -1,83 +1,50 @@
-import { motion } from "motion/react";
-import * as React from "react";
-import { cn } from "@/lib/utils";
+import { cva, type VariantProps } from "class-variance-authority"
+import { Button as ButtonPrimitive } from "@base-ui/react/button"
 
-interface RainbowButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  colors?: string[];
-  duration?: number;
-  borderWidth?: number;
-  animated?: boolean;
+import { cn } from "@/lib/utils"
+
+const rainbowButtonVariants = cva(
+  cn(
+    "relative cursor-pointer group transition-all animate-rainbow",
+    "inline-flex items-center justify-center gap-2 shrink-0",
+    "rounded-sm outline-none focus-visible:ring-[3px] aria-invalid:border-destructive",
+    "text-sm font-medium whitespace-nowrap",
+    "disabled:pointer-events-none disabled:opacity-50",
+    "[&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 [&_svg]:shrink-0"
+  ),
+  {
+    variants: {
+      variant: {
+        default:
+          "border-0 bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-primary-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:bg-[length:200%] before:[filter:blur(0.75rem)] dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]",
+        outline:
+          "border border-input border-b-transparent bg-[linear-gradient(#ffffff,#ffffff),linear-gradient(#ffffff_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-accent-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:bg-[length:200%] before:[filter:blur(0.75rem)] dark:bg-[linear-gradient(#0a0a0a,#0a0a0a),linear-gradient(#0a0a0a_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))]",
+      },
+      size: {
+        default: "h-9 px-4 py-2",
+        sm: "h-8 rounded-xl px-3 text-xs",
+        lg: "h-11 rounded-xl px-8",
+        icon: "size-9",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  }
+)
+
+type RainbowButtonProps = ButtonPrimitive.Props &
+  VariantProps<typeof rainbowButtonVariants>
+
+function RainbowButton({ className, variant, size, ...props }: RainbowButtonProps) {
+  return (
+    <ButtonPrimitive
+      data-slot="button"
+      className={cn(rainbowButtonVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
 }
 
-const RainbowButton = React.forwardRef<HTMLButtonElement, RainbowButtonProps>(
-  (
-    {
-      children,
-      colors = ["#f43f5e", "#8b5cf6", "#3b82f6", "#22c55e", "#f43f5e"],
-      duration = 2,
-      borderWidth = 2,
-      animated = true,
-      className,
-      onClick,
-      disabled,
-      type = "button",
-      ...props
-    },
-    ref,
-  ) => {
-    const gradientColors = colors.join(", ");
-
-    return (
-      <button
-        ref={ref}
-        type={type}
-        onClick={onClick}
-        disabled={disabled}
-        className={cn(
-          "relative inline-flex items-center justify-center overflow-hidden rounded-lg font-medium transition-transform hover:scale-105 active:scale-95 disabled:pointer-events-none disabled:opacity-50",
-          className,
-        )}
-        style={{ padding: borderWidth }}
-        {...props}
-      >
-        {/* Animated gradient background */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(var(--gradient-angle, 0deg), ${gradientColors})`,
-          }}
-          animate={
-            animated
-              ? {
-                  "--gradient-angle": ["0deg", "360deg"],
-                }
-              : undefined
-          }
-          transition={
-            animated
-              ? {
-                  duration,
-                  repeat: Infinity,
-                  ease: "linear",
-                }
-              : undefined
-          }
-        />
-        {/* Button content */}
-        <span
-          className="relative z-10 flex items-center gap-2 rounded-md bg-background px-6 py-2.5 font-medium text-sm transition-colors hover:bg-background/90"
-          style={{
-            borderRadius: `calc(0.5rem - ${borderWidth}px)`,
-          }}
-        >
-          {children}
-        </span>
-      </button>
-    );
-  },
-);
-RainbowButton.displayName = "RainbowButton";
-
-export { RainbowButton };
+export { RainbowButton, rainbowButtonVariants, type RainbowButtonProps }

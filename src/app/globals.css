@@ -79,7 +79,27 @@
   --color-surface-selected: var(--surface-selected);
   --color-chrome: var(--chrome);
   --color-chrome-foreground: var(--chrome-foreground);
-}
+  --animate-background-position-spin: background-position-spin 3000ms infinite alternate;
+  @keyframes background-position-spin {
+  0% {
+    background-position: top center;
+    }
+  100% {
+    background-position: bottom center;
+    }
+  }
+  --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  --color-color-5: var(--color-5);
+  --color-color-4: var(--color-4);
+  --color-color-3: var(--color-3);
+  --color-color-2: var(--color-2);
+  --color-color-1: var(--color-1)
+;
+  @keyframes rainbow {
+  0% {
+    background-position: 0%;}
+  100% {
+    background-position: 200%;}}}
 
 :root {
   --card: oklch(0.99 0.005 300);
@@ -190,6 +210,11 @@
   --chrome-hover: color-mix(in oklab, var(--chrome-foreground) 10%, transparent);
   --chrome-border: color-mix(in oklab, var(--chrome-foreground) 12%, transparent);
   --chrome-shadow: var(--surface-shadow-1);
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 .dark {
@@ -303,6 +328,11 @@
   --chrome-hover: color-mix(in oklab, var(--chrome-foreground) 10%, transparent);
   --chrome-border: color-mix(in oklab, var(--chrome-foreground) 12%, transparent);
   --chrome-shadow: 0 0 0 1px oklch(0 0 0 / 0.7), inset 0 1px 0 0 oklch(1 0 0 / 0.065);
+  --color-1: oklch(66.2% 0.225 25.9);
+  --color-2: oklch(60.4% 0.26 302);
+  --color-3: oklch(69.6% 0.165 251);
+  --color-4: oklch(80.2% 0.134 225);
+  --color-5: oklch(90.7% 0.231 133);
 }
 
 /* Chrome-surface contract: re-points text/border tokens for the subtree so

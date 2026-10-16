@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { characters } from "@/lib/characters";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CharacterGallery from "@/components/character-gallery";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 function Field({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
@@ -40,13 +41,31 @@ export default async function CharacterPage({
 
       {/* Sections */}
 	  
-			  <div className="rounded-xl border p-4">
-  <span className="text-muted-foreground text-sm">Voiced by </span>
-  <span className="text-sm font-medium">{character.voicedBy}</span>      </div>
-  <div className="rounded-xl border p-4">
-    <span className="text-muted-foreground text-sm">Character Notes </span>
-  <span className="text-sm font-medium">{character.charNotes}</span>
-</div>
+{character.voicedBy ? (
+  <div className="rounded-xl border p-4 flex items-center justify-between gap-3">
+    <div>
+      <span className="text-muted-foreground text-sm">Voiced by </span>
+      <span className="text-sm font-medium">{character.voicedBy}</span>
+    </div>
+
+    {character.voicedBy === "TBA" ? (
+      <RainbowButton
+        variant="outline"
+        size="sm"
+        nativeButton={false}
+        render={
+          <a
+            href="https://forms.gle/NwgmNXbivXaCbJix5"
+            target="_blank"
+            rel="noopener noreferrer"
+          />
+        }
+      >
+        🎙️ Audition for this role
+      </RainbowButton>
+    ) : null}
+  </div>
+) : null}
 		
       <div className="grid gap-6 md:grid-cols-2">
 	  
