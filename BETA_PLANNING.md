@@ -6,6 +6,7 @@
 - **Episode type + data** — `src/lib/episodes.ts` (`EpisodeKind` union, teaser + s01e01 real, short-1 TBA)
 - **Episode pages** — list (`/episodes`) + detail (`/episodes/[slug]`) with YouTube iframe embed
 - **Navigation reorganized** — `src/lib/navigation.ts` (union type `NavigationSection = NavigationLink | NavigationGroup` + grouped `navigationData`); header branches link vs group (desktop `NavigationMenuTrigger`/`Content`, mobile `DropdownMenuGroup`/`Label`)
+- **Home page** — hero demoted `<main>`→`<section>`, home page got a content-column `<main>` (`max-w-7xl space-y-16`), plus `home-bento.tsx` (video card → `/episodes/teaser` + Characters/About/World/Episodes/Soundtrack cards). Characters card shows a featured slice (`characters.slice(0, 3)`) + "see all" link.
 
 ## 🧱 Next up (homework)
 - [ ] **Stories** (`/stories`) — RP "side-story" posts linked to characters via a `characters: [slug]` field. Build: typed `src/lib/stories.ts` (mirroring `characters.ts`, `body` = typed `StoryBlock[]` union — heading/paragraph/quote/image — rendered with existing shadcn/Base UI components, zero new deps), `/stories` list (`.map()`), `/stories/[slug]` detail.
@@ -31,9 +32,12 @@
 - [ ] Reusable `<YouTubeEmbed>` component
 - [ ] Per-character VA field on `Character`
 - [ ] Episodes **card layout** — show videos (via `YouTubePlayer`) as cards on the same page as the episode list, instead of a bare list + separate detail page
-- [ ] Character **dialogue as text messages** — use the installed chat bubble/message components to render dialogue between characters like a text thread (left/right alignment per speaker, avatars = portraits, names as labels)
 - [ ] **Cards + div layers** on pages where needed (page layout structure)
 - [ ] **Bento grids** for image layouts (or find a better gallery option first)
+
+## ♿ Accessibility (later)
+- [ ] **Text-size toggle** — `A- / A / A+` buttons that scale the root font size (everything is `rem`, so one number scales the whole page). Client component + `localStorage` persistence. Foundation first: verify no `maximum-scale=1` in the viewport meta (don't disable browser zoom), keep `rem` units, check dark-theme color contrast.
+- [ ] **Scroll-to-top button** — floating bottom-right button, appears after scrolling down, smooth-scrolls to top. `"use client"` component in `layout.tsx` (site-wide).
 
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.

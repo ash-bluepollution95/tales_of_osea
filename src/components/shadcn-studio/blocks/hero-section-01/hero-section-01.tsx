@@ -1,19 +1,13 @@
 import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Bluesky } from "@/components/ui/svgs/bluesky";
 
 const HeroSection = () => {
   return (
-    <section className='relative isolate flex flex-1 flex-col items-center justify-center px-4 py-16 sm:px-6 sm:py-24'>
-
-      {/* Glass card */}
-      <div className='w-full max-w-3xl rounded-3xl border border-border/60 bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent p-8 text-center shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-12'>
-        <div className='bg-muted mx-auto flex w-fit items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
-          <Badge>Fan-Made</Badge>
-          <span className='text-muted-foreground'>Video Series</span>
-        </div>
-
-        <h1 className='mt-6 text-3xl leading-[1.29167] text-balance sm:text-4xl lg:text-5xl'>
+  
+	<section>
+	<Card className="mx-auto w-full max-w-3xl text-center transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
+          <CardHeader> <CardTitle><h1 className='mt-6 text-3xl leading-[1.29167] text-balance sm:text-4xl lg:text-5xl'>
 
           <span className='relative'>
             Tales of Osea
@@ -47,7 +41,14 @@ const HeroSection = () => {
             </svg>
           </span>{' '}
 
-        </h1>
+        </h1>    </CardTitle>  </CardHeader>
+ <CardContent className="space-y-1">
+        <div className='bg-muted mx-auto flex w-fit items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
+          <Badge>Fan-Made</Badge>
+          <span className='text-muted-foreground'>Video Series</span>
+        </div>
+
+        
 
         <p className='text-muted-foreground mt-4'>
           A machinima series utilizing Final Fantasy XIV. Mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before.
@@ -63,11 +64,35 @@ const HeroSection = () => {
         </p>
 
 
+           <div className="mt-6 flex justify-center space-x-4">
+  <a
+    href="https://bsky.app/profile/duskfallcrew.bsky.social"
+    className="text-muted-foreground hover:text-foreground transition-colors"
+    aria-label="Follow us on Bluesky"
+  >
+    <Bluesky className="h-5 w-5" />
+  </a>
+  <a
+    href="https://discord.gg/gxD8XcNzAg"
+    className="text-muted-foreground hover:text-foreground transition-colors"
+    aria-label="Join us on Discord"
+  >
+    <img src="/Discord-Symbol-Blurple.svg" alt="Discord" className="h-5 w-5" />
+  </a>
+  <a
+    href="https://www.threads.com/@duskfallcrew"
+    className="text-muted-foreground hover:text-foreground transition-colors"
+    aria-label="Connect with us on Threads"
+  >
+    <img src="/threads-logo-white.svg" alt="Threads" className="h-5 w-5" />
+  </a>
+</div>
 
        
-      </div>
+      </CardContent>
+        </Card>
 
-    </section>
+	 </section>
   )
 }
 
