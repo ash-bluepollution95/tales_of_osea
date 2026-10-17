@@ -91,6 +91,8 @@ export default async function CharacterPage({
           <CardContent className="space-y-1">
             <Field label="Birth Name" value={character.identity.birthName} />
             <Field label="Osenayan Name" value={character.identity.osenayanName} />
+			<Field label="Nickname" value={character.identity.nickName} />
+			<Field label="Chosen Name" value={character.identity.chosenName} />
             <Field label="Eorzean Name" value={character.identity.eorzeanName} />
             <Field label="Race" value={character.identity.race} />			
             <Field label="Gender" value={character.identity.gender} />
@@ -215,6 +217,9 @@ export default async function CharacterPage({
             <Field label="Exes" value={character.relationships.exes} />
           </CardContent>
         </Card>
+		
+		 
+		 
 
         <Card>
           <CardHeader>
@@ -236,6 +241,18 @@ export default async function CharacterPage({
             </CardContent>
           </Card>
         ) : null}
+		
+		{character.favorites ? (
+  <Card>
+    <CardHeader>
+      <CardTitle>Favorites</CardTitle>
+    </CardHeader>
+    <CardContent className="space-y-1">
+      <Field label="Food" value={character.favorites.food} />
+      <Field label="Color" value={character.favorites.color} />
+    </CardContent>
+  </Card>
+) : null}
       </div>
     </main>
   );

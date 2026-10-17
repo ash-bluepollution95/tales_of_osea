@@ -34,10 +34,16 @@
 - [ ] Episodes **card layout** — show videos (via `YouTubePlayer`) as cards on the same page as the episode list, instead of a bare list + separate detail page
 - [ ] **Cards + div layers** on pages where needed (page layout structure)
 - [ ] **Bento grids** for image layouts (or find a better gallery option first)
+- [ ] **Nicer expandable cards** — the characters list already peek-expands via native `<details>`/`<summary>`; upgrade it to a smoother animated expandable (height transition, chevron icon, nicer open/close). Audition existing legos (`v-collapsible-3`, Base UI `collapsible`) before hand-rolling.
+- [ ] **Video backlit glow** — add a subtle purple backlight glow behind every YouTube thing (the home-bento video card, `EpisodeThumbnail`, `YouTubePlayer`) so videos read "lit from behind" against the nebula. Consistent treatment site-wide.
+- [ ] **Hero card side-art (hover crossfade)** — semi-transparent WebP(s) with characters on the left/right edges, transparent in the middle so the hero text sits in the clear zone. On hover, crossfade between 1–4 variants. Technique: stack all variants `absolute inset-0` (z-0) behind a `relative z-10` text layer, crossfade via `opacity` transitions (plain CSS — no WebKit hacks, and the 1990s image-slicing isn't needed, WebP alpha does the frame). Considerations: preload all variants, mark `aria-hidden` (decorative), respect `prefers-reduced-motion`, keep each WebP ≤ ~500KB (owner's cap — transparency can bloat the file).
 
 ## ♿ Accessibility (later)
 - [ ] **Text-size toggle** — `A- / A / A+` buttons that scale the root font size (everything is `rem`, so one number scales the whole page). Client component + `localStorage` persistence. Foundation first: verify no `maximum-scale=1` in the viewport meta (don't disable browser zoom), keep `rem` units, check dark-theme color contrast.
-- [ ] **Scroll-to-top button** — floating bottom-right button, appears after scrolling down, smooth-scrolls to top. `"use client"` component in `layout.tsx` (site-wide).
+- [ ] **Scroll-to-top button** — floating bottom-right button, appears after scrolling down, smooth-scrolls to top. ✅ Component already exists (`src/components/ui/scroll-to-top.tsx`, 5 variants: round/pill/minimal/progress/text, all themed + accessible) — just import + drop one in `layout.tsx` (site-wide). No build-from-scratch needed.
+
+## 🐞 Known issues (polish — non-blocking, build is clean)
+- [ ] **Characters bento card — audition button overflows at narrow widths.** In `home-bento.tsx`, the Characters card's `RainbowButton` ("🎙️ Audition Form Available!") pokes outside the card edge when the window is squished to mobile-ish width. Likely cause: the long label + the button's `whitespace-nowrap`, so the text can't wrap at narrow widths. Fix options (pick one): shorten the label (e.g. "🎙️ Audition"), add `whitespace-normal break-words` to let it wrap, or make the button `w-full`. Visual-only, no build impact.
 
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.

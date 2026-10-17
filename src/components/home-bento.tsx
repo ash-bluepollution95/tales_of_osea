@@ -71,7 +71,7 @@ export default function HomeBento() {
     <Link href="/characters" className="inline-block text-sm text-muted-foreground hover:underline">
       See all characters →
     </Link>
-	<div> <RainbowButton
+	<div className="space-y-3"> <RainbowButton
         variant="outline"
         size="sm"
         nativeButton={false}

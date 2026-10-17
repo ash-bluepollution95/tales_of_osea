@@ -22,14 +22,14 @@ export const stories: Story[] = [
   characters: ["kay_solas", "criss_solas"],
   body: [
     { type: "heading", text: "Where it started" },
-    { type: "paragraph", text: "The first time Kay saw it, he blamed the energy drinks." },
+    { type: "paragraph", text: "The first time Kay saw it, he blamed the energy drinks. (FYI: This is a placeholder, we're not done writing the story for this section, this is COMING SOON!)" },
     { type: "quote", text: "That's not a reflection, Criss. That's us." },
-    {
-      type: "image",
-      src: "/images/stories/the-cracks-show.webp",
-      alt: "a description for screen readers",
-      caption: "optional caption under the image",
-    },
+   // {
+     //   type: "image",
+      // src: "/images/stories/the-cracks-show.webp",
+      //  alt: "a description for screen readers",
+       // caption: "optional caption under the image",
+   //   },
   ],
 },
 ];

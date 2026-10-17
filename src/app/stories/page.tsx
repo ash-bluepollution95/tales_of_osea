@@ -15,8 +15,8 @@ export default function StoriesPage() {
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {stories.map((s) => (
           <li key={s.slug}>
-            <div className="group bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent text-card-foreground rounded-2xl border p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl">
-              <h2 className="text-lg font-semibold">{s.title}</h2>
+            <div className="group bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent text-card-foreground rounded-2xl border p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
+              <h2 className="text-lg">{s.title}</h2>
               <p className="text-muted-foreground text-sm">{s.date}</p>
               <p className="text-muted-foreground text-sm">{s.blurb}</p>
               <Link

@@ -33,7 +33,7 @@ export default function EpisodesPage() {
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {episodes.map((ep) => (
           <li key={ep.slug}>
-            <Card className="h-full overflow-hidden">
+            <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
               <div className="bg-muted relative -mt-6 aspect-video w-full">
                 <EpisodeThumbnail
                   primary={thumbnailFor(ep)}

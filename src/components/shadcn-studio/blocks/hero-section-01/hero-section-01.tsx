@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
   
 	<section>
-	<Card className="mx-auto w-full max-w-3xl text-center transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
+	<Card className="mx-auto max-w-7xl text-center transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
           <CardHeader> <CardTitle><h1 className='mt-6 text-3xl leading-[1.29167] text-balance sm:text-4xl lg:text-5xl'>
 
           <span className='relative'>
@@ -42,7 +42,7 @@ const HeroSection = () => {
           </span>{' '}
 
         </h1>    </CardTitle>  </CardHeader>
- <CardContent className="space-y-1">
+<CardContent className="mx-auto max-w-3xl space-y-1">
         <div className='bg-muted mx-auto flex w-fit items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
           <Badge>Fan-Made</Badge>
           <span className='text-muted-foreground'>Video Series</span>
@@ -88,7 +88,7 @@ const HeroSection = () => {
 </div>
 
 	    <p className='text-muted-foreground mt-4'> 
-        Disclaimer: The story within is a ficitonalized version of aspects of being a dissociative identity disorder system. There is no intention of romanticizing or diminishing the medical aspects of mental health, or things around the subject. More information on this is covered under the disclaimers, up in the nagivation menu. Feel free to connect if you have any questions or concerns. </p>
+        Disclaimer: The story within is a ficitonalized version of aspects of being a dissociative identity disorder system. There is no intention of romanticizing or diminishing the medical aspects of mental health, or things around the subject. More information on this is covered under the disclaimers, in the nagivation menu. Feel free to connect if you have any questions or concerns. </p>
        
       </CardContent>
         </Card>

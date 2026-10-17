@@ -16,7 +16,7 @@ export type Character = {
   skills: Skills;
   qualities: Qualities;
   desires: Desires;
-  favorites?: string;   // "?" = optional
+  favorites?: Favorites;   // was: favorites?: string;
   other: Other;
   family: Family;
   relationships: Relationships;
@@ -114,6 +114,13 @@ type Tech = {
   implants: string;
   geneticMods: string;
 };
+
+type Favorites = {
+  food: string;
+  color: string;
+  // ...whatever the OG sheet lists
+};
+
 
 export const characters: Character[] = [
   {
@@ -357,7 +364,12 @@ export const characters: Character[] = [
   crush: "Shale.", 
   exes: "She jokes about it being Y'shtola's sister when they met throug hthe Arcanists guild but since she's a WAR/MRD -- she uh can't really claim that anymore LOL. ",  },
   tech: {   implants: "None, though somehow the other Miqo'te are swearing she got a boob job", 
-  geneticMods: " None, but whatever the gods gave Y'shtola she wants some of that.",  },             
+  geneticMods: " None, but whatever the gods gave Y'shtola she wants some of that.",  },
+  favorites: {
+  food: "Vylbrand Chocolate Cookies",
+  color: "Pink",
+  // ...
+},  
   gallery: [
   { thumb: "/images/characters/tori_solas/01-thumb.webp", full: "/images/characters/tori_solas/01-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori in the Limsa Lominsa inn attempting to throw her axe in someone's general direction." },
   { thumb: "/images/characters/tori_solas/02-thumb.webp", full: "/images/characters/tori_solas/02-full.webp", alt: "Tori Solas, pinkish lavendar hair, teal eyes, miqo'te female.", caption: "Tori seemingly reading what seems to be the book that is causing chaos." },
@@ -2074,13 +2086,13 @@ export const characters: Character[] = [
   } ,
   {
   slug: "marlin_johnson",
-  name: "Mah'li",
+  name: "Mah'li Ramiyah",
   title: "Soul as Black as his Coffee.",
   blurb: "Generational trauma wrapped in a neat little package.",
   
   voicedBy:"TBA",
   charNotes: "Still working on naming conventions, so his name may change before being voiced.",
-  relChar:"";
+  relChar:"Partial mirror to Criss. Kitch was his sister in their universe. Father to three.",
   
   identity: {
   birthName: "Christopher Marlin Johnson",
@@ -2097,29 +2109,29 @@ export const characters: Character[] = [
   currentSituation: {
   mainClass: "Dark Knight",
   sideClass: "None" ,
-  job: "Paissa Litter Box Owner, Bloomers Bar and Grill Owner",
-  residence: "Basement apartment under the Bar and Grill",
-  economicClass:    "Paid for by your souls. Tax not included.",
+  job: "Solution Nine Security",
+  residence: "Shaaloani, small shack.",
+  economicClass:    "In my day houses were 25 bucks and my grandmother's favorite flower. Now it's 25,000 bucks and the taxes from 3 generations. Also Pizza.",
   },
   
   appearance: {
-  age: "45",
-  hair: "White.",
-  eyes: "Purple." ,
-  skin:  "Pasty white, sun avoider.",
-  height: "Tall enough to know better.",
-  build: "Too skinny to resist.",
-  face: "(Info Coming SOON)",
-  bodyMod: "Vanilla",
-  dominantHand:  "Loren's left hand",
-  outfit:  "Made with the fibers of your souls.",
+  age: "30s",
+  hair: "Teal and Black.",
+  eyes: "Sunset Crystal" ,
+  skin:  "Scarred, Spiced and something you can't find at Taco Bell.",
+  height: "Stilts, knocked knees and over six foot.",
+  build: "The opposite of twinkle stars.",
+  face: "Face 4 with C+ Jaw modding.",
+  bodyMod: "TBSE HUNK.",
+  dominantHand:  "Do I LOOK Like that level of hornball? *raises Felix's hand* Here fine, here's my ex.",
+  outfit:  "Anything menacing.",
 	  
   },
   
-  background: {   hometown: "Ishgard, The Foundation"   ,
-  heritage: "Elezen ",
-  firstLanguage:  "Ishgardian",
-  lifeEvents: "Being orphaned, obtaining the deed to the Litterbox.",
+  background: {   hometown: "Wherever the family went. Swamps, Cities, Accents as mixed as the spices between cumin, paprika and curry. Formerly had an apartment near Heritage Found."   ,
+  heritage: "Hispanic, Cajun, Osenayan, Irish, Germanic",
+  firstLanguage:  "Marred Cajun",
+  lifeEvents: "Seeing his sons grow up.",
   historicalevents: "Pants were eaten by Estinien." ,
   regrets:   "Not being actually rich, because your souls aren't paying him enough." ,
   

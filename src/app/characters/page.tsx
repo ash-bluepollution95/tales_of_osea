@@ -16,7 +16,7 @@ export default function CharactersPage() {
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {characters.map((c) => (
           <li key={c.slug}>
-            <details className="group bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent text-card-foreground rounded-2xl border shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl">
+            <details className="group bg-background/70 bg-gradient-to-b from-white/[0.06] to-transparent text-card-foreground rounded-2xl border shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08),0_24px_48px_-12px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
               <summary className="flex cursor-pointer list-none flex-col gap-2 p-6 [&::-webkit-details-marker]:hidden">
                 <span className="text-lg font-semibold">{c.name}</span>
                 <span className="text-muted-foreground text-sm">{c.title}</span>
