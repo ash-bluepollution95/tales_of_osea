@@ -197,7 +197,12 @@ export const characters: Character[] = [
   crush: "Erenville.", 
   exes: "He jokes Wuk Lamat is his Ex, but in reality he's just a dumb catboy XD ",  },
   tech: {   implants: "He's got a knee replacement, and it's not one he had when he was alive outside of Eorzea, he got stabbed in a fight and they stuck an electrope based replacement in it-- he's got some story about it - because it's slowly causing some 'issues'. ", 
-  geneticMods: "Technically the replacement is a 'GENETIC MODIFICATION' but Kay didn't know about the effects, he'll joke he didn't read the ToS -- but in reality, it was a dodgy side deal because he didn't have the funds to deal with it -- and Criss wasn't around yet. ",  },             
+  geneticMods: "Technically the replacement is a 'GENETIC MODIFICATION' but Kay didn't know about the effects, he'll joke he didn't read the ToS -- but in reality, it was a dodgy side deal because he didn't have the funds to deal with it -- and Criss wasn't around yet. ",  },
+  favorites: {
+  food: "BBQ Ribs",
+  color: "Black and red.",
+  // ...
+ },    
  gallery: [
  { thumb: "/images/characters/kay_solas/01-thumb.webp", full: "/images/characters/kay_solas/01-full.webp", alt: "Kay Solas, black and red hair miqo'te, red eyes, red and black open jacket.", caption: "Kay and Criss in Aethrochemical Research Facility." },
   { thumb: "/images/characters/kay_solas/02-thumb.webp", full: "/images/characters/kay_solas/02-full.webp", alt: "Kay Solas Viper Outfit, black and red hair, miqo'te, red eyes, baseball jacket with no undershirt, torn jeans and ripped knees.", caption: "Kay hawking outside of the Bloomers Bar and Grill." },
@@ -280,6 +285,11 @@ export const characters: Character[] = [
   exes: "Theory has it he TRIED TO TAKE G'RAHA OUT TO DINNER ONCE -- but nah he's not got any exes in Eorzea, and he doenst' recall most of them from his other life.",  },
   tech: {   implants: "According to Criss he's got a few teeth crowns and had braces when he was younger? AND THAT MAY JUST BE WHY HE HEARS RADIO (he's kidding btw) from several hometown stations XD", 
   geneticMods: "None but Criss calls the Mithra patterns on a face one that was forced on him, because the fact that it's a thin layer of fur he can't shave off PISSES HIM THE EVER LOVING FUCK OFF.",  },             
+  favorites: {
+  food: "Gardettoes. Though he's unsure wtf they actually are because he forgot.",
+  color: "He raised his hand trying to proudly tell you but... it slipped his mind.",
+  // ...
+},    
   gallery: [
  { thumb: "/images/characters/criss_solas/01-thumb.webp", full: "/images/characters/criss_solas/01-full.webp", alt: "Criss Solas, blue and pink hair, braided messy long hair with fringe (bangs), teal and violet open jacket, black slacks, kneeling, purple floor.", caption: "Criss in an assumed end of the world scenario (Shadowbringers Dungeon)" },
   { thumb: "/images/characters/criss_solas/02-thumb.webp", full: "/images/characters/criss_solas/02-full.webp", alt: "Criss Solas and Angel Of'The'Night, Angel is a white/light blonde haired Elezen with assumed blue-violet eyes. Criss's appearance is, blue and pink hair, braided messy long hair with fringe (bangs), Criss is wearing the Story Teller's crop top dyed with black and teal, and Angel is wearing the Night of Devilry outfit in standard purple hues.", caption: "Angel flirting with Criss inside the Bloomers Bar and Grill." },
@@ -455,7 +465,12 @@ export const characters: Character[] = [
   crush: "Koana.", 
   exes: "grr... If you see Marlin tell him i said hello.. ",  },
   tech: {   implants: "None", 
-  geneticMods: " None that he's aware of.",  },             
+  geneticMods: " None that he's aware of.",  }, 
+  favorites: {
+  food: "Mince and Cheese Pie, Not Microwaved.. OK FINE ITS BARRAMUNDI.",
+  color: "Blue",
+  // ...
+},    
  gallery: [
  { thumb: "/images/characters/felix_solas/01-thumb.webp", full: "/images/characters/felix_solas/01-full.webp", alt: "Felix Solas, eastern techno jacket outfit, black hair, green-teal eyes, australian transmasc Midlander Hyur.", caption: "Felix in the Grand Cosmos seeking his family." },
  { thumb: "/images/characters/felix_solas/02-thumb.webp", full: "/images/characters/felix_solas/02-full.webp", alt: "Felix Solas, eastern techno jacket outfit, black hair, green-teal eyes, australian transmasc Midlander Hyur.", caption: "Felix feeling Flirty while inside the Tuliyollal inn." },
@@ -539,7 +554,12 @@ export const characters: Character[] = [
   crush: "I dont have time for that..", 
   exes: "Waaat? ",  },
   tech: {   implants: "None", 
-  geneticMods: " None that he's aware of.",  },             
+  geneticMods: " None that he's aware of.",  },
+  favorites: {
+  food: "Blood pudding and toast",
+  color: "Light green.",
+  // ...
+},    
   gallery: [
   { thumb: "/images/characters/roiadan_vanzey/01-thumb.webp", full: "/images/characters/roiadan_vanzey/01-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oidan visiting the Paissa Litterbox Venue." },
   { thumb: "/images/characters/roiadan_vanzey/02-thumb.webp", full: "/images/characters/roiadan_vanzey/02-full.webp", alt: "R'oidan Tia,long sleek ginger colored hair with a couple braids, glowing green eyes. Male Miqo'te.", caption: "R'oidan showing off his purchased Bard Bow.." },
@@ -624,7 +644,12 @@ export const characters: Character[] = [
   crush: "I will crush someone's head in for what opinions they provide of my brother", 
   exes: "I'm sure i had someone but now's not the time",  },
   tech: {   implants: "None", 
-  geneticMods: " None that he's aware of.",  },             
+  geneticMods: " None that he's aware of.",  },
+  favorites: {
+  food: "Steak, make it walking.",
+  color: "Sandalwood brown.",
+  // ...
+},    
   gallery: [
   { thumb: "/images/characters/antaine_vanzey/Taine01-thumb.webp", full: "/images/characters/antaine_vanzey/Taine01-full.webp", alt: "T'aine Tia,long messy tied ginger colored hair, fluffier feral-style cat ears, hazel eyes, Male Miqo'te.", caption: "T'aine with a menacing look, holding a shinobi knife just above his shoulder." },
   { thumb: "/images/characters/antaine_vanzey/Taine02-thumb.webp", full: "/images/characters/antaine_vanzey/Taine02-full.webp", alt: "T'aine Tia,long messy tied ginger colored hair, fluffier feral-style cat ears, hazel eyes, Male Miqo'te.", caption: "T'aine doing the pose of the unbound." },
@@ -713,7 +738,12 @@ export const characters: Character[] = [
   crush: "Toss up between Fordola and Y'shtola.", 
   exes: "His Wife lol.",  },
   tech: {   implants: "None", 
-  geneticMods: " None that he's aware of.",  },             
+  geneticMods: " None that he's aware of.",  },
+  favorites: {
+  food: "Chef salad, extra bacon, instead of french dressing MAKE IT CAESAR.",
+  color: "Silver.",
+  // ...
+},    
   gallery: [
   { thumb: "/images/characters/andrew_bryant/Andy01-thumb.webp", full: "/images/characters/andrew_bryant/Andy01-full.webp", alt: "Andrej Steelhelm, white hair, blue eyes, stubble, beard, mustache, 40s, gunbreaker, bastion coat. ", caption: "Andrej's back is facing the viewer as he plots what insanity comes next.." },
   { thumb: "/images/characters/andrew_bryant/Andy02-thumb.webp", full: "/images/characters/andrew_bryant/Andy02-full.webp", alt: "Andrej Steelhelm, white hair, blue eyes, stubble, beard, mustache, 40s, gunbreaker, bastion coat.", caption: "Andrej showing off his DAD skills by pointing his gunblade at the air." },
@@ -803,7 +833,12 @@ export const characters: Character[] = [
   crush: "Everyone. Especially Garlean Legati, and then the Paissa Litterbox Owner.", 
   exes: "Everyone.",  },
   tech: {   implants: "Tits", 
-  geneticMods: "Tits",  },             
+  geneticMods: "Tits",  }, 
+  favorites: {
+  food: "Vylbrand Chocolate Cookies",
+  color: "Pink",
+  // ...
+},    
   gallery: [
   { thumb: "/images/characters/kitch_bunny/Kitch01-thumb.webp", full: "/images/characters/kitch_bunny/Kitch01-full.webp", alt: "Kitch Bunny, black skinned, black hair, gold eyes, gold Galatea outfit with imp/bat wings.", caption: "Kitch visiting a poignant place, or just plotting her brother's downfall.." },
   { thumb: "/images/characters/kitch_bunny/Kitch02-thumb.webp", full: "/images/characters/kitch_bunny/Kitch02-full.webp", alt: "Kitch Bunny, black skinned, black hair, gold eyes, gold Galatea outfit with imp/bat wings.", caption: "Kitch asking somewhat politley where the next Garlean Legatus's home town is." },
@@ -892,7 +927,12 @@ export const characters: Character[] = [
   crush: " None..", 
   exes: " None.",  },
   tech: {   implants: " None.", 
-  geneticMods: "She'll tell you it's her brains. but otherwise None.",  },             
+  geneticMods: "She'll tell you it's her brains. but otherwise None.",  },
+  favorites: {
+  food: "Shrimp Onigiri.",
+  color: "Neon Pink",
+  // ...
+},    
   gallery: [
   { thumb: "/images/characters/mace_turtle/Mace01-thumb.webp", full: "/images/characters/mace_turtle/Mace01-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon. ", caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass." },
   { thumb: "/images/characters/mace_turtle/Mace02-thumb.webp", full: "/images/characters/mace_turtle/Mace02-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'" },
@@ -982,7 +1022,12 @@ export const characters: Character[] = [
   crush: "Shhh... I saw Erenville and almost wanted to cheat on Derek with him.", 
   exes: "IF I DONT KEEP MYSELF IN CHECK DEREK GONNA BE MY EX XD",  },
   tech: {   implants: " None.", 
-  geneticMods: "None but he's gonna tell you it's the way he cooks.",  },             
+  geneticMods: "None but he's gonna tell you it's the way he cooks.",  },
+  favorites: {
+  food: "Denny's menu. But at 3am, from the bathroom.",
+  color: "Dusty blue.",
+  // ...
+},    
   // gallery: [
   //{ thumb: "/images/characters/mace_turtle/Mace01-thumb.webp", full: "/images/characters/mace_turtle/Mace01-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon. ", caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass." },
  // { thumb: "/images/characters/mace_turtle/Mace02-thumb.webp", full: "/images/characters/mace_turtle/Mace02-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'" },
@@ -1072,7 +1117,12 @@ export const characters: Character[] = [
   crush: "MMMM HILDA OR HIEN PICK YOUR POISON.", 
   exes: "I left my last sleeping bag in solution nine, and it's texting me every day in regret ",  },
   tech: {   implants: " None.", 
-  geneticMods: "None ",  },             
+  geneticMods: "None ",  },
+  favorites: {
+  food: "Lasanga. But Vegetarian.",
+  color: "Rainbows.",
+  // ...
+},    
   // gallery: [
   //{ thumb: "/images/characters/mace_turtle/Mace01-thumb.webp", full: "/images/characters/mace_turtle/Mace01-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon. ", caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass." },
  // { thumb: "/images/characters/mace_turtle/Mace02-thumb.webp", full: "/images/characters/mace_turtle/Mace02-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'" },
@@ -1162,7 +1212,12 @@ export const characters: Character[] = [
   crush: " Everyone that's got a good body, and has a wonderful face... (He'll even tell you that he's crushed on dudes before but that's probably him trying to hide that he's likely more straight than gay XD)", 
   exes: "My right hand.",  },
   tech: {   implants: " None.", 
-  geneticMods: "None ",  },             
+  geneticMods: "None ",  },
+  favorites: {
+  food: "Beef stroganoff.",
+  color: "I'm gonna be an ass and say white, because it's the lack of color. It's somehow really neat lol.",
+  // ...
+},   
   // gallery: [
   //{ thumb: "/images/characters/mace_turtle/Mace01-thumb.webp", full: "/images/characters/mace_turtle/Mace01-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon. ", caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass." },
  // { thumb: "/images/characters/mace_turtle/Mace02-thumb.webp", full: "/images/characters/mace_turtle/Mace02-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'" },
@@ -1251,19 +1306,24 @@ export const characters: Character[] = [
   partner: "If she was here i'd tell you..",      
   crush: "  Merlwyb.", 
   exes: "None.. (In theory because Sonny, Kintsugi and Lilac and Den were all fused once it's Kintsugi's girlfriend that's her ex lol)",  },
-  tech: {   implants: " None.", 
+  tech: {   implants: " None.",
+  favorites: {
+  food: "Pirate Tacos, you do the math.",
+  color: "Have you seen the colors of ice, fire and thunder?",
+  // ...
+}, 
   geneticMods: "None ",  },             
-  // gallery: [
-  //{ thumb: "/images/characters/mace_turtle/Mace01-thumb.webp", full: "/images/characters/mace_turtle/Mace01-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon. ", caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass." },
- // { thumb: "/images/characters/mace_turtle/Mace02-thumb.webp", full: "/images/characters/mace_turtle/Mace02-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'" },
-//  { thumb: "/images/characters/mace_turtle/Mace03-thumb.webp", full: "/images/characters/mace_turtle/Mace03-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace once again trying to lick everything off the pizza like a mad lizard." },
- // { thumb: "/images/characters/mace_turtle/Mace04-thumb.webp", full: "/images/characters/mace_turtle/Mace04-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace standing in a dungeon going 'ENJOY THE CUTSCENES' and then promptly cackling and running off ." },
-  //{ thumb: "/images/characters/mace_turtle/Mace05-thumb.webp", full: "/images/characters/mace_turtle/Mace05-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace using her pictomancer abiltiies on the fly, without warning, probably against absolutley nothing.." },
-  // { thumb: "/images/characters/mace_turtle/Mace06-thumb.webp", full: "/images/characters/mace_turtle/Mace06-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace screeching and we quote 'FULL MOOG AHEAD ZYOOM!'" },
-    //{ thumb: "/images/characters/mace_turtle/Mace07-thumb.webp", full: "/images/characters/mace_turtle/Mace07-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace sharing the butterflies." },
-	// { thumb: "/images/characters/mace_turtle/Mace08-thumb.webp", full: "/images/characters/mace_turtle/Mace08-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace attempting to paint a celebration note for completing a task in a dungeon, right before the mobs come running." },
-   // { thumb: "/images/characters/mace_turtle/Mace09-thumb.webp", full: "/images/characters/mace_turtle/Mace09-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace's semi professional portrait taken by Lilac one day.." },
-  //], 
+   gallery: [
+   { thumb: "/images/characters/lilac_solas/01-thumb.webp", full: "/images/characters/lilac_solas/01_full.webp", alt: "Portrait of Ophelle aka Lilac, purple and violet and lilac hues in the hair, as well as eyes, elezen-style aka hyur with modded elezen ears. Decorated hair with what seems to be a crown or head jewelery. ", caption: "A serious portrait of Ophelle aka Lilac, getting ready to defend the Pirates, or just burn T'eargah to the ground one of the two." },
+   { thumb: "/images/characters/lilac_solas/02-thumb.webp", full: "/images/characters/lilac_solas/02_full.webp", alt: "Ophelle aka Lilac, purple and violet and lilac hues in the hair, as well as eyes, elezen-style aka hyur with modded elezen ears. Decorated hair with what seems to be a crown or head jewelery.", caption: "Ophelle aka Lilac attempting to look like a lady, devouring pizza." },
+ { thumb: "/images/characters/lilac_solas/03_thumb.webp", full: "/images/characters/lilac_solas/03_full.webp", alt: "Ophelle aka Lilac, purple and violet and lilac hues in the hair, as well as eyes, elezen-style aka hyur with modded elezen ears. Decorated hair with what seems to be a crown or head jewelery.", caption: "Ophelle getting ready to prove her worth." },
+  { thumb: "/images/characters/lilac_solas/04_thumb.webp", full: "/images/characters/lilac_solas/04_full.webp", alt: "Ophelle aka Lilac, purple and violet and lilac hues in the hair, as well as eyes, elezen-style aka hyur with modded elezen ears. Decorated hair with what seems to be a crown or head jewelery.", caption: "Ophelle giving things a hard think." },
+   { thumb: "/images/characters/lilac_solas/05_thumb.webp", full: "/images/characters/lilac_solas/05_full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Ophelle attacking with full force." },
+    { thumb: "/images/characters/lilac_solas/06_thumb.webp", full: "/images/characters/lilac_solas/06_full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Ophelle threatening someone." },
+    { thumb: "/images/characters/lilac_solas/07_thumb.webp", full: "/images/characters/lilac_solas/07_full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "A lady can enjoy a good set of moves can't she?" },
+	  { thumb: "/images/characters/lilac_solas/08_thumb.webp", full: "/images/characters/lilac_solas/08_full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "You really want to test Ophelle? THE GREATEST BLACK MAGE IN ALL OF FINAL FANTASY ASIDE FROM DONALD DUCK?" },
+     { thumb: "/images/characters/lilac_solas//09_thumb.webp", full: "/images/characters/lilac_solas/09_full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Ophelle weaponizing her beauty.." },
+  ], 
   noGos: ["Calling her by saying `I went to a Denny's restaurant at 3am and i needed the bathroom`, Assuming she likes ONLY dresses.., Calling her Denzel, Asking her if she's Sonny, Asking her if she's Kinstugi. "],           
   } ,
   {
@@ -2086,7 +2146,7 @@ export const characters: Character[] = [
   } ,
   {
   slug: "marlin_johnson",
-  name: "Mah'li Ramiyah",
+  name: "Mah'li Jhasa",
   title: "Soul as Black as his Coffee.",
   blurb: "Generational trauma wrapped in a neat little package.",
   
@@ -2099,7 +2159,7 @@ export const characters: Character[] = [
   osenayanName: "wasn't allowed to know.",
   chosenName: "Marlin",
   nickName: "Marle",
-  eorzeanName: "Mah'li Ramiyah",
+  eorzeanName: "Mah'li Jhasa",
   race: "Keeper of the Moon Miqo'te",
   gender: "I am feeling the effects of mascuilinity, I WANT TO GO TO WAR!!!" ,
   orientation:  "180 degrees in the hellspawn direction.",
