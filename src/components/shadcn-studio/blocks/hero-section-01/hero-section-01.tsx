@@ -55,13 +55,12 @@ const HeroSection = () => {
 		      </p>
 
               <p className='text-muted-foreground mt-4'>
-          Much like the sundered worlds of Ancient Etheryis, the cracks of other worlds start to show - and the differences start flooding in.  The cracks however, are not just an Ascian playing head games.
+          Much like the sundered worlds of Ancient Etheryis, the visions of other worlds start to show - and the differences start flooding in.  These visions however, are not just an Ascian playing head games.
 				       </p>
 		  <p className='text-muted-foreground mt-4'>
-		  These cracks are caused by an Ancient book from the Osenayans themselves. A book filled with incantations, memories and spells.    </p>
+		  These events and visions are caused by an Ancient book from the Osenayans themselves. A book filled with incantations, memories and spells. Future, past and present from every universe start to converge - causing chaos beyond.    </p>
 		  
-		    <p className='text-muted-foreground mt-4'> Future, past and present from every universe start to converge - causing chaos beyond. 
-        </p>
+	
 
 
            <div className="mt-6 flex justify-center space-x-4">
@@ -88,6 +87,8 @@ const HeroSection = () => {
   </a>
 </div>
 
+	    <p className='text-muted-foreground mt-4'> 
+        Disclaimer: The story within is a ficitonalized version of aspects of being a dissociative identity disorder system. There is no intention of romanticizing or diminishing the medical aspects of mental health, or things around the subject. More information on this is covered under the disclaimers, up in the nagivation menu. Feel free to connect if you have any questions or concerns. </p>
        
       </CardContent>
         </Card>

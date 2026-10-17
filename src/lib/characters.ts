@@ -8,6 +8,7 @@ export type Character = {
   // --- detail-page only ---
   voicedBy?: string;   // "?" = optional, so uncast characters don't break anything
   charNotes?: string;
+  relChar?: string; // This is "CHARACTER RELATION" and is a new addition to show relation wether mirror or direct siblings etc or otherwise.
   identity: Identity;
   currentSituation: CurrentSituation;
   appearance: Appearance;
@@ -2003,6 +2004,99 @@ export const characters: Character[] = [
   currentSituation: {
   mainClass: "Paladin",
   sideClass: "Reaper" ,
+  job: "Paissa Litter Box Owner, Bloomers Bar and Grill Owner",
+  residence: "Basement apartment under the Bar and Grill",
+  economicClass:    "Paid for by your souls. Tax not included.",
+  },
+  
+  appearance: {
+  age: "45",
+  hair: "White.",
+  eyes: "Purple." ,
+  skin:  "Pasty white, sun avoider.",
+  height: "Tall enough to know better.",
+  build: "Too skinny to resist.",
+  face: "(Info Coming SOON)",
+  bodyMod: "Vanilla",
+  dominantHand:  "Loren's left hand",
+  outfit:  "Made with the fibers of your souls.",
+	  
+  },
+  
+  background: {   hometown: "Ishgard, The Foundation"   ,
+  heritage: "Elezen ",
+  firstLanguage:  "Ishgardian",
+  lifeEvents: "Being orphaned, obtaining the deed to the Litterbox.",
+  historicalevents: "Pants were eaten by Estinien." ,
+  regrets:   "Not being actually rich, because your souls aren't paying him enough." ,
+  
+  },
+  skills: {   qualifications: "I can wield a sword and serve you alchohol at the same time!",
+  talents:  "Skinning G'raha Tia." ,
+  languages:  " Ishgardian, Eorzean",
+  
+  },
+  qualities: {   conditions: "So old he trips over lalafells, anemic because your souls aren't feeding him enough.",
+  strengths: "The light that burns within." ,
+  weaknesses: "Haha.", 
+  },
+  desires: {   yearning: "Souls, more of them.",
+  goals: "Expand the Paissa Litterbox Venue.",
+  wishes: "High quality souls, the higher quality the more nutritious." ,
+  dreamJob: "Running a nightclub, and collecting souls.", },
+  other: {   fears: "Ankle Biters..", 
+  secrets: "Drinking the blood of young fair maidens, such ferrous liquid, such mastacation was not my intention.. WHOOOPS..", 
+  habits: "Flirting with Criss, then flirting with patrons to make him jealous.", 
+  hobbies: "Collecting the finest screams in the galaxy.", },
+  family: {   parents: ["Fuhuhuuuck off i'm an orphan."],   
+  siblings: ["Nope. "], 
+  children:  "Where do i get the eorzean snip snip of prevention again?"  ,
+  other: "Trying to find a male viera with a diverse face."  },
+  relationships: {   friends: [ "Staff at each venue."  ],  
+  enemies: ["Tataru because I earned more money than her."], 
+  partner:   "TBA",      
+  crush: "None.", 
+  exes:  "None",  },
+  tech: {   implants: " Linkpearl.", 
+  geneticMods: "None ",  },             
+  // gallery: [
+  //{ thumb: "/images/characters/mace_turtle/Mace01-thumb.webp", full: "/images/characters/mace_turtle/Mace01-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon. ", caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass." },
+ // { thumb: "/images/characters/mace_turtle/Mace02-thumb.webp", full: "/images/characters/mace_turtle/Mace02-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'" },
+//  { thumb: "/images/characters/mace_turtle/Mace03-thumb.webp", full: "/images/characters/mace_turtle/Mace03-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace once again trying to lick everything off the pizza like a mad lizard." },
+ // { thumb: "/images/characters/mace_turtle/Mace04-thumb.webp", full: "/images/characters/mace_turtle/Mace04-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace standing in a dungeon going 'ENJOY THE CUTSCENES' and then promptly cackling and running off ." },
+  //{ thumb: "/images/characters/mace_turtle/Mace05-thumb.webp", full: "/images/characters/mace_turtle/Mace05-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace using her pictomancer abiltiies on the fly, without warning, probably against absolutley nothing.." },
+  // { thumb: "/images/characters/mace_turtle/Mace06-thumb.webp", full: "/images/characters/mace_turtle/Mace06-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace screeching and we quote 'FULL MOOG AHEAD ZYOOM!'" },
+    //{ thumb: "/images/characters/mace_turtle/Mace07-thumb.webp", full: "/images/characters/mace_turtle/Mace07-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace sharing the butterflies." },
+	// { thumb: "/images/characters/mace_turtle/Mace08-thumb.webp", full: "/images/characters/mace_turtle/Mace08-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace attempting to paint a celebration note for completing a task in a dungeon, right before the mobs come running." },
+   // { thumb: "/images/characters/mace_turtle/Mace09-thumb.webp", full: "/images/characters/mace_turtle/Mace09-full.webp", alt: "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.", caption: "Mace's semi professional portrait taken by Lilac one day.." },
+  //], 
+  noGos: ["Try to kill him, Don't skin G'raha for him, Assaulting Women in front of him or at any of his venues"],           
+  } ,
+  {
+  slug: "marlin_johnson",
+  name: "Mah'li",
+  title: "Soul as Black as his Coffee.",
+  blurb: "Generational trauma wrapped in a neat little package.",
+  
+  voicedBy:"TBA",
+  charNotes: "Still working on naming conventions, so his name may change before being voiced.",
+  relChar:"";
+  
+  identity: {
+  birthName: "Christopher Marlin Johnson",
+  osenayanName: "wasn't allowed to know.",
+  chosenName: "Marlin",
+  nickName: "Marle",
+  eorzeanName: "Mah'li Ramiyah",
+  race: "Keeper of the Moon Miqo'te",
+  gender: "I am feeling the effects of mascuilinity, I WANT TO GO TO WAR!!!" ,
+  orientation:  "180 degrees in the hellspawn direction.",
+  religion: "Got caught up in the vineyards in the 90s, died and went to hell.",
+  politics:  "Don't make me drink the kool-aid again.",
+  },
+  currentSituation: {
+  mainClass: "Dark Knight",
+  sideClass: "None" ,
   job: "Paissa Litter Box Owner, Bloomers Bar and Grill Owner",
   residence: "Basement apartment under the Bar and Grill",
   economicClass:    "Paid for by your souls. Tax not included.",

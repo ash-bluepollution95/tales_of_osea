@@ -4,23 +4,25 @@ export type NavigationSection = NavigationLink | NavigationGroup
 
 export const navigationData: NavigationSection[] = [
   { title: "Home", href: "/" },
+  { title: "About", href: "/about" },
   { title: "Characters", href: "/characters" },
   { title: "Story", children: [
-      { title: "About", href: "/about" },
-      { title: "World", href: "/world" },
-      { title: "Episodes", href: "/episodes" },
-	  { title: "Stories", href: "/stories" }, 
+		{ title: "World", href: "/world" },
+    	  { title: "Stories", href: "/stories" }, 
   ]},
-  { title: "Soundtrack", href: "/soundtrack" },
+  { title: "Media", children: 
+  [{ title: "Soundtrack", href: "/soundtrack" },
+   { title: "Episodes", href: "/episodes" },   ]},
   { title: "Community", children: [
       { title: "Collaborate", href: "/collaborate" },
       { title: "Credits", href: "/credits" },
   ]},
+  { title: "Disclaimers", href: "/disclaimer" },
   { title: "Legal", children: [
       { title: "Copyright", href: "/copyright" },
-      { title: "Disclaimers", href: "/disclaimer" },
 	  { title: "Privacy", href: "/privacy" },
 	  { title: "Terms", href: "/terms" },
   ]},
+  
   
 ]

@@ -66,6 +66,20 @@ export default async function CharacterPage({
     ) : null}
   </div>
 ) : null}
+
+ {character.charNotes ? (
+        <div className="rounded-xl border p-4">
+          <span className="text-muted-foreground text-sm">Character Notes </span>
+          <span className="text-sm font-medium">{character.charNotes}</span>
+        </div>
+      ) : null}
+
+{character.relChar ? (
+  <div className="rounded-xl border p-4">
+    <span className="text-muted-foreground text-sm">Character Relation </span>
+    <span className="text-sm font-medium">{character.relChar}</span>
+  </div>
+) : null}
 		
       <div className="grid gap-6 md:grid-cols-2">
 	  
