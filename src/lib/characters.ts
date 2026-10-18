@@ -1307,12 +1307,12 @@ export const characters: Character[] = [
   crush: "  Merlwyb.", 
   exes: "None.. (In theory because Sonny, Kintsugi and Lilac and Den were all fused once it's Kintsugi's girlfriend that's her ex lol)",  },
   tech: {   implants: " None.",
+  geneticMods: "None ",  },  
   favorites: {
   food: "Pirate Tacos, you do the math.",
   color: "Have you seen the colors of ice, fire and thunder?",
   // ...
-}, 
-  geneticMods: "None ",  },             
+},   
    gallery: [
    { thumb: "/images/characters/lilac_solas/01-thumb.webp", full: "/images/characters/lilac_solas/01_full.webp", alt: "Portrait of Ophelle aka Lilac, purple and violet and lilac hues in the hair, as well as eyes, elezen-style aka hyur with modded elezen ears. Decorated hair with what seems to be a crown or head jewelery. ", caption: "A serious portrait of Ophelle aka Lilac, getting ready to defend the Pirates, or just burn T'eargah to the ground one of the two." },
    { thumb: "/images/characters/lilac_solas/02-thumb.webp", full: "/images/characters/lilac_solas/02_full.webp", alt: "Ophelle aka Lilac, purple and violet and lilac hues in the hair, as well as eyes, elezen-style aka hyur with modded elezen ears. Decorated hair with what seems to be a crown or head jewelery.", caption: "Ophelle aka Lilac attempting to look like a lady, devouring pizza." },
