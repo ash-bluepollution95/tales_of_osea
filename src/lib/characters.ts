@@ -22,7 +22,7 @@ export type Character = {
   relationships: Relationships;
   tech?: Tech;             // "?" = not every char has implants/mods
   noGos: string[];         // "Things you can't get away with" → a LIST
-  gallery?: { thumb: string; full: string; alt: string; caption?: string }[];   // "?" = per-character image gallery; thumb = grid tile, full = lightbox, alt = screen-reader, caption = optional lightbox text
+  gallery?: { thumb?: string; full: string; alt: string; caption?: string; title?: string }[];   // "?" = per-character image gallery; full = the 16:9 image (slice + lightbox), thumb = legacy square tile (being retired), alt = screen-reader, caption = optional lightbox/subtitle text, title = optional short label for the slice edge
 };
 
 type Identity = {

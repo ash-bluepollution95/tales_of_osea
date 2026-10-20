@@ -6,33 +6,26 @@ import { Dialog } from "@base-ui/react/dialog";
 import { X } from "lucide-react";
 
 type GalleryItem = {
-  thumb: string;
+  thumb?: string;
   full: string;
   alt: string;
   caption?: string;
+  title?: string;
 };
 
 type CharacterGalleryProps = {
   gallery?: GalleryItem[];
 };
 
+/**
+ * Full grid + lightbox. Used on the dedicated /characters/[slug]/gallery
+ * page — shows every image as a 16:9 tile and lets you click through to
+ * the full-res view.
+ */
 export default function CharacterGallery({ gallery }: CharacterGalleryProps) {
   const [selected, setSelected] = useState<GalleryItem | null>(null);
 
-  if (!gallery || gallery.length === 0) {
-    return (
-      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <div
-            key={i}
-            className="relative aspect-square overflow-hidden rounded-xl border border-dashed border-border"
-          >
-            <div className="bg-muted/40 absolute inset-0 animate-pulse" />
-          </div>
-        ))}
-      </div>
-    );
-  }
+  if (!gallery || gallery.length === 0) return null;
 
   return (
     <Dialog.Root
@@ -42,19 +35,20 @@ export default function CharacterGallery({ gallery }: CharacterGalleryProps) {
       }}
     >
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-        {gallery.map((img) => (
+        {gallery.map((img, i) => (
           <button
             key={img.full}
             type="button"
             onClick={() => setSelected(img)}
-            className="relative aspect-square w-full overflow-hidden rounded-xl border"
+            className="relative aspect-video w-full overflow-hidden rounded-xl border bg-black"
           >
             <Image
-              src={img.thumb}
+              src={img.full}
               alt={img.alt}
               fill
+              priority={i === 0}
               sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover"
+              className="object-contain"
             />
           </button>
         ))}

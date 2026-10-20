@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 import { characters } from "@/lib/characters";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import CharacterGallery from "@/components/character-gallery";
+import CharacterGallerySlice from "@/components/character-gallery-slice";
+import { buttonVariants } from "@/components/ui/button";
+import Link from "next/link";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 
 function Field({ label, value }: { label: string; value?: string }) {
@@ -33,11 +35,21 @@ export default async function CharacterPage({
         </p>
       </header>
 
-      {/* Gallery */}
-      <section className="mb-10">
-        <h2 className="mb-4">Gallery</h2>
-        <CharacterGallery gallery={character.gallery} />
-      </section>
+      {/* Gallery — slice style on the sheet, full grid via the button below */}
+      {character.gallery && character.gallery.length > 0 ? (
+        <section className="mb-10">
+          <h2 className="mb-4">Gallery</h2>
+          <CharacterGallerySlice gallery={character.gallery} />
+          <div className="mt-4">
+            <Link
+              href={`/characters/${character.slug}/gallery`}
+              className={buttonVariants({ variant: "outline", size: "sm" })}
+            >
+              View full gallery
+            </Link>
+          </div>
+        </section>
+      ) : null}
 
       {/* Sections */}
 	  
