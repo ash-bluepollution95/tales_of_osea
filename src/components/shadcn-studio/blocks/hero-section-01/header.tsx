@@ -36,7 +36,7 @@ const Header = ({ navigationData, className }: HeaderProps) => {
 
 
         {/* Navigation */}
-        <NavigationMenu className='max-md:hidden' closeDelay={250}>
+        <NavigationMenu className='max-md:hidden bg-transparent! shadow-none!' closeDelay={250}>
           <NavigationMenuList className='flex-wrap justify-start gap-0'>
             {navigationData.map((navItem) => (
   <NavigationMenuItem key={navItem.title}>

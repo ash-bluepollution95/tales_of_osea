@@ -99,7 +99,21 @@
   0% {
     background-position: 0%;}
   100% {
-    background-position: 200%;}}}
+    background-position: 200%;}}
+  @keyframes ui-col-in {
+  from {
+    max-width: 0;
+    opacity: 0;}
+  to {
+    max-width: 1em;
+    opacity: 1;}}
+  @keyframes ui-col-out {
+  from {
+    max-width: 1em;
+    opacity: 1;}
+  to {
+    max-width: 0;
+    opacity: 0;}}}
 
 :root {
   --card: oklch(0.99 0.005 300);

@@ -1,0 +1,237 @@
+/* Caliper UI: semantic roles, shared by copied components and the playground.
+   Theme and density also resolve on any element with data-theme / data-density,
+   so a preview region can switch independently of the page.
+   Values follow docs/DESIGN-SYSTEM.md: flat fills carry depth, the primary action is ink,
+   one accent (default Sky) marks selection and data, three shadows. Names are unchanged
+   so installed parts keep working; the retired material tokens now resolve to flat values. */
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+  /* Series: the accent leads, then violet, amber, teal and rose at one OKLCH lightness and chroma, so no series shouts
+     and every mark stands about 3:1 off the grounds; a neutral grey closes the set for "Other". */
+  --chart-1: var(--chart-accent);
+  --chart-2: oklch(0.56 0.19 295);
+  --chart-3: oklch(0.64 0.17 55);
+  --chart-4: oklch(0.6 0.13 170);
+  --chart-5: oklch(0.6 0.2 355);
+  --chart-6: oklch(0.62 0 0);
+  /* Neutrals: page, stage, tile, field. */
+  --background: #f4f4f5;
+  --foreground: #0a0a0b;
+  --surface: #ffffff;
+  --elevated: #ffffff;
+  --elevated-glass: rgb(255 255 255 / 97%);
+  --edge-light: rgb(255 255 255 / 80%);
+  --edge-glow: rgb(20 20 28 / 8%);
+  --blur-overlay: 20px;
+  --muted: #e9e9ec;
+  --muted-foreground: #5f5f68;
+  /* The second tone of a two-tone headline, placeholders and keycaps, and the lifted part of a control (segment, thumb). */
+  --foreground-2: #8e8e96;
+  --faint: #6c6c75;
+  --knob: #ffffff;
+  --border: rgb(0 0 0 / 8%);
+  --border-strong: #8a8a94;
+  /* The customer's accent: neutral by default (ink here, near-white in the dark block), so the library is monochrome until
+     a hue is picked. Change the seven --accent* values and --chart-accent here and in the dark block together (the docs'
+     Customize panel copies a ready block). Light: --accent is a deep fill with white text at 4.5:1. Dark: --accent is a
+     lighter tone of the hue with dark text at 4.5:1. --accent-text reads at 4.6:1 as text on every ground. --chart-accent
+     leads the chart series (a calm blue while the accent is neutral, so data still reads as data). */
+  --accent: #18181b;
+  --accent-foreground: #ffffff;
+  --accent-hover: #2a2a2e;
+  --accent-press: #000000;
+  --accent-text: #27272a;
+  --accent-soft: rgb(24 24 27 / 8%);
+  --chart-accent: #2f6fdb;
+  /* The accent's deep tone (its white-text fill) in both themes, for surfaces that always carry white: avatar orbs. */
+  --accent-deep: #4b4b52;
+  /* The primary action is ink. */
+  --primary: #0a0a0b;
+  --primary-foreground: #ffffff;
+  --primary-hover: #2a2a2e;
+  --primary-press: #000000;
+  /* Status tints are opaque on purpose: contrast tools and nested surfaces read one colour, not an alpha. */
+  /* Brand marks (today, now, active, drag) follow the accent; in light they use its readable tone. */
+  --brand: var(--accent-text);
+  --brand-foreground: #ffffff;
+  --brand-subtle: var(--accent-soft);
+  --river: #5d4fb9;
+  --river-subtle: #eeeeff;
+  --ring: var(--accent-text);
+  --success: #0e793c;
+  --success-subtle: #dff7e9;
+  --warning: #8a5a00;
+  --warning-subtle: #fdf1dc;
+  --destructive: #cf0f52;
+  --destructive-foreground: #ffffff;
+  --destructive-subtle: #fee3ec;
+  --danger: #cf0f52;
+  --danger-foreground: #ffffff;
+  --overlay: rgb(12 12 18 / 30%);
+  --shadow-overlay: 0 12px 40px rgb(20 20 28 / 14%);
+  --shadow-feedback: 0 4px 12px rgb(20 20 28 / 8%);
+  --shadow-control: none;
+  --radius-control: 12px;
+  --radius-surface: 16px;
+  --radius-overlay: 20px;
+  --duration-instant: 0ms;
+  --duration-fast: 120ms;
+  --duration-normal: 180ms;
+  --duration-deliberate: 280ms;
+  --duration-travel: 400ms;
+  --duration-showcase: 600ms;
+  --delay-stagger: 60ms;
+  --duration-loading: 1000ms;
+  --duration-skeleton: 1600ms;
+  --duration-marquee: 24000ms;
+  --motion-enter-distance: 4px;
+  --motion-showcase-distance: 16px;
+  --motion-press-scale: 0.97;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-settle: cubic-bezier(0.22, 1.2, 0.36, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-showcase: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-linear: linear;
+  --control-height: 40px;
+  --nav-height: 40px;
+  --row-padding: 16px;
+  /* Fills replace materials: a control is a flat fill one step above its ground. */
+  --raised: #e9e9ec;
+  --raised-hover: #dfdfe3;
+  --raised-press: #d6d6db;
+  --sunken: #e9e9ec;
+  /* A selected row or item: the customer's accent mixed into the ground, stronger than the hover fill in both themes. */
+  --selected: color-mix(in srgb, var(--accent) 22%, var(--background));
+  --danger-fill: #f31260;
+  --danger-fill-hover: #e00f58;
+  --danger-fill-press: #c70c4d;
+  --danger-fill-foreground: #ffffff;
+  /* Retired materials, kept as names so installed parts resolve: no lift, no inner shade. */
+  --shadow-raised: none;
+  --shadow-raised-press: none;
+  --shadow-accent: none;
+  --shadow-accent-press: none;
+  --shadow-danger: none;
+  --shadow-danger-press: none;
+  --shadow-plate: 0 1px 3px rgb(0 0 0 / 20%);
+  --shadow-sunken: none;
+  /* Fields keep a 3:1 boundary (WCAG 1.4.11); focus is a 2px ring. */
+  --field: #ffffff;
+  --shadow-field: inset 0 0 0 1px var(--border-strong);
+  --shadow-field-hover: inset 0 0 0 1px color-mix(in srgb, var(--border-strong) 60%, var(--foreground));
+  --ring-halo: transparent;
+  --shadow-field-focus: 0 0 0 2px var(--ring);
+  --shadow-field-invalid: 0 0 0 2px var(--danger-fill);
+  --shadow-field-quiet: inset 0 0 0 1px var(--border);
+  --radius-mark: 8px;
+  --radius-button: 12px;
+  --radius-touch: 16px;
+  --motion-press-travel: 1px;
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  color-scheme: dark;
+  /* Series: the same hues a step lighter for the dark grounds. */
+  --chart-1: var(--chart-accent);
+  --chart-2: oklch(0.7 0.16 295);
+  --chart-3: oklch(0.75 0.15 60);
+  --chart-4: oklch(0.72 0.12 170);
+  --chart-5: oklch(0.72 0.16 355);
+  --chart-6: oklch(0.6 0 0);
+  /* A soft near-black in pure grey (no tint): page, stage, tile, field, each a step lighter. */
+  --background: #161616;
+  --foreground: #f5f5f5;
+  --surface: #1b1b1b;
+  --elevated: #212121;
+  --elevated-glass: rgb(33 33 33 / 97%);
+  --edge-light: rgb(255 255 255 / 16%);
+  --edge-glow: rgb(255 255 255 / 8%);
+  --muted: #2a2a2a;
+  --muted-foreground: #a3a3a3;
+  --foreground-2: #737373;
+  --faint: #8a8a8a;
+  --knob: #444444;
+  --border: rgb(255 255 255 / 8%);
+  --border-strong: #7a7a7a;
+  --accent: #ececec;
+  --accent-foreground: #161616;
+  --accent-hover: #ffffff;
+  --accent-press: #d4d4d4;
+  --accent-text: #e4e4e4;
+  --accent-soft: rgb(236 236 236 / 12%);
+  --chart-accent: #7aa5f5;
+  --accent-deep: #4b4b52;
+  --primary: #fafafa;
+  --primary-foreground: #0a0a0b;
+  --primary-hover: #e4e4e7;
+  --primary-press: #d4d4d8;
+  --brand: var(--accent);
+  --brand-foreground: var(--accent-foreground);
+  --river: #c4c4ff;
+  --river-subtle: #323245;
+  --success: #17c964;
+  --success-subtle: #153524;
+  --warning: #f5a524;
+  --warning-subtle: #3d2e19;
+  --destructive: #ff5c8a;
+  --destructive-foreground: #161616;
+  --destructive-subtle: #3c1423;
+  --danger: #ff5c8a;
+  --danger-foreground: #161616;
+  --overlay: rgb(0 0 0 / 55%);
+  --shadow-overlay: 0 12px 40px rgb(0 0 0 / 40%);
+  --shadow-feedback: 0 4px 12px rgb(0 0 0 / 24%);
+  --raised: #2a2a2a;
+  --raised-hover: #333333;
+  --raised-press: #1f1f1f;
+  --sunken: #1b1b1b;
+  --shadow-plate: 0 1px 3px rgb(0 0 0 / 40%);
+  --field: #2a2a2a;
+  /* Derived tokens are restated so a dark region inside a light page resolves them against its own values. */
+  --brand-subtle: var(--accent-soft);
+  --ring: var(--accent-text);
+  --selected: color-mix(in srgb, var(--accent) 24%, var(--background));
+  --shadow-field: inset 0 0 0 1px var(--border-strong);
+  --shadow-field-hover: inset 0 0 0 1px color-mix(in srgb, var(--border-strong) 60%, var(--foreground));
+  --shadow-field-focus: 0 0 0 2px var(--ring);
+  --shadow-field-quiet: inset 0 0 0 1px var(--border);
+}
+
+:root[data-density="compact"],
+[data-density="compact"] {
+  --control-height: 36px;
+  --nav-height: 36px;
+  --row-padding: 12px;
+}
+
+/* Touch targets stay generous even when a desktop prefers compact density. */
+@media (pointer: coarse), (max-width: 767px) {
+  :root,
+  :root[data-density="compact"],
+  [data-density="compact"] {
+    --control-height: 44px;
+    --nav-height: 44px;
+    --radius-button: var(--radius-touch);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root,
+  [data-theme] {
+    --duration-fast: var(--duration-instant);
+    --duration-normal: var(--duration-instant);
+    --duration-deliberate: var(--duration-instant);
+    --duration-travel: var(--duration-instant);
+    --duration-showcase: var(--duration-instant);
+    --delay-stagger: var(--duration-instant);
+    --duration-loading: var(--duration-instant);
+    --duration-skeleton: var(--duration-instant);
+    --motion-enter-distance: 0px;
+    --motion-showcase-distance: 0px;
+    --motion-press-scale: 1;
+    --motion-press-travel: 0px;
+  }
+}

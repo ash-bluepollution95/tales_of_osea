@@ -58,6 +58,13 @@
     "@hugeicons-animated": "https://hugeicons-animated.com/r/{name}.json",
     "@pane": "https://pane.theui.company/r/{name}.json",
     "@cnippet": "https://ui.cnippet.dev/r/{name}.json",
-    "@magicui": "https://magicui.design/r/{name}"
+    "@magicui": "https://magicui.design/r/{name}",
+    "@keyframeui": "https://keyframeui.com/r/{name}.json",
+    "@reui": "https://reui.io/r/{style}/{name}.json",
+    "@glint-ui": "https://glint-ui-seven.vercel.app/r/{name}.json",
+    "@caliper": "https://caliperui.site/r/{name}.json",
+    "@spectrumui": "https://ui.spectrumhq.in/r/{name}.json",
+    "@pulld": "https://pulld.pages.dev/r/{name}.json",
+    "@animbits": "https://animbits.dev/r/{name}.json"
   }
 }

@@ -2,9 +2,8 @@ import { notFound } from "next/navigation";
 import { characters } from "@/lib/characters";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CharacterGallerySlice from "@/components/character-gallery-slice";
-import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import RidgeButton from "@/components/RidgeButton";
 
 function Field({ label, value }: { label: string; value?: string }) {
   if (!value) return null;
@@ -29,7 +28,8 @@ export default async function CharacterPage({
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
       <header className="mb-10 text-center">
         <h1>{character.name}</h1>
-        <p className="text-muted-foreground mt-2 text-lg">{character.title}</p>
+		<p className="text-muted-foreground mt-2 text-lg">{character.otherName}</p>
+        <p className="text-muted-foreground mt-2 text-lg">{character.slogan}</p>
         <p className="text-muted-foreground mx-auto mt-2 max-w-2xl">
           {character.blurb}
         </p>
@@ -41,12 +41,9 @@ export default async function CharacterPage({
           <h2 className="mb-4">Gallery</h2>
           <CharacterGallerySlice gallery={character.gallery} />
           <div className="mt-4">
-            <Link
-              href={`/characters/${character.slug}/gallery`}
-              className={buttonVariants({ variant: "outline", size: "sm" })}
-            >
+            <RidgeButton href={`/characters/${character.slug}/gallery`}>
               View full gallery
-            </Link>
+            </RidgeButton>
           </div>
         </section>
       ) : null}

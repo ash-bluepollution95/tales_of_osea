@@ -60,6 +60,15 @@ Taste-testing a batch of new legos — only `slice-gallery` is wired in (committ
 - [ ] **Characters bento card — audition button overflows at narrow widths.** In `home-bento.tsx`, the Characters card's `RainbowButton` ("🎙️ Audition Form Available!") pokes outside the card edge when the window is squished to mobile-ish width. Likely cause: the long label + the button's `whitespace-nowrap`, so the text can't wrap at narrow widths. Fix options (pick one): shorten the label (e.g. "🎙️ Audition"), add `whitespace-normal break-words` to let it wrap, or make the button `w-full`. Visual-only, no build impact.
 - [ ] **Prefetch console noise (benign).** Home bento's ~15 `<Link>`s prefetch RSC shells on load; superseded prefetches show as red "Fetch failed loading" + `?_rsc=` in DevTools (status 200/304 — cancelled aborts, not errors). Cosmetic, users never see it. If it bugs enough: `prefetch={false}` on the bento links (trades away instant-nav).
 
+## 🖼️ Gallery image backlog (data housekeeping)
+- [x] **Wire the gallery-less sheets** — tayvin (18), jupiter (11), sonny (16), jamie (21), marlin (42) now wired with `NN-full.webp` + drafted base `alt` (no captions yet; base alts are drafts the owner can reword).
+- [x] **Wire criss/felix/kay/kitch (+ andrew/mace renames)** — ✅ done. criss 102, felix 32, kay 37, kitch 45 all wired to `NN-full.webp` with base `alt`; andrew/mace files renamed `AndyNN`/`MaceNN` → `NN-full` and re-pathed. Kay had a duplicate `06` and kitch a `39`/`38` typo — both fixed. Captions pending owner.
+- [x] **Wire kristoff** — ✅ done. 14 images (`kristoff_hanlon`, `NN-full.webp`) wired with owner's base `alt`. Captions pending owner.
+- [ ] **Wire aspen** — renamed (`aspen_johnson` 46); blocked on the naming mismatch below.
+- [ ] **khris_tia** — 22 images dumped, no character sheet yet. Rename + wire once the sheet exists.
+- [ ] **Folder/slug naming mismatches** — settle folder vs slug (image paths use the *folder* name, so pick one and rename): `aspen_johnson` vs `uaspen_tia`, `angel_ofthenight` vs `angel`, `roiadan_vanzey` vs `roi_vanzey`.
+- [ ] **Cleanup** — junk empty `New folder` in `public/images/characters/`; orphaned `-thumb.webp` files (andrew/mace/roiadan/tori still have them).
+
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.
 - One source of truth: `Episode.characters` is the only stored link; reverse lookups are **derived** with `.filter()`, never mirrored.
