@@ -77,6 +77,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 	  {children} <EcommerceFooterWithSocials />         </div>
 
 </Providers>
+<Analytics />
+ <SpeedInsights />
 </body>
     </html>
   );
