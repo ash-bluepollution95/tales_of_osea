@@ -60,4 +60,14 @@ In light of trying to minimalize the amount of AI, and prevent hypothetical "com
 
 ## BRAIN WORMIES 
 
-A vent section, based on the code - not based on life, things that are unable to be smoothed out and prove there's a human aspect to this project. 
+A vent section, based on the code - not based on life, things that are unable to be smoothed out and prove there's a human aspect to this project. Or also known as the things that need to be fixed that I do NOT know how to fix and do not want the LLM to just wash it away. 
+
+- The whole site is starting to feel "AI VIBE CODED" in the fact that it's half-assed, we can't click on thumbnails we have to click on BUTTONS and it's not ACCESSIBLE at all. 
+
+- The idea was to use components AND blocks to make things EASIER, now things are way more difficult and it's becoming scarily MORE reliant  (Added comment: i'm aware that we did SOMETHINGS different for learning, the slug route learning is amazing, the problem is it doesn't... feel like we're getting the job done DESIGN wise rather than data wise is all.)
+
+- DATA wise in the code itself, the way i'm learning is NEAT and interesting and i'm learning more logic -- YES, but what's fighting now is ACCESSIBILITY and ease of use: We're over engineering everything for the sake of learning. 
+
+- There needs to return to a BALANCE of easy as this is taking too long to complete tasks, I had to run to QWEN today to finish off the stories section.  (And boy do i regret that sadly lol) -- Qwen kept forcing it's rhetoric of where to put shit, and kept telling me even more than Deepseek does to "OVERENGINEER" things XD -- finally i got it to just tell me which part to copy and paste 30 times. 
+
+- THE SITE overall looks "NEAT" my problem is the accessibiltiy and the button targets and the fact that a lot of the backwards over engineering was the sake of type safety, AS LONG AS IT BUILDS: I DO NOT CARE.  AS LONG AS IT IS NOT A SECURITY RISK: I DO NOT CARE.  If the type check doesn't fail: then HTML DOM it the stupid way instead of givine me a 5 page TS routing file and 4 hallucinated buttons.  I am frustrated YES, but let me add that i am not ANGRY (angy yes lol, angy angy but not truly angry) -- I want to do more "SHINE" and polish so things LOOK decent, and if we have to add certain things within rights then fine LOL.

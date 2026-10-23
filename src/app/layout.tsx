@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { Providers } from "./providers";
 import EcommerceFooterWithSocials from "@/components/blocks/ecommerce/ecommerce-footers/with-socials";
 import MagicRings from "@/components/MagicRings";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 const inconsolataInconsolata = Inconsolata({subsets:['latin','latin-ext','vietnamese'],weight:['200','300','400','500','600','700','800','900'],variable:'--font-inconsolata'});
 
@@ -29,7 +31,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Tales of Osea",
-  description: "FFXIV Project Website",
+  description: "A machinima series utilizing Final Fantasy XIV. Mirroring the concept of multiversal selves, fictionalizing the world and feelings of those that may have once lived before. Much like the sundered worlds of Ancient Etheryis, the visions of other worlds start to show - and the differences start flooding in. These visions however, are not just an Ascian playing head games. These events and visions are caused by an Ancient book from the Osenayans themselves. A book filled with incantations, memories and spells. Future, past and present from every universe start to converge - causing chaos beyond. Disclaimer: The story within is a ficitonalized version of aspects of being a dissociative identity disorder system. There is no intention of romanticizing or diminishing the medical aspects of mental health, or things around the subject. More information on this is covered under the disclaimers, in the nagivation menu. Feel free to connect if you have any questions or concerns.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
