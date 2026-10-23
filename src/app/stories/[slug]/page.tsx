@@ -5,6 +5,20 @@ import { stories } from "@/lib/stories";
 import { characters } from "@/lib/characters";
 import type { StoryBlock } from "@/lib/stories";
 
+function CreditLink({ name, url }: { name: string; url?: string }) {
+  if (!url) return <>{name}</>;
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      className="underline underline-offset-2 hover:text-foreground"
+    >
+      {name}
+    </a>
+  );
+}
+
 function Block({ block }: { block: StoryBlock }) {
   switch (block.type) {
     case "heading":
@@ -27,13 +41,25 @@ function Block({ block }: { block: StoryBlock }) {
             height={1080}
             className="rounded-xl border"
           />
-          {block.caption ? (
+          {block.caption || block.credit ? (
             <figcaption className="text-muted-foreground text-sm">
-              {block.caption}
+              {block.caption ? (
+                <span className="block">{block.caption}</span>
+              ) : null}
+              {block.credit ? (
+                <span className="text-muted-foreground/70 mt-1 block text-xs">
+                  Photo by{" "}
+                  <CreditLink name={block.credit.author} url={block.credit.authorUrl} />{" "}
+                  on{" "}
+                  <CreditLink name={block.credit.source} url={block.credit.sourceUrl} />
+                </span>
+              ) : null}
             </figcaption>
           ) : null}
         </figure>
       );
+    default:
+      return null;
   }
 }
 
@@ -68,13 +94,22 @@ export default async function StoryPage({
           })}
         </div>
       ) : null}
-
+	       
       {/* the story body */}
       <div className="space-y-6">
         {story.body.map((block, i) => (
           <Block key={i} block={block} />
         ))}
       </div>
+	  {/*Music Inspo*/}
+	  
+	   <div className="space-y-6">
+	   {story.music && (
+  <p className="text-xs text-muted-foreground/60 mt-2 italic">
+    Musical Inspiration: {story.music}
+  </p>
+)}
+	   </div>
     </main>
   );
 }
