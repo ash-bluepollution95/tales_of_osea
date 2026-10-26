@@ -21,11 +21,13 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "border-beam": "^1.4.1",
+    "botid": "^1.5.11",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cn": "^0.2.6",
     "embla-carousel-react": "^8.6.0",
     "fragment-canvas": "^1.0.9",
+    "gray-matter": "^4.0.3",
     "gsap": "^3.15.0",
     "lucide-react": "^1.45.0",
     "motion": "^13.2.0",
@@ -39,6 +41,8 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.87.0",
     "react-resizable-panels": "^4.12.4",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "shadcn": "^4.21.0",
     "swiper": "^14.2.0",
     "tailwind-merge": "^3.6.0",
@@ -47,6 +51,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -61,7 +66,7 @@
     "unrs-resolver@1.12.2": true
   },
   "overrides": {
-      "hono": "^4.13.10",
-	  "braces": "^3.0.3" 
-    }
+    "hono": "^4.13.10",
+    "braces": "^3.0.3"
+  }
 }

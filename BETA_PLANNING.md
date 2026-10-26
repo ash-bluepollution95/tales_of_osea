@@ -11,7 +11,13 @@
 - **Character gallery — slice on sheet + full grid** — sheet uses `slice-gallery` (`src/components/character-gallery-slice.tsx`: reads the 16:9 `full` webp directly, no thumbnails, caps at 12, `caption` = subtitle) + a "View full gallery" button → `/characters/[slug]/gallery` (`character-gallery.tsx`: full grid + Base UI lightbox, `object-contain`). Manual square thumbnails retired; images load eager.
 
 ## 🧱 Next up (homework)
-- [ ] **Stories** (`/stories`) — RP "side-story" posts linked to characters via a `characters: [slug]` field. Build: typed `src/lib/stories.ts` (mirroring `characters.ts`, `body` = typed `StoryBlock[]` union — heading/paragraph/quote/image — rendered with existing shadcn/Base UI components, zero new deps), `/stories` list (`.map()`), `/stories/[slug]` detail.
+- [x] **Stories** (`/stories`) — ✅ SHIPPED (2026-10-26): markdown route live. `content/stories/*.md` (frontmatter: title/date/excerpt/characters) + `src/lib/stories.ts` reader (fs + gray-matter + date sort) + `markdownToHtml` (remark) + `formatStoryDate` (Intl, **timeZone: "UTC"** — don't remove it) + `/stories` list + `/stories/[slug]` detail (`generateStaticParams` + try/catch→`notFound()` — fs throws on bad slugs, `.find()` returned undefined) + prose div (`prose dark:prose-invert prose-headings:font-heading prose-a:text-primary prose-blockquote:border-primary/50 max-w-none`) + character chips + home-bento rewired to `getAllStories()`. First story: `the-first-memory.md` (Criss). Leftover polish: list page still shows raw ISO date (wrap in `formatStoryDate`); `music?: string` field + footer block deferred; story image credits (see Later).
+
+**Story pipeline (owner's draft queue — add each as a `.md` drop when ready):**
+- [ ] **Kay — "The First Memory" is Criss's; Kay's 10-pager** — drafted, needs one human pass on the expositionals before conversion
+- [ ] **Kay's second story** — in progress
+- [ ] **Fronter's story** (current alter) — status TBD
+- [ ] **Jupiter's story** — barebones, possibly done, owner unsure
 - [x] Fill **Kay's real copy** into `characters.ts` (replace all the `"TBA"` strings with his sheet's content)
 - [x] Add **Criss's row** to `characters.ts` (then add his slug to `s01e01.characters`)
 - [ ] **Homework #2** — on the episode detail page, turn `Featuring: {episode.characters.join(", ")}` into real `<Link>`s to `/characters/[slug]` — and resolve each slug to its `Character.name` so it *displays* the name (e.g. "Kay"), not the raw slug (`kay_solas`)
@@ -29,6 +35,9 @@
 - [ ] **Align mobile nav menu to the surface ladder** — desktop nav (cubby-ui `NavigationMenu` in `header.tsx`) wears the `--surface-*` elevation ladder (highlight rim + layered shadow → "sleek"); the mobile dropdown (`src/components/ui/dropdown-menu.tsx` + the `md:hidden` block in `src/components/shadcn-studio/blocks/hero-section-01/header.tsx`) uses flat shadcn `bg-popover` + `shadow-md` + `ring-foreground/10` + `bg-accent` row hover, so contrast doesn't match. **Look for:** the popup line in `dropdown-menu.tsx` (`bg-popover … shadow-md ring-1 ring-foreground/10`) and the item hover (`data-highlighted:bg-accent`). **Fix:** swap the popup's shadow/ring for the surface rim + combined shadow, and use the surface hover token on items.
 
 ## 🔮 Later
+- [ ] **Stories pagination** — confirmed feasible, deliberately deferred until story count warrants it. List paging (`?page=` or `/stories/page/[n]`) = `.slice()` math on the date-sorted `getAllStories()` array; prev/next links on detail = same array, index ±1. Zero new deps.
+- [ ] **Story image credits** — plain markdown `![alt](src)` has no fields for attribution, but stories may use credited images (e.g. the Unsplash Atlanta shot in the-first-memory). The old StoryBlock draft had an `ImageCredit` type (author/authorUrl/source/sourceUrl). Decide a convention when building story image handling (frontmatter credits keyed by filename vs caption convention). Parked from the old src/lib/stories.ts (which the markdown route replaces).
+- [ ] **Auto-galleries (anti image-drudgery)** — owner wants to explore auto-detecting images so galleries don't need manual wiring (kills the per-image backlog grind). Two build-time flavors, both small, zero runtime cost: (1) scan `public/images/characters/<slug>/` with `fs.readdirSync`, filter `*-full.webp`, sort, generate the `Character.gallery` array (captions/alt need a convention — sidecar or defaults); (2) scan a story's markdown AST for `![...]` image nodes → auto "images in this story" strip. Same files-as-source-of-truth pattern as the stories reader.
 - [ ] **Reusable faceted search** — a shared `<FacetedSearch>` / `useFacetedSearch` hook: facet `<Select>` + text `<Input>`, filters any typed array client-side with `match-sorter` (`keys`). Build once, reuse on `/characters`, `/soundtrack`, `/episodes`. Plain-substring v1 → `match-sorter` v2. Turns those lists into `"use client"` components. Build together.
 - [ ] "Appears in:" section on character page (derive via `episodes.filter(...)`)
 - [ ] Reusable `<YouTubeEmbed>` component
@@ -68,6 +77,47 @@ Taste-testing a batch of new legos — only `slice-gallery` is wired in (committ
 - [ ] **khris_tia** — 22 images dumped, no character sheet yet. Rename + wire once the sheet exists.
 - [ ] **Folder/slug naming mismatches** — settle folder vs slug (image paths use the *folder* name, so pick one and rename): `aspen_johnson` vs `uaspen_tia`, `angel_ofthenight` vs `angel`, `roiadan_vanzey` vs `roi_vanzey`.
 - [ ] **Cleanup** — junk empty `New folder` in `public/images/characters/`; orphaned `-thumb.webp` files (andrew/mace/roiadan/tori still have them).
+
+## 🧾 External audit backlog (JILLY's phased suggestions — triaged by GLM 2026-10-26, nothing urgent)
+Work in phases, one branch each, prove every item with build output or a number. GLM's triage notes inline; ✅🟢⚠️🔶🔍 = verdicts.
+
+**P0 — Metadata + static rendering** 🟢 (zero visual risk) — DO FIRST
+- `generateStaticParams` for characters/[slug], characters/[slug]/gallery, episodes/[slug], soundtrack/[slug] — build output shows them ƒ (dynamic). stories/[slug] ✅ DONE (shipped 2026-10-26).
+- `generateMetadata` per route: title template `%s · Tales of Osea`, `metadataBase` from NEXT_PUBLIC_SITE_URL + prod fallback, OpenGraph + Twitter. Plus `app/sitemap.ts` + `app/robots.ts`.
+- Prove: routes flip ƒ→○ in build output; unique `<title>` per page; /sitemap.xml resolves.
+
+**P1 — Image diet** 🟢 — merge with gallery backlog items (orphaned thumbs, New folder cleanup)
+- Start with NUMBERS: list unreferenced `public/images` files + every file >300KB with pixel dimensions.
+- Re-encode referenced: max 1920px wide full (✅ already our gallery convention), WebP q≈80, strip EXIF, never upscale. (AVIF optional; slower encodes on the HDD.)
+- `next/image` for raw `<img>` in JSX code. NOTE: story markdown bodies STAY plain `<img>` (v1 decision — remark output, pre-optimized webp); don't rehydrate without a real reason.
+- Delete unreferenced LAST, on a branch. Verify-first before any delete.
+
+**P2 — Dependencies** 🟢 — go slow: one removal at a time, build after each
+- Move `shadcn` → devDependencies (it's a CLI, never imported at runtime). Then `npm audit --omit=dev` for the real runtime picture.
+- Candidate removals — VERIFY with grep first: `@hugeicons/*`, `@tailgrids/icons`, `swiper`, `react-hook-form`, `@fontsource-variable/nunito` (likely redundant with next/font). 🔶 `radix-ui` removal consciously RETIRES our documented tombstone marker (memory: zero-Radix migration) — fine, git history remembers.
+- Delete demo routes `/cookie-consent-01` + `/hero-section-01` — both real (in build output). 🔍 Confirm owner doesn't use hero-section-01 as an audition reference first.
+- Unused components: NOT mass-deleted — produce a list + proposed quarantine folder (unimported = zero bundle anyway, per board notes).
+
+**P3 — Lint + CI** 🟢 CORRECTED (2026-10-26): JILLY was RIGHT, GLM's glob was wrong — the registry "lego warehouse" IS in src/components: 8starlabs-ui, animate-ui, grootstudio, interior, kibo-ui, kokonutui, microkit, pouf, radix-nova, satori-ui, shadcn-space, smoothui, spectrumui, tailgrids, uiable, unlumen-ui (+ shadcn-studio/cubby-ui/ui which are IN USE). Lesson: verify with directory reads, not globs.
+- eslint scope: `npx eslint src` sweeps ALL of them (tsc does too — they currently pass type-check, but lint likely won't). Ignore the un-auditioned registry dirs in the eslint config; keep rules on app/, lib/, and our composed components.
+- ⚠️ CHECK `git status` BEFORE any `git add -A`: if registry dirs are untracked, a blanket add sweeps thousands of lego files into an unrelated commit — commit selectively or add the warehouse to .gitignore-adjacent strategy FIRST (decide: track the warehouse or keep it local?).
+- Fix `react/no-unescaped-entities` in privacy/terms/collaborate IF it fires — run `npx eslint src` first.
+- GitHub Action (npm ci + lint + build) — optional; Vercel already builds on push.
+
+**P4 — Types** 🟢 HIGH VALUE, small
+- Derive `CharacterSlug` union from characters.ts; type `Episode.characters` with it → typos become compile errors (direct, data is TS-visible).
+- For `Story.characters` (markdown frontmatter — INVISIBLE to TS): validate at build time in the stories reader — check each frontmatter slug against the union, throw a clear error listing the bad slug.
+- 🔍 Verify `historicalevents` → `historicalEvents` casing issue exists first (grep world.ts).
+
+**P5 — Mobile + a11y** 🟢 — aligns with existing Accessibility items
+- header.tsx: internal links → `next/link`, add `aria-current`, close mobile menu on navigation.
+- MagicRings: respect `prefers-reduced-motion`, don't mount on small screens / when `saveData` is set. (Board note: MagicRings may be replaced anyway — gate whatever the final background is.)
+
+**P6 — Consent** 🟢 legit for a public site, medium effort
+- Switch embeds to `youtube-nocookie.com`; mount iframes only after consent; wire a real consent component (after the demo route is deleted in P2).
+- Reconcile `/privacy` with reality — Vercel Analytics + Speed Insights are cookieless; say so accurately.
+
+**Suggested order:** P0 → P4 (small, high-value) → P1 (merge gallery backlog) → P2 → P5 → P3 → P6. Owner types along on whatever teaches; chores can be assistant-executed with explanations.
 
 ## Notes / conventions
 - Slug format: `name_surname` (e.g. `kay_solas`). `title` = first/last name, not an epithet.

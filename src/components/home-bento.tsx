@@ -7,7 +7,7 @@ import { Play, Users, BookOpenText, Compass, Clapperboard, Music } from "lucide-
 import EpisodeThumbnail from "@/components/episode-thumbnail";
 import { soundtrack } from "@/lib/soundtrack";
 import { worldSections } from "@/lib/world";
-import { stories } from "@/lib/stories";
+import { getAllStories } from "@/lib/stories";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 
 const teaser = episodes.find((e) => e.slug === "teaser");
@@ -15,7 +15,7 @@ const featuredEpisodes = episodes.filter((e) => e.kind !== "teaser").slice(0, 3)
 const featuredTracks = soundtrack.slice(0, 2);												  
 const featuredCharacters = characters.slice(0, 3);
 const featuredWorld = worldSections.slice(0, 3);
-const featuredStories = stories.slice(0, 2);
+const featuredStories = getAllStories().slice(0, 2);
 
 export default function HomeBento() {
   return (
