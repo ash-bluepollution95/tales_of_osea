@@ -23,6 +23,10 @@ export default async function CharacterPage({
   const character = characters.find((c) => c.slug === slug);
 
   if (!character) notFound();
+  
+  const castingOpen = character.castingOpen ?? character.voicedBy === "TBA";
+  const hasVoiceCredit = Boolean(character.voicedBy);
+  const isReopened = castingOpen && hasVoiceCredit && character.voicedBy !== "TBA";
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
@@ -50,14 +54,21 @@ export default async function CharacterPage({
 
       {/* Sections */}
 	  
-{character.voicedBy ? (
+{castingOpen || hasVoiceCredit ? (
   <div className="rounded-xl border p-4 flex items-center justify-between gap-3">
     <div>
-      <span className="text-muted-foreground text-sm">Voiced by </span>
-      <span className="text-sm font-medium">{character.voicedBy}</span>
+      <span className="text-muted-foreground text-sm">
+        {isReopened ? "Previously voiced by " : "Voiced by "}
+      </span>
+      <span className="text-sm font-medium">
+        {isReopened ? character.voicedBy : (character.voicedBy ?? "TBA")}
+      </span>
+      {isReopened ? (
+        <span className="text-muted-foreground text-sm"> — role re-opened</span>
+      ) : null}
     </div>
 
-    {character.voicedBy === "TBA" ? (
+    {castingOpen ? (
       <RainbowButton
         variant="outline"
         size="sm"

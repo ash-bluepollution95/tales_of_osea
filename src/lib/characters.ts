@@ -7,7 +7,8 @@ export type Character = {
   blurb: string;     // one-line hook for the list
 
   // --- detail-page only ---
-  voicedBy?: string;   // "?" = optional, so uncast characters don't break anything
+  voicedBy?: string;
+  castingOpen?: boolean;   // true = role is accepting auditions
   charNotes?: string;
   relChar?: string; // This is "CHARACTER RELATION" and is a new addition to show relation wether mirror or direct siblings etc or otherwise.
   identity: Identity;
@@ -257,6 +258,7 @@ export const characters: Character[] = [
   blurb: "Leader, Healer, Country Bumpkin and Charismatic Parent.",
   
   voicedBy:"ApolloTheGremlin",
+  castingOpen: true,
   charNotes: "Gets called the bratty Prince sometimes by his siblings.",
   relChar: "Partial mirror and half brother to Kay Solas, Brother to Kitch, Husband to Felix, Father of one too many green tinted weirdos.",
   
