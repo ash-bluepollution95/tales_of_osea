@@ -8,6 +8,8 @@ export interface BrickGalleryItem {
   /** Height / width of the image, e.g. 1.5 for a portrait photo. */
   ratio: number;
   alt?: string;
+  /** Text shown on hover. Falls back to alt when absent. */
+  caption?: string;
   href?: string;
 }
 
@@ -123,12 +125,12 @@ export function BrickGallery({
                   aria-hidden
                   className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 />
-                {item.alt && (
+                {(item.caption ?? item.alt) && (
                   <span
                     aria-hidden
                     className="pointer-events-none absolute bottom-3 left-3 translate-y-2 text-sm font-medium text-white opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100"
                   >
-                    {item.alt}
+                    {item.caption ?? item.alt}
                   </span>
                 )}
               </Tag>

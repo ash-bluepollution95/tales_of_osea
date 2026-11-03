@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { characters } from "@/lib/characters";
 import CharacterGallery from "@/components/character-gallery";
+import GalleryBricks from "@/components/gallery-bricks";
+import { galleriesFor } from "@/lib/galleries";
 import { buttonVariants } from "@/components/ui/button";
 
 export default async function CharacterGalleryPage({
@@ -14,18 +16,27 @@ export default async function CharacterGalleryPage({
 
   if (!character) notFound();
 
-  const hasGallery = character.gallery && character.gallery.length > 0;
+  // Migrated characters read straight from their image folder; everyone
+  // else falls back to the hand-wired character.gallery data.
+  const scanned = await galleriesFor(character.slug);
+  const isScanned = scanned !== null;
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
       <header className="mb-10 text-center">
         <h1>{character.name} — Gallery</h1>
         <p className="text-muted-foreground mt-2">
-          Every screenshot. Click any image to view it full-size.
+          {isScanned
+            ? "Every screenshot, laid out brick by brick. Drop a new image in the folder and it appears here after the next build."
+            : "Every screenshot. Click any image to view it full-size."}
         </p>
       </header>
 
-      {hasGallery ? (
+      {isScanned ? (
+        // Migrated path: the lego grid + lightbox, fed from the image folder.
+        <GalleryBricks shots={scanned} />
+      ) : character.gallery && character.gallery.length > 0 ? (
+        // Old hand-wired path: the grid + lightbox that was here before.
         <CharacterGallery gallery={character.gallery} />
       ) : (
         <p className="text-muted-foreground text-center">
