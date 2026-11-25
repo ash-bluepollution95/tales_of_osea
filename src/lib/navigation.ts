@@ -17,7 +17,11 @@ export const navigationData: NavigationSection[] = [
       { title: "Collaborate", href: "/collaborate" },
       { title: "Credits", href: "/credits" },
   ]},
-  { title: "Disclaimers", href: "/disclaimer" },
+  
+  { title: "Information", children: [
+      { title: "Disclaimers", href: "/disclaimer" },
+	  { title: "Disclosure", href: "/disclosure" },
+  ]},
   { title: "Legal", children: [
       { title: "Copyright", href: "/copyright" },
 	  { title: "Privacy", href: "/privacy" },
