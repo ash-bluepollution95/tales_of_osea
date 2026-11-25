@@ -7,7 +7,7 @@ characters:
   - criss solas
 ---
 
-Pre Note: There are other characters included in this, but not everyone has character sheets as of the original writing. Since the project is on temporary pause while we get the storyline re-written a bit better. All of the stories we write are fairly raw and undergo minimal editing, so things may change as things go a long. 
+ - Pre Note: There are other characters included in this, but not everyone has character sheets as of the original writing. Since the project is on temporary pause while we get the storyline re-written a bit better. All of the stories we write are fairly raw and undergo minimal editing, so things may change as things go a long. 
 
 Life isn’t ever simple, not when you know there’s a paradox trying to swallow the whole of your and several universes like a bad hentai. I’d love to tell you I'm another catboy who only just worked his life in fast food and didn’t do much. I’d love to tell you what you’d love to hear that like my younger brother I dealt with therapy and otherwise. No, instead despite what my family thinks based on what I’ve told them I died before the end of the world. More than once, on different aspects and while that’s confusing, likely even mortifying - I promise you I can explain. 
 
