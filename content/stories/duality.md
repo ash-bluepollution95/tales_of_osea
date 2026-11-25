@@ -1,5 +1,5 @@
 ---
-title: "GODS OF WAR"
+title: "Duality"
 date: "2026-11-7"
 excerpt: "Waking up somewhere you're not sure what day or time it is... or who you'll meet."
 characters:
