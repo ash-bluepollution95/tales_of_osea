@@ -31,7 +31,7 @@ export default function EpisodesPage() {
       </header>
 
       <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {episodes.map((ep) => (
+        {episodes.map((ep, i) => (
           <li key={ep.slug}>
             <Card className="h-full overflow-hidden transition-shadow duration-300 hover:shadow-lg hover:shadow-primary/15">
               <div className="bg-muted relative -mt-6 aspect-video w-full">
@@ -39,6 +39,7 @@ export default function EpisodesPage() {
                   primary={thumbnailFor(ep)}
                   fallback={fallbackFor(ep)}
                   alt={ep.title}
+                  priority={i < 6}
                 />
               </div>
               <CardHeader>

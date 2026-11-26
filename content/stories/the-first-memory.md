@@ -11,6 +11,13 @@ characters:
 
 There wasn't much going on in downtown Atlanta, Georgia. I was on the way to my early morning shift at the local convenience store. A short breezy morning to start the day fresh, but the fresh feeling was taking forever to come through. Stale, the breeze was cut short, litter and leaves refusing to rustle during a spring morning on the way to work. Atlanta wasn't my true home at this stage, it was just the largest city where you could find work. After a long stint in recovery for my mental health, I finally was able to nab a job somewhere. Alas, in this case I'm really only working the early bird shift serving coffees and donuts. Feels like I'm about to either lose my marbles from the lack of sleep, or the fact something isn't right in the air currently.
 
+
+|  |  |
+| --- | --- |
+| ![Downtown Atlanta Georgia. Streets empty.](/images/stories/atlanta-000.webp) |    |
+|  [Greg Keelen - Unsplash](https://unsplash.com/photos/brown-and-black-concrete-building-near-road-during-daytime--xsFKKYt62U)   |  |
+
+
  
 The sky was a different color than usual, something I just chalked up to a random weather pattern. Y'know the kind that happens when you know a weird thunderstorm's about to roll in and pour in about a week’s worth of rain in less than an hour? Yea, that. 
 
@@ -99,4 +106,4 @@ I looked at my hands, patted around my hair and my clothes and noticed everythin
 "With your soul." 
 
 
-Somehow my mind couldn't handle his answer, and I blacked out yet again. I tried to recall my footsteps that just happened but the memories that brought me here are fading fast. I know I was on the way to work, but I'm starting to forget why, how or otherwise. This is gonna be a long night. 
+Somehow my mind couldn't handle his answer, and I blacked out yet again. I tried to recall my footsteps that just happened but the memories that brought me here are fading fast. I know I was on the way to work, but I'm starting to forget why, how or otherwise. This is gonna be a long night.

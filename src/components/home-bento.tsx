@@ -31,6 +31,7 @@ export default function HomeBento() {
         primary={`https://i.ytimg.com/vi/${teaser.youtubeId}/maxresdefault.jpg`}
         fallback={`https://i.ytimg.com/vi/${teaser.youtubeId}/hqdefault.jpg`}
         alt={teaser.title}
+        priority
       />
     </div>
     <div className="absolute inset-0 flex items-center justify-center">

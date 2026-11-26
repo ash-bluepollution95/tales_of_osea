@@ -1,6 +1,9 @@
 import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Bluesky } from "@/components/ui/svgs/bluesky";
+import { DecoratedText } from "@/components/ui/decorated-text";
+
+
 
 const HeroSection = () => {
   return (
@@ -43,10 +46,9 @@ const HeroSection = () => {
 
         </h1>    </CardTitle>  </CardHeader>
 <CardContent className="mx-auto max-w-3xl space-y-1">
-        <div className='bg-muted mx-auto flex w-fit items-center gap-2.5 rounded-full border px-2 py-1 text-sm'>
-          <Badge>Fan-Made</Badge>
-          <span className='text-muted-foreground'>Video Series</span>
-        </div>
+        
+         <p className='text-2xl'>  <DecoratedText text="Fan Made Series" decoration="sparkles" trigger="view" color="#8b5cf6"/>    </p>
+ 
 
         
 

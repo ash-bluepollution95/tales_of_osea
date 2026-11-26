@@ -2,6 +2,7 @@ import HeroSection from '@/components/shadcn-studio/blocks/hero-section-01/hero-
 import Header from '@/components/shadcn-studio/blocks/hero-section-01/header'
 import type { NavigationSection } from '@/lib/navigation'
 
+
 const navigationData: NavigationSection[] = [
   {
     title: 'Home',

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { characters } from "@/lib/characters";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import CharacterGallerySlice from "@/components/character-gallery-slice";
+import { galleriesFor } from "@/lib/galleries";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import RidgeButton from "@/components/RidgeButton";
 
@@ -10,7 +11,7 @@ function Field({ label, value }: { label: string; value?: string }) {
   return (
     <p className="text-muted-foreground text-sm">
       <strong className="text-foreground font-medium">{label}:</strong> {value}
-    </p>
+    </p>        
   );
 }
 
@@ -23,7 +24,14 @@ export default async function CharacterPage({
   const character = characters.find((c) => c.slug === slug);
 
   if (!character) notFound();
-  
+
+  // Migrated characters feed the sheet slice from their image folder scan;
+  // everyone else falls back to the hand-wired character.gallery data.
+  const scanned = await galleriesFor(character.slug);
+  const sliceGallery = scanned
+    ? scanned.map((s) => ({ full: s.src, alt: s.alt ?? "", caption: s.caption }))
+    : character.gallery;
+
   const castingOpen = character.castingOpen ?? character.voicedBy === "TBA";
   const hasVoiceCredit = Boolean(character.voicedBy);
   const isReopened = castingOpen && hasVoiceCredit && character.voicedBy !== "TBA";
@@ -40,10 +48,10 @@ export default async function CharacterPage({
       </header>
 
       {/* Gallery — slice style on the sheet, full grid via the button below */}
-      {character.gallery && character.gallery.length > 0 ? (
+      {sliceGallery && sliceGallery.length > 0 ? (
         <section className="mb-10">
           <h2 className="mb-4">Gallery</h2>
-          <CharacterGallerySlice gallery={character.gallery} />
+          <CharacterGallerySlice gallery={sliceGallery} />
           <div className="mt-4">
             <RidgeButton href={`/characters/${character.slug}/gallery`}>
               View full gallery

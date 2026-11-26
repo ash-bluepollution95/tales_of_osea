@@ -21,15 +21,18 @@ export default async function CharacterGalleryPage({
   const scanned = await galleriesFor(character.slug);
   const isScanned = scanned !== null;
 
+  // Gallery header tagline: the character speaks first (slogan), then their
+  // blurb, then a plain visitor-useful instruction as the safety net.
+  const tagline =
+    character.slogan ??
+    character.blurb ??
+    "Every screenshot. Click any image to view it full-size.";
+
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-12 sm:px-6 sm:py-16">
       <header className="mb-10 text-center">
         <h1>{character.name} — Gallery</h1>
-        <p className="text-muted-foreground mt-2">
-          {isScanned
-            ? "Every screenshot, laid out brick by brick. Drop a new image in the folder and it appears here after the next build."
-            : "Every screenshot. Click any image to view it full-size."}
-        </p>
+        <p className="text-muted-foreground mt-2">{tagline}</p>
       </header>
 
       {isScanned ? (

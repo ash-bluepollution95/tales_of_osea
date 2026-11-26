@@ -38,16 +38,6 @@ export const episodes: Episode[] = [
     releaseDate: "September 9th, 2026",
     characters: ["criss_solas", "kay_solas"],
   },
-  {
-    slug: "short-1",
-    kind: "short",
-    title: "Criss Solas - Episode 001",
-    blurb: "Criss Solas - Voiced by ApollotheGremlin ",
-    description: "Criss Solas Introduction via Teaser and Episode 001.",
-    youtubeId: "HhHO6f-3f0A",
-    releaseDate: "September, 9th, 2026",
-    characters: ["criss_solas"],
-  },
     {
     slug: "short-2",
     kind: "short",
@@ -58,14 +48,5 @@ export const episodes: Episode[] = [
     releaseDate: "September, 9th, 2026",
     characters: ["kay_solas"],
   },
-      {
-    slug: "short-3",
-    kind: "short",
-    title: "Teaser Short",
-    blurb: "Introduction Teaser Short",
-    description: "Tales of Osea Teaser Short",
-    youtubeId: "_4iUMZO00ww",
-    releaseDate: "August 27, 2026",
-    characters: ["criss_solas", "kay_solas"],
-  },
+
 ];

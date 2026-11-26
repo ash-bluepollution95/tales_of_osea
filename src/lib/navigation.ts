@@ -13,20 +13,20 @@ export const navigationData: NavigationSection[] = [
   { title: "Media", children: 
   [{ title: "Soundtrack", href: "/soundtrack" },
    { title: "Episodes", href: "/episodes" },   ]},
-  { title: "Community", children: [
-      { title: "Collaborate", href: "/collaborate" },
-      { title: "Credits", href: "/credits" },
-  ]},
-  
+
   { title: "Information", children: [
       { title: "Disclaimers", href: "/disclaimer" },
 	  { title: "Disclosure", href: "/disclosure" },
+	  { title: "Responsibilities", href: "/responsibilities" },
+	   { title: "Collaborate", href: "/collaborate" },
+      { title: "Credits", href: "/credits" },
   ]},
   { title: "Legal", children: [
       { title: "Copyright", href: "/copyright" },
 	  { title: "Privacy", href: "/privacy" },
 	  { title: "Terms", href: "/terms" },
   ]},
+  { title: "Contact", href: "/contact" },
   
   
 ]

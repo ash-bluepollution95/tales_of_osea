@@ -42,16 +42,68 @@ const OVERRIDES: Record<string, Record<string, Pick<GalleryShot, "alt" | "captio
       caption: "Criss spotted with shorter hair, most assume this is a form of 'turn' which in non-eorzean terms sort of just means form shift or switch.",
     },
   },
+  kay_solas: {
+    "32-full.webp": {
+      alt: "Kay Solas, black and red hair miqo'te, red eyes, red and black open jacket.",
+      caption: "Kay and Criss in Aethrochemical Research Facility.",
+    },
+    "06-full.webp": {
+      alt: "Kay Solas Viper Outfit, black and red hair, miqo'te, red eyes, baseball jacket with no undershirt, torn jeans and ripped knees.",
+      caption: "Kay hawking outside of the Bloomers Bar and Grill.",
+    },
+    "04-full.webp": {
+      alt: "Kay Solas Astrologian Outfit, black and red hair, miqo'te, red eyes, cosmic exploration tech gear.",
+      caption: "Kay standing inside a high tech area (Spoiler Dungeon Post DT).",
+    },
+  },
+  mace_turtle: {
+    "44-full.webp": {
+      caption: "Mace making every attempt to prove her psychotic worth to her Aunt Kitch by grinning like a lizard-dumbass.",
+    },
+    "06-full.webp": {
+      caption: "Mace going 'COME HITHER AND AND HEAR FEEL THINK DEEZ NUTS I PAINT'",
+    },
+    "02-full.webp": {
+      caption: "Mace once again trying to lick everything off the pizza like a mad lizard.",
+    },
+    "36-full.webp": {
+      caption: "Mace standing in a dungeon going 'ENJOY THE CUTSCENES' and then promptly cackling and running off .",
+    },
+    "10-full.webp": {
+      caption: "Mace using her pictomancer abiltiies on the fly, without warning, probably against absolutley nothing..",
+    },
+    "16-full.webp": {
+      caption: "Mace screeching and we quote 'FULL MOOG AHEAD ZYOOM!'",
+    },
+    "14-full.webp": {
+      caption: "Mace sharing the butterflies.",
+    },
+    "45-full.webp": {
+      caption: "Mace attempting to paint a celebration note for completing a task in a dungeon, right before the mobs come running.",
+    },
+    "25-full.webp": {
+      caption: "Mace's semi professional portrait taken by Lilac one day..",
+    },
+  },
 };
 
 /** Fallback alt per character: the short description that used to be
  *  copy-pasted onto every entry. Leave out for characters without one. */
 const DEFAULT_ALT: Record<string, string> = {
   criss_solas: "Criss Solas, blue and pink hair, miqo'te, red eyes, teal and violet open jacket.",
+  kay_solas: "Kay Solas, black and red hair miqo'te, red eyes.",
+  mace_turtle:
+    "Mimi Okeya (Mace/Turtle) - Raen Aura - bright skin, pink limbal ring eyes, bright lips, green and pink hair, belted purple dress with a neon green jacket. Figmental Pictomancer weapon.",
 };
 
 /** Characters that have moved to the folder-scan gallery. */
-const MIGRATED = new Set(["criss_solas"]);
+const MIGRATED = new Set([
+  "criss_solas", "kay_solas", "mace_turtle", "andrew_bryant",
+  "angel_ofthenight", "aspen_johnson", "denzel_solas", "felix_solas",
+  "lilac_solas", "antaine_vanzey", "jamie_kilkenny", "jupiter_lorcan",
+  "kitch_bunny", "kristoff_hanlon", "roiadan_vanzey", "marlin_johnson",
+  "tori_solas", "tayvin_solas", "sonny_solas",
+]);
 
 const IMAGE_EXTS = new Set([".webp", ".png", ".jpg", ".jpeg", ".gif", ".avif"]);
 

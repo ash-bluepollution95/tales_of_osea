@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import html from "remark-html";
 
 export type Story = {
@@ -32,7 +33,7 @@ export function getAllStories(): Story[] {
 }
 
 export async function markdownToHtml(markdown: string) {
-  const result = await remark().use(html).process(markdown);
+  const result = await remark().use(remarkGfm).use(html).process(markdown);
   return result.toString();
 }
 
