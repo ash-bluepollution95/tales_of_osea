@@ -18,7 +18,6 @@ export const navigationData: NavigationSection[] = [
       { title: "Disclaimers", href: "/disclaimer" },
 	  { title: "Disclosure", href: "/disclosure" },
 	  { title: "Responsibilities", href: "/responsibilities" },
-	   { title: "Collaborate", href: "/collaborate" },
       { title: "Credits", href: "/credits" },
   ]},
   { title: "Legal", children: [
@@ -26,7 +25,10 @@ export const navigationData: NavigationSection[] = [
 	  { title: "Privacy", href: "/privacy" },
 	  { title: "Terms", href: "/terms" },
   ]},
+   { title: "Connect", children: [
   { title: "Contact", href: "/contact" },
-  
+  	   { title: "Collaborate", href: "/collaborate" },
+	   	   { title: "Audition", href: "/audition" },
+   ]}, 
   
 ]
