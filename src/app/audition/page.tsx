@@ -1,4 +1,4 @@
-import { buttonVariants } from "@/components/ui/button";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 export default function AuditionPage() {
   return (
